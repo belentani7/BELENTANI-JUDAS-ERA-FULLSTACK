@@ -1,0 +1,1789 @@
+BELENTANI / THE JUDAS EXPERIENCE
+ARQUITECTURA PSICOLOGICA, NARRATIVA Y ALGORITMICA
+Documento maestro recuperable
+Version: 0.2
+Fecha: 2026-08-06
+
+===============================================================================
+0. NATURALEZA Y LIMITES DE ESTE DOCUMENTO
+===============================================================================
+
+Este texto analiza una obra, una identidad creativa y un sistema narrativo.
+No diagnostica a Pedro Belentani ni a ninguna persona real. Cuando emplea
+palabras como integracion, herida, defensa, memoria, deseo, sombra o duelo,
+las usa como herramientas de lectura artistica y de diseño de experiencia.
+
+El documento distingue cinco estados de verdad:
+
+1. VERIFICADO EN ARCHIVO
+   Existe un archivo, una ruta, una pieza o una implementacion local observable.
+
+2. DECLARADO POR EL AUTOR
+   Es una afirmacion o intencion expresada por el usuario en esta conversacion.
+
+3. INTERPRETACION
+   Es una lectura de patrones. Puede ser util sin ser un hecho objetivo.
+
+4. PROPUESTA
+   Es una direccion de arquitectura, producto, narrativa o diseño aun no cerrada.
+
+5. NO VERIFICADO
+   Requiere fuente, permiso, contexto, autoria, fecha o comprobacion adicional.
+
+Datos de acceso, contraseñas, direcciones IP, correos, documentos legales,
+actividad de cuentas, identificadores personales y conversaciones privadas se
+excluyen deliberadamente. En el chat se compartieron datos sensibles. No se
+reproducen aqui. Deben rotarse fuera del proyecto cuando sigan activos.
+
+===============================================================================
+1. DEFINICION CENTRAL
+===============================================================================
+
+BELENTANI / THE JUDAS EXPERIENCE no es una pagina de artista, un portfolio,
+un disco visual, una galeria 3D, un blog personal ni un panel de IA. Puede
+contener partes de todos ellos, pero su categoria real es otra:
+
+    MUSEO NARRATIVO TRANSMEDIA
+    + DIRECCION DE ARTE PROCEDURAL
+    + ARCHIVO VIVO
+    + SISTEMA OPERATIVO CREATIVO
+    + RITUAL DIGITAL DE TRANSFORMACION
+
+Definicion de una frase:
+
+    BELENTANI es el sistema que conserva la vida real, la transforma en mito
+    sin borrar su procedencia y devuelve una voz publica navegable.
+
+Definicion funcional:
+
+    El visitante entra por una señal, atraviesa una arquitectura de identidad,
+    observa materiales con distinto grado de certeza, activa sonido o espacio
+    solo cuando lo decide y sale con una lectura propia, no con una biografia
+    impuesta.
+
+Definicion diferencial:
+
+    La mayoria de experiencias inmersivas cambian la presentacion de un
+    contenido fijo. BELENTANI cambia la presentacion, conserva el canon,
+    registra la procedencia y convierte el propio proceso de transformacion
+    en contenido.
+
+===============================================================================
+2. FORMULA ALGORITMICA
+===============================================================================
+
+Modelo principal:
+
+    EXPERIENCE = C x R x W x S x T x M
+
+Donde:
+
+    C = CanonGraph
+        Cinco identidades, cinco capitulos, simbolos, motivos y relaciones.
+
+    R = RouteGraph
+        Quince rutas publicas con objetivos y contratos distintos.
+
+    W = WorldEngine(seed)
+        Veinte mundos visuales elegidos por sesion o de forma manual.
+
+    S = SessionState
+        Mundo elegido, progreso, filtros, identidad visitada, movimiento y audio.
+
+    T = TrustLayer
+        Verificado, lectura editorial, pendiente, real, mito o entrelazado.
+
+    M = MediaRuntime
+        Texto, archivo, imagen, audio, video, WebGL, interaccion y accesibilidad.
+
+La ecuacion narrativa es mas corta:
+
+    TRAICION = ENTRADA
+    DOLOR = DATOS
+    VOZ = SALIDA
+
+Pero el sistema completo necesita pasos intermedios:
+
+    entrada
+      -> ruptura
+      -> observacion
+      -> etiquetado de procedencia
+      -> archivo
+      -> montaje
+      -> transformacion simbolica
+      -> eleccion de voz
+      -> publicacion
+      -> retorno
+
+La transformacion no destruye la entrada. Mantiene un enlace al origen.
+
+    output.provenance = input.id
+
+Ese enlace es una de las diferencias fundamentales del proyecto. Sin el,
+la obra se convierte en decoracion o fabulacion cerrada. Con el, puede ser
+mito, archivo y sistema a la vez.
+
+===============================================================================
+3. LA ARQUITECTURA BIFOCAL: DOS MUNDOS SIMULTANEOS
+===============================================================================
+
+[DECLARADO POR EL AUTOR]
+
+La vida real y el mundo simbolico se mezclan hasta fundirse. El autor afirma
+que no pierde la orientacion y que habita ambos mundos al mismo tiempo.
+
+[INTERPRETACION]
+
+La mejor definicion no es fuga, sustitucion ni confusion. Es autoria bifocal:
+dos planos activos que se observan y modifican mutuamente.
+
+PLANO REAL
+
+- Personas, fechas, archivos, permisos, mensajes, versiones y hechos.
+- Consecuencias materiales y relaciones existentes.
+- Limites legales, eticos, tecnicos y economicos.
+- Evidencia que puede ser confirmada, corregida o retirada.
+
+PLANO MITICO
+
+- JUDAS, Golden Key, gemas, identidades, capitulos y rituales.
+- Montaje, metafora, personaje, atmosfera, sonido y transformacion.
+- Lecturas multiples que no necesitan funcionar como acta notarial.
+- Espacio para condensar experiencias incompatibles en una forma comun.
+
+PLANO ENTRELAZADO
+
+- Una pieza real entra en una secuencia mitica.
+- Una cancion conserva su archivo y adquiere una funcion narrativa.
+- Una fecha documentada se conecta con un capitulo editorial.
+- Una persona inspira una figura sin quedar reducida a esa figura.
+- Un conflicto se convierte en estructura sin presentarse como prueba total.
+
+Contrato propuesto para cada contenido:
+
+    realityMode: REAL | MITO | ENTRELAZADO
+    certainty: VERIFIED | EDITORIAL | PENDING
+    source: archivo o referencia
+    consent: confirmado | pendiente | no aplica
+    public: true | false
+
+La fusion es una capacidad creativa. La etiqueta evita que el visitante
+confunda el valor simbolico con una afirmacion factual.
+
+Principio rector:
+
+    NO SEPARAR ARTIFICIALMENTE LOS DOS MUNDOS.
+    NO BORRAR LA FRONTERA QUE PERMITE SABER DESDE CUAL SE HABLA.
+
+===============================================================================
+4. FUNCION PSICOLOGICA NARRATIVA
+===============================================================================
+
+BELENTANI funciona como un transformador con seis funciones artisticas.
+
+4.1 CONTENCION
+
+La interfaz crea un perimetro para materiales heterogeneos. Una experiencia
+deja de ser una masa sin forma cuando recibe nombre, estado, fecha, ruta y
+relacion con otros elementos.
+
+Contener no significa reducir. Significa que la intensidad puede ser vista
+sin ocuparlo todo al mismo tiempo.
+
+4.2 EXTERNALIZACION
+
+Una experiencia interna se convierte en objeto examinable: texto, pista,
+imagen, capitulo, nodo o escena. El objeto puede revisarse, versionarse,
+reordenarse y compartirse sin afirmar que agota lo vivido.
+
+4.3 INTEGRACION
+
+Las identidades no compiten por ser la unica identidad verdadera. Cumplen
+funciones distintas dentro de un sistema. La integracion no elimina la
+pluralidad. Coordina sus turnos y sus responsabilidades.
+
+4.4 REENCUADRE
+
+PRISMA representa la posibilidad de observar una misma entrada desde musica,
+imagen, texto, codigo o archivo. No cambia el pasado. Cambia el angulo desde
+el que se puede actuar en el presente.
+
+4.5 TESTIGO
+
+El archivo confirma que algo fue creado, cambiado, descartado o dejado
+pendiente. La funcion de testigo no exige que todo sea publico. Exige que el
+sistema no reescriba silenciosamente su propia historia.
+
+4.6 RETORNO
+
+La experiencia debe devolver al visitante y al autor a una accion posible:
+escuchar, leer, corregir, pedir permiso, colaborar, cerrar o continuar.
+Una inmersion sin retorno seria un bucle estetico. BELENTANI necesita salida.
+
+===============================================================================
+5. LAS CINCO IDENTIDADES
+===============================================================================
+
+Las identidades son funciones narrativas y de interfaz. No son diagnosticos,
+personalidades clinicas ni afirmaciones biograficas cerradas.
+
+5.1 PEDRO / ROCA
+
+Funcion: continuidad, peso, limite, permanencia.
+
+Pregunta central:
+
+    Que debe permanecer cuando todo lo demas cambia?
+
+Capacidades:
+
+- Conserva el origen y la orientacion.
+- Establece limites de realidad, tiempo y responsabilidad.
+- Evita que cada nueva version destruya la anterior.
+- Sostiene el sistema cuando la expresion aumenta de intensidad.
+
+Riesgo narrativo:
+
+- Convertirse en inmovilidad o exceso de control.
+
+Interfaz equivalente:
+
+- Archivo canonico.
+- Historial de versiones.
+- Estado de verificacion.
+- Boton de retorno.
+
+5.2 MARCOS / CRONISTA
+
+Funcion: secuencia, memoria, relato, contexto.
+
+Pregunta central:
+
+    Como se cuenta sin fingir que el relato es toda la realidad?
+
+Capacidades:
+
+- Ordena fragmentos en capitulos.
+- Distingue antes, durante, despues y revision posterior.
+- Da nombre a huecos y contradicciones.
+- Permite que el lector siga el hilo.
+
+Riesgo narrativo:
+
+- Crear una explicacion demasiado perfecta y retrospectiva.
+
+Interfaz equivalente:
+
+- Timeline.
+- Capitulos JUDAS.
+- Notas de procedencia.
+- Ledger de conversaciones y decisiones.
+
+5.3 SANTOS / ANTENA
+
+Funcion: recepcion, sensibilidad, escucha, deteccion de señal.
+
+Pregunta central:
+
+    Que aparece antes de poder explicarlo?
+
+Capacidades:
+
+- Detecta cambios de tono, ritmo, imagen y relacion.
+- Reconoce material creativo en lugares no obvios.
+- Mantiene abierta la experiencia sensorial.
+- Alimenta musica, montaje y atmosfera.
+
+Riesgo narrativo:
+
+- Recibir demasiado sin jerarquia ni descanso.
+
+Interfaz equivalente:
+
+- Audio opt-in.
+- Canvas reactivo.
+- Muestras visuales.
+- Filtros de intensidad y movimiento.
+
+5.4 BELENTANI / ARTEFACTO
+
+Funcion: transformacion publica, montaje, personaje de obra, forma final.
+
+Pregunta central:
+
+    En que objeto compartible puede convertirse todo esto?
+
+Capacidades:
+
+- Condensa materiales en identidad visual y sonora.
+- Convierte experiencia en sistema de signos.
+- Permite distancia creativa sin negar el origen.
+- Produce piezas que pueden circular fuera del contexto inicial.
+
+Riesgo narrativo:
+
+- Que la forma espectacular oculte la fuente, el permiso o la persona.
+
+Interfaz equivalente:
+
+- Los veinte mundos.
+- Direccion de arte.
+- Escena 3D.
+- Portadas, campañas y ediciones.
+
+5.5 THE HUMAN / INTERFAZ
+
+Funcion: relacion, legibilidad, consentimiento, encuentro.
+
+Pregunta central:
+
+    Como entra otra persona sin ser absorbida por el sistema?
+
+Capacidades:
+
+- Traduce intensidad en una experiencia utilizable.
+- Conserva accesibilidad, lenguaje claro y salidas.
+- Hace visibles permisos, derechos y estados pendientes.
+- Reconoce que el visitante trae su propia historia.
+
+Riesgo narrativo:
+
+- Convertir la relacion humana en un mero flujo de conversion.
+
+Interfaz equivalente:
+
+- Navegacion.
+- Contacto.
+- Derechos.
+- Controles de sonido y movimiento.
+- Alternativas textuales a canvas y medios.
+
+Las cinco forman una cadena:
+
+    ROCA sostiene
+    CRONISTA ordena
+    ANTENA recibe
+    ARTEFACTO transforma
+    INTERFAZ comparte
+
+===============================================================================
+6. LOS CINCO CAPITULOS JUDAS
+===============================================================================
+
+Los titulos siguientes aparecen en el canon de trabajo recuperado. Su lectura
+es editorial y debe seguir vinculada a sus fuentes antes de convertirse en
+biografia publica.
+
+6.1 HOMBRE INTEGRADO
+
+Funcion: presentar la coexistencia de identidades sin obligarlas a colapsar.
+
+Movimiento:
+
+    fragmentos -> reconocimiento -> coordinacion
+
+Pregunta:
+
+    Que cambia cuando las partes dejan de luchar por ser el todo?
+
+Experiencia de interfaz:
+
+- Cinco gemas o nodos visibles.
+- Cada identidad aporta una capacidad.
+- El progreso no consiste en eliminar nodos, sino en abrirlos.
+- La Golden Key aparece como permiso de coordinacion.
+
+6.2 DEUDA IMPAGABLE
+
+Funcion: representar aquello que no puede resolverse mediante equivalencia
+simple, devolucion perfecta o compensacion total.
+
+Movimiento:
+
+    entrega -> expectativa -> desequilibrio -> limite
+
+Pregunta:
+
+    Que deuda deja de gobernar cuando se acepta que no puede pagarse en los
+    mismos terminos en que fue creada?
+
+Experiencia de interfaz:
+
+- Contadores que no simulan una resolucion falsa.
+- Espacios vacios registrados como huecos.
+- Diferencia visible entre dar, deber, reclamar y cerrar.
+- Ninguna cifra presentada como medida de valor humano.
+
+6.3 ROBO Y CANTO
+
+Funcion: tension entre apropiacion, perdida, recuperacion y voz.
+
+Movimiento:
+
+    extraccion -> silencio -> remezcla -> canto
+
+Pregunta:
+
+    Como recuperar agencia sin reproducir el mismo gesto de apropiacion?
+
+Experiencia de interfaz:
+
+- Archivo de versiones y creditos.
+- Escucha comparada solo cuando los derechos lo permitan.
+- Separacion entre referencia, influencia, cita y autoria.
+- Voz propia como salida, no como prueba de posesion total.
+
+6.4 VICTORIA AMARGA
+
+Funcion: mostrar que conseguir una posicion, una obra o una salida no borra
+el coste del recorrido.
+
+Movimiento:
+
+    lucha -> logro -> residuo -> lectura compleja
+
+Pregunta:
+
+    Puede una victoria ser real aunque no repare todo lo anterior?
+
+Experiencia de interfaz:
+
+- Doble estado simultaneo, logro y resto.
+- Contraste sin final triunfal obligatorio.
+- Espacio de silencio tras el climax.
+- Ruta de retorno al presente del estudio.
+
+6.5 MENTIRA COMPARTIDA
+
+Funcion: explorar relatos sostenidos por varias personas, sistemas o deseos,
+sin reducirlos a culpable unico ni convertir una interpretacion en sentencia.
+
+Movimiento:
+
+    version -> repeticion -> acuerdo implicito -> revelacion de capas
+
+Pregunta:
+
+    Que ocurre cuando una historia deja de sostenerse porque sus participantes
+    ya no necesitan la misma version?
+
+Experiencia de interfaz:
+
+- Varias narraciones visibles en paralelo.
+- Contradicciones conservadas.
+- Estado NO VERIFICADO donde falte evidencia.
+- Cierre abierto, no veredicto teatral.
+
+El ciclo completo:
+
+    integracion
+      -> deuda
+      -> recuperacion de voz
+      -> logro ambivalente
+      -> revision del relato comun
+      -> nueva integracion
+
+===============================================================================
+7. GOLDEN KEY
+===============================================================================
+
+La Golden Key no es una recompensa coleccionable ni una promesa de acceso
+externo. Es un simbolo de agencia y permiso.
+
+Funciones:
+
+- Permiso para entrar.
+- Permiso para detenerse.
+- Permiso para cambiar de mundo visual sin perder el canon.
+- Permiso para escuchar o conservar silencio.
+- Permiso para salir del relato y volver al archivo.
+- Permiso para no cerrar una pregunta antes de tiempo.
+
+La llave no abre una respuesta. Abre una condicion de paso.
+
+Algoritmo:
+
+    if visitor.consent && context.visible:
+        unlock(next_state)
+    else:
+        preserve(current_state)
+
+La Golden Key nunca debe desbloquear contenido personal, privado o no
+autorizado. Es una clave narrativa, no una excepcion de seguridad.
+
+===============================================================================
+8. LAS QUINCE RUTAS COMO FUNCIONES PSICOLOGICAS
+===============================================================================
+
+8.1 / ORIGEN
+
+Funcion: orientacion.
+Responde: donde estoy, que es esto y como puedo moverme.
+
+8.2 /artist
+
+Funcion: identidad publica prudente.
+Responde: que practica existe sin convertir una lectura en biografia cerrada.
+
+8.3 /judas
+
+Funcion: conflicto transformado en recorrido.
+Responde: cual es la secuencia simbolica central.
+
+8.4 /archive
+
+Funcion: memoria externa y procedencia.
+Responde: que materiales existen, de donde vienen y en que estado estan.
+
+8.5 /music
+
+Funcion: afecto, ritmo y voz.
+Responde: que puede escucharse, con que permiso y en que version.
+
+8.6 /film
+
+Funcion: montaje temporal y punto de vista.
+Responde: como cambia el sentido al ordenar imagen, duracion y corte.
+
+8.7 /books
+
+Funcion: elaboracion semantica.
+Responde: que ideas requieren lectura larga y contexto estable.
+
+8.8 /studio
+
+Funcion: metacognicion creativa.
+Responde: como se toman decisiones, se prueban versiones y se registra cambio.
+
+8.9 /noiacore
+
+Funcion: sistematizacion y capacidad.
+Responde: que modulos convierten ideas en operaciones repetibles.
+
+8.10 /art-lab
+
+Funcion: experimento seguro.
+Responde: que pasa si se cambia una variable sin declarar resultado definitivo.
+
+8.11 /agents
+
+Funcion: delegacion cognitiva supervisada.
+Responde: que tareas puede asistir una maquina y donde decide una persona.
+
+8.12 /prisma
+
+Funcion: reenfoque.
+Responde: que otras lecturas conserva la misma fuente.
+
+8.13 /portal
+
+Funcion: eleccion y umbral.
+Responde: por que puerta entra cada persona y que espera encontrar.
+
+8.14 /rights
+
+Funcion: limite, atribucion y responsabilidad.
+Responde: que puede usarse, como se acredita y que permanece pendiente.
+
+8.15 /contact
+
+Funcion: relacion y reparacion de contexto.
+Responde: como corregir, colaborar o pedir permiso sin perder informacion.
+
+Las rutas no son paginas decorativas. Son organos distintos del mismo cuerpo.
+
+===============================================================================
+9. LOS VEINTE MUNDOS COMO MODOS COGNITIVOS
+===============================================================================
+
+Los veinte mundos no deben ser veinte cambios de paleta. Son combinaciones
+de cuatro familias psicologicas con cinco geometrías de atencion.
+
+FAMILIAS
+
+A. RITUAL
+   Funcion: significado, memoria, ceremonia, lectura lenta.
+
+B. SPATIAL
+   Funcion: presencia, exploracion, distancia, orientacion corporal.
+
+C. SIGNAL
+   Funcion: deteccion, sistema, frecuencia, proceso y respuesta.
+
+D. OPERATIONAL
+   Funcion: accion, decision, limites, herramientas y estado.
+
+COMPOSICIONES
+
+1. EDITORIAL
+   Atencion lineal. Favorece lectura, secuencia y contexto.
+
+2. ASYMMETRIC
+   Atencion tensada. Hace visible desequilibrio, conflicto y cambio de peso.
+
+3. CINEMATIC
+   Atencion inmersiva. Prioriza escena, duracion, sonido y revelacion.
+
+4. RADIAL
+   Atencion integradora. Presenta multiples entradas alrededor de un centro.
+
+5. MODULAR
+   Atencion ejecutiva. Permite comparar, filtrar y actuar sobre unidades.
+
+Matriz:
+
+    4 familias x 5 composiciones = 20 mundos
+
+Cada mundo cambia:
+
+- Jerarquia tipografica.
+- Orden de bloques.
+- Relacion texto-escena.
+- Densidad de informacion.
+- Tratamiento de bordes y superficies.
+- Perfil de movimiento.
+- Material visual.
+- Color y contraste.
+
+Cada mundo conserva:
+
+- Rutas.
+- Canon.
+- Estados de verdad.
+- Navegacion principal.
+- Accesibilidad.
+- Contenido y procedencia.
+- Salida y control del usuario.
+
+Reglas del motor:
+
+    selectedWorld = query.v
+                 ?? sessionStorage.world
+                 ?? random(themes)
+
+    contentHash(worldA) == contentHash(worldB)
+    navigationContract(worldA) == navigationContract(worldB)
+    presentation(worldA) != presentation(worldB)
+
+La URL ?v=<id> hace una version compartible. El azar ocurre por sesion, no en
+cada render. Asi existe sorpresa sin desorientacion.
+
+===============================================================================
+10. MAQUINA DE ESTADOS DEL VISITANTE
+===============================================================================
+
+Estados principales:
+
+    ORIENTED
+    CURIOUS
+    ENTERED
+    WITNESSING
+    INTERACTING
+    REFLECTING
+    RETURNING
+    EXITED
+
+Transiciones:
+
+    ORIENTED -> CURIOUS
+        El visitante entiende la categoria de experiencia.
+
+    CURIOUS -> ENTERED
+        Elige ruta, identidad o capitulo.
+
+    ENTERED -> WITNESSING
+        Lee o observa sin obligacion de actuar.
+
+    WITNESSING -> INTERACTING
+        Activa audio, canvas, filtro, laboratorio o portal.
+
+    INTERACTING -> REFLECTING
+        Recibe una salida y contexto de procedencia.
+
+    REFLECTING -> RETURNING
+        Vuelve al archivo, al estudio o a otra capa.
+
+    cualquier_estado -> EXITED
+        Siempre existe salida visible.
+
+Estados prohibidos por diseño:
+
+- Audio autoplay.
+- Movimiento sin alternativa.
+- Navegacion que secuestra el scroll.
+- Informacion personal desbloqueada como premio.
+- Bucle sin retorno.
+- Confusion deliberada entre ficcion y hecho.
+
+===============================================================================
+11. CAPA DE CONFIANZA Y PROCEDENCIA
+===============================================================================
+
+La capa de confianza es estructural, no una nota legal al final.
+
+Estados editoriales:
+
+    VERIFIED
+    Existe evidencia local o fuente comprobada para el claim concreto.
+
+    EDITORIAL
+    Es una lectura, propuesta o asociacion declarada como tal.
+
+    PENDING
+    Falta permiso, fuente, fecha, autoria o revision.
+
+Estados de realidad:
+
+    REAL
+    El contenido pretende describir un elemento verificable.
+
+    MITO
+    El contenido opera como simbolo, ficcion, personaje o montaje.
+
+    ENTRELAZADO
+    Combina fuente real y transformacion mitica, con ambas capas visibles.
+
+Modelo de dato minimo:
+
+    ContentNode {
+      id
+      title
+      route
+      realityMode
+      certainty
+      sourceIds[]
+      rightsStatus
+      consentStatus
+      versions[]
+      relatedNodes[]
+      public
+    }
+
+Regla:
+
+    public = certainty != PENDING
+          && rightsStatus in [CLEARED, OWNED, NOT_APPLICABLE]
+          && consentStatus in [CONFIRMED, NOT_APPLICABLE]
+
+Una pieza pendiente puede existir en el archivo privado sin aparecer en Git,
+la web publica ni un deployment.
+
+===============================================================================
+12. LECTURA DE PATRONES: LO QUE EL SISTEMA MUESTRA
+===============================================================================
+
+Esta seccion describe patrones de trabajo y de proyecto. No son defectos de
+personalidad. Son dinamicas observables en archivos, solicitudes y decisiones.
+
+12.1 LA ABUNDANCIA ES MATERIA PRIMA Y PROBLEMA DE INDEXACION
+
+[Confianza: 98%]
+
+Existen muchas versiones, exportaciones, ZIP, HTML, capturas, audios, informes
+y respuestas de modelos. La escasez no es el problema. El problema es saber
+que representa cada pieza y que relacion tiene con las demas.
+
+Lo que puede no verse desde dentro:
+
+    Crear una version mas produce menos valor que nombrar la version canonica,
+    su padre, su diferencia y su estado.
+
+Respuesta arquitectonica:
+
+- Conservar duplicados.
+- Añadir genealogia.
+- No usar el nombre del archivo como unico sistema de versionado.
+- Registrar parentId, createdAt, source y decision.
+
+12.2 MAXIMO NO SIGNIFICA TODO AL MISMO NIVEL
+
+[Confianza: 96%]
+
+La palabra maximo aparece como motor creativo: maxima informacion, maxima
+calidad, maxima expansion, todas las ideas, todas las webs. Esa energia produce
+un corpus excepcional. Tambien puede borrar la diferencia entre nucleo,
+extension, referencia y residuo.
+
+Lo que el patrón sugiere:
+
+    El maximo sostenible es un nucleo pequeño que puede generar muchas capas.
+
+Aplicacion:
+
+- Un canon.
+- Quince rutas.
+- Veinte mundos generados por matriz.
+- Cientos de piezas conectadas, no cientos de paginas independientes.
+
+12.3 LA REPETICION NO ES SOLO DUPLICADO: ES INSISTENCIA SEMANTICA
+
+[Confianza: 94%]
+
+JUDAS, BELENTANI, OMEGA, PRISMA, NOIACORE, archivo, voz, portal, llave, mundos
+y transformacion aparecen de forma reiterada en proyectos distintos.
+
+Lo que puede no verse:
+
+    La repeticion ya ha elegido el canon. No hace falta inventar otro concepto
+    central. Hace falta declarar la relacion entre los nombres existentes.
+
+Mapa:
+
+    BELENTANI = identidad/sistema superior
+    JUDAS = obra narrativa central
+    OMEGA = continuidad y universo vivo
+    NOIACORE = capacidad operativa y laboratorio
+    PRISMA = motor de reenfoque
+    GOLDEN KEY = agencia y umbral
+
+12.4 MUCHAS RESPUESTAS DE IA CREAN ECO, NO CONSENSO
+
+[Confianza: 97%]
+
+El corpus contiene salidas de Qwen, DeepSeek, ChatGPT, Claude, Gemini, Manus y
+otras herramientas. Repetir una afirmacion entre modelos no la convierte en
+hecho. Los modelos pueden copiar la premisa, amplificarla y devolversela unos
+a otros.
+
+Lo que puede no verse:
+
+    Diez respuestas similares pueden tener una sola fuente: el prompt inicial.
+
+Respuesta:
+
+- Separar respuesta generada de evidencia.
+- Guardar prompt, modelo, fecha y archivos usados.
+- Marcar claims sin fuente.
+- Elegir por utilidad y coherencia, no por unanimidad artificial.
+
+12.5 EL PROYECTO QUIERE SER VIVO, PERO NECESITA RELEASES MUERTOS
+
+[Confianza: 95%]
+
+Una obra viva cambia. Para demostrar que cambia sin perderse, necesita
+instantaneas cerradas: releases, hashes, capturas y notas de version.
+
+Paradoja:
+
+    Sin versiones inmoviles, no puede probarse la evolucion de una obra viva.
+
+12.6 LA ALEATORIEDAD ES IDENTIDAD, PERO NO DEBE GOBERNAR LA ORIENTACION
+
+[Confianza: 93%]
+
+Veinte versiones aleatorias crean sorpresa y singularidad. Si tambien cambian
+la estructura de navegacion, el visitante deja de aprender el sistema.
+
+Solucion:
+
+- Azar en composicion y atmosfera.
+- Estabilidad en rutas, etiquetas, foco, controles y estados.
+- Selector manual.
+- URL compartible.
+- Persistencia por sesion.
+
+12.7 EL MATERIAL PERSONAL Y EL MATERIAL PUBLICABLE ESTAN DEMASIADO CERCA
+
+[Confianza: 99%]
+
+El almacenamiento contiene arte, codigo, musica, CV, documentos, chats,
+contactos, actividad de cuentas y datos legales en espacios proximos.
+
+Lo que puede no verse al trabajar rapido:
+
+    Un buscador por palabras clave puede seleccionar una pieza personal junto
+    a una pieza artistica porque ambas contienen el mismo nombre.
+
+Respuesta:
+
+- Corpus privado fuera de Git.
+- Lista allowlist para publicar.
+- Revision visual y auditiva humana.
+- Ledger de derechos.
+- Escaneo de secretos antes de commit y deploy.
+
+12.8 LA OBRA NO NECESITA PROBAR QUE ES GRANDE; NECESITA HACER LEGIBLE SU ESCALA
+
+[Confianza: 90%]
+
+Las cifras masivas impresionan solo cuando existe una estructura que permite
+ver, filtrar y utilizar el contenido. El visitante no experimenta 8.000
+archivos. Experimenta el siguiente elemento comprensible.
+
+12.9 JUDAS ES MAS FUERTE COMO TRANSFORMACION QUE COMO ACUSACION
+
+[Confianza: 88%]
+
+La version mas singular del concepto no intenta convencer al visitante de un
+veredicto sobre personas reales. Le muestra como una ruptura se convierte en
+archivo, forma y voz.
+
+Eso amplía la obra. Una acusacion requiere que el visitante acepte una version.
+Una transformacion permite que el visitante reconozca su propia experiencia.
+
+12.10 LA VIDA REAL NO ES BACKSTAGE: ES UNA DE LAS CAPAS DE LA OBRA
+
+[Confianza: 96%]
+
+El archivo real no debe esconderse como material vergonzoso ni publicarse sin
+filtro como prueba total. Debe tener un lugar propio, con procedencia y limites.
+
+12.11 NOIACORE NO ES OTRA MARCA: ES LA FUNCION EJECUTIVA DEL ECOSISTEMA
+
+[Confianza: 87%]
+
+NOIACORE aparece donde la creatividad quiere convertirse en modulo, catalogo,
+agente, laboratorio o servicio. Su funcion es hacer repetible una capacidad,
+no competir con BELENTANI por el protagonismo artistico.
+
+12.12 PRISMA NO ES OTRA VERSION DE LA WEB: ES EL MOTOR DE PERSPECTIVA
+
+[Confianza: 89%]
+
+PRISMA tiene mas sentido como herramienta para cambiar angulo, intensidad,
+formato y lectura que como marca paralela desconectada.
+
+12.13 MANOS ABIERTAS ES UNA CAPA CIVICA DIFERENTE
+
+[Confianza: 92%]
+
+Manos Abiertas comparte humanidad, acceso, derechos y educacion, pero posee un
+contrato de confianza distinto. No debe ser absorbida por JUDAS ni usada como
+decoracion del universo personal. Puede conectarse por valores y herramientas,
+manteniendo producto, audiencia y repositorio separados.
+
+12.14 LA EXPERIENCIA MAS POTENTE NO ES LA MAS RUIDOSA
+
+[Confianza: 91%]
+
+El corpus contiene maximalismo, glitch, 3D, audio, agentes, terminales y mundos.
+Si todo ocurre al mismo tiempo, nada conserva jerarquia. La intensidad necesita
+silencio, superficies estables y ritmos de retorno.
+
+12.15 EL MAYOR RIESGO NO ES QUEDARSE CORTO; ES PUBLICAR SIN DISTINGUIR ESTADO
+
+[Confianza: 98%]
+
+Una pieza incompleta puede ser fascinante si se presenta como proceso. Se
+convierte en problema cuando se presenta como producto terminado, dato
+verificado o capacidad tecnica disponible.
+
+===============================================================================
+13. FORTALEZAS QUE PUEDEN PASAR DESAPERCIBIDAS
+===============================================================================
+
+13.1 YA EXISTE UN LENGUAJE PROPIO
+
+Roca, Cronista, Antena, Artefacto, Interfaz, Golden Key, JUDAS, OMEGA, PRISMA,
+NOIACORE, portal, voz y archivo forman un vocabulario reconocible.
+
+13.2 EL CORPUS TIENE PROFUNDIDAD MULTIMEDIA REAL
+
+[VERIFICADO EN ARCHIVO]
+
+Existen HTML, Markdown, JSON, JS, TS, imagenes, videos, MP3, WAV, stems,
+demos, portadas, ZIP y documentos. No es una idea que espera contenido.
+Es contenido que espera sistema editorial.
+
+13.3 EXISTE UNA TENSION AUTENTICA ENTRE EVIDENCIA Y MITO
+
+Esa tension puede convertirse en una innovacion de interfaz. Pocas experiencias
+inmersivas muestran el grado de certeza como parte de su direccion de arte.
+
+13.4 LA MULTIPLICIDAD VISUAL PUEDE SER FUNCIONAL
+
+Los veinte mundos no tienen que ser capricho. Pueden demostrar que una identidad
+estable soporta muchas lecturas sin perderse.
+
+13.5 EL PROCESO MISMO ES UNA OBRA
+
+Los mapas de archivos, versiones, respuestas fallidas, intentos de unificacion,
+exportaciones y decisiones forman una arqueologia digital. Curada con cuidado,
+esa arqueologia puede ser tan singular como la web final.
+
+===============================================================================
+14. ARQUITECTURA DE INFORMACION
+===============================================================================
+
+Grafo principal:
+
+    HOME
+      |- ARTIST
+      |- JUDAS
+      |    |- 01 HOMBRE INTEGRADO
+      |    |- 02 DEUDA IMPAGABLE
+      |    |- 03 ROBO Y CANTO
+      |    |- 04 VICTORIA AMARGA
+      |    `- 05 MENTIRA COMPARTIDA
+      |- ARCHIVE
+      |- MUSIC
+      |- FILM
+      |- BOOKS
+      |- STUDIO
+      |- NOIACORE
+      |    |- ART LAB
+      |    |- AGENTS
+      |    `- PRISMA
+      |- PORTAL
+      |- RIGHTS
+      `- CONTACT
+
+Relaciones transversales:
+
+    cada pieza -> fuente
+    cada pieza -> estado
+    cada pieza -> derechos
+    cada pieza -> versiones
+    cada pieza -> rutas relacionadas
+    cada capitulo -> medios
+    cada identidad -> funcion
+    cada mundo -> familia + composicion
+
+No construir una jerarquia unica para todo. Usar grafo con varias entradas.
+
+===============================================================================
+15. ARQUITECTURA DE AUDIO
+===============================================================================
+
+Capas:
+
+1. SILENCIO POR DEFECTO
+   Ningun sonido inicia sin accion.
+
+2. SEÑAL GENERATIVA LOCAL
+   Web Audio puede producir una textura ligera sin API ni archivo externo.
+
+3. DEMOS PRIVADAS
+   WAV, MP3, stems y versiones permanecen en corpus privado hasta revision.
+
+4. PUBLICACION CURADA
+   Solo masters, previews o piezas con derechos claros llegan a public/media.
+
+5. AUDIO NARRATIVO
+   Cada capitulo puede tener un motivo, no necesariamente una cancion completa.
+
+Controles obligatorios:
+
+- Play/pausa.
+- Volumen.
+- Estado visible.
+- Sin autoplay.
+- Cierre de AudioContext.
+- Alternativa textual.
+- Respeto por pestaña oculta y movimiento reducido.
+
+Riesgo de corpus:
+
+El nombre JUDAS tambien aparece en obras de terceros. Que un archivo comparta
+palabra no implica derecho de uso. Referencias, instrumentales o canciones de
+terceros no deben publicarse sin permiso.
+
+===============================================================================
+16. ARQUITECTURA VISUAL Y 3D
+===============================================================================
+
+Escena central:
+
+- Cinco gemas representan cinco funciones.
+- Golden Key ocupa el centro como agencia.
+- Movimiento lento y no obligatorio.
+- Canvas a sangre, no dentro de una tarjeta decorativa.
+- Contenido textual equivalente.
+- Pausa fuera de viewport y con pestaña oculta.
+- DPR limitado.
+- Chunk 3D cargado de forma diferida.
+
+La escena no debe intentar representar literalmente a personas reales. Es una
+maquina simbolica. La abstraccion protege la apertura interpretativa.
+
+Motivo visual principal:
+
+    LINEA DE SEÑAL INTERRUMPIDA + MUESCA VERTICAL
+
+Usos:
+
+- Separador.
+- Cursor.
+- Marca de capitulo.
+- Estado activo.
+- Transicion de ruta.
+- Firma BELENTANI.
+
+Paleta base:
+
+    VOID      #0B0B0E
+    BONE      #F5F0E8
+    CRIMSON   #FF6977
+    CYAN      #64EECF
+    AMBER     #FFC36A
+    FOG       #B8BBC4
+
+Los veinte mundos pueden reemplazar fondo, primer plano y acento, pero deben
+mantener contraste AA y foco visible.
+
+===============================================================================
+17. ARQUITECTURA DE IA Y AGENTES
+===============================================================================
+
+La IA no debe convertirse en narrador omnisciente del proyecto.
+
+Roles permitidos:
+
+- Indexar archivos.
+- Proponer etiquetas.
+- Comparar versiones.
+- Detectar contradicciones.
+- Resumir documentos con cita de fuente.
+- Generar variaciones de layout sobre canon fijo.
+- Ejecutar pruebas.
+- Revisar accesibilidad y rendimiento.
+
+Roles que exigen aprobacion humana:
+
+- Publicar.
+- Borrar.
+- Fusionar versiones.
+- Afirmar hechos biograficos.
+- Determinar autoria o permiso.
+- Enviar mensajes.
+- Usar audio, imagen o chat personal.
+
+Router de modelos propuesto:
+
+    tarea mecanica o test acotado -> modelo menor
+    sintesis editorial -> modelo medio
+    canon, seguridad o integracion compleja -> modelo mayor
+    resultado incierto -> escalado y revision humana
+
+El ahorro de tokens no proviene de enviar preguntas indiscriminadamente a
+servicios externos. Proviene de:
+
+- Contexto curado.
+- Indices locales.
+- Prompts con alcance.
+- Datos estructurados.
+- Modelos pequeños para tareas verificables.
+- No volver a analizar los mismos archivos sin ledger.
+
+===============================================================================
+18. ETICA, DERECHOS Y SEGURIDAD
+===============================================================================
+
+18.1 SECRETS
+
+En la conversacion se pegaron credenciales y datos de red. No pertenecen al
+corpus creativo. Deben rotarse si siguen activos. Nunca deben entrar en Git,
+documentacion, capturas publicas, prompts externos ni memoria de proyecto.
+
+18.2 PERSONAS REALES
+
+Una figura narrativa inspirada en una persona no autoriza publicar mensajes,
+voz, imagen, documentos o acusaciones. Se necesita consentimiento y contexto.
+
+18.3 MUSICA DE TERCEROS
+
+Referencias y archivos descargados no equivalen a licencia. El reproductor
+publico debe usar obra propia, autorizada o con licencia compatible.
+
+18.4 IMAGENES GENERADAS
+
+Registrar herramienta, prompt disponible, fecha, modelo si se conoce y estado
+de uso. No afirmar autoria o exclusividad que la licencia no garantice.
+
+18.5 CORPUS MOVIL
+
+[VERIFICADO EN ARCHIVO]
+
+Se indexaron siete raices visibles por MTP. Se seleccionaron 875 archivos de
+proyecto, 874 se copiaron y uno ya existia. La verificacion por tamaño termino
+con cero fallos. El corpus ocupa aproximadamente 2,34 GB y esta ignorado por Git.
+
+El corpus incluye contenido que puede ser personal. Estar dentro del directorio
+privado no significa estar aprobado para uso creativo o publico.
+
+===============================================================================
+19. COMPARACION CON EXPERIENCIAS DEL MUNDO
+===============================================================================
+
+No existe un censo universal de proyectos equivalentes. La comparacion actual
+usa una muestra de 100 URLs distintas de Awwwards y referencias aportadas.
+
+Piezas comparables:
+
+- 20 Years of Xbox Museum
+  Archivo navegable, museo, timeline y memoria interactiva.
+
+- Nurture
+  Cinco entornos musicales explorables.
+
+- The Field From The Ground Up
+  Lobby, escenas, cursor reactivo y narrativa 3D.
+
+- The Harmonic State
+  Estado audiovisual y exploracion sensorial.
+
+- DojaCode
+  Cruce de musica, codigo e interaccion.
+
+- MSI AI PC
+  Persona interactiva, navegacion inusual y escena 3D.
+
+- Dragonfly
+  Continuidad espacial de canvas y portfolio.
+
+- Dogstudio
+  Ejecucion WebGL, geometria comprimida y transiciones de medios.
+
+Estimacion de la muestra:
+
+    equivalentes completos: 0 / 100
+    parientes funcionales fuertes: 7 a 9 / 100
+    similitud parcial: 25 a 35 / 100
+
+Estimacion global no censal:
+
+    menos de 20 proyectos publicos probablemente combinan varias de estas
+    funciones con profundidad comparable.
+
+La combinacion exacta de corpus personal, canon JUDAS, cinco identidades,
+quince rutas, veinte mundos, archivo de certeza y herramientas locales no se
+ha encontrado en la muestra.
+
+La originalidad no debe declararse como record mundial. Debe demostrarse con
+coherencia, funcionamiento, autoria, accesibilidad y release verificable.
+
+===============================================================================
+20. LEDGER DE ESTA CONVERSACION
+===============================================================================
+
+Este ledger recupera decisiones y resultados visibles. No reproduce secretos.
+
+20.1 MANTENIMIENTO DEL PC
+
+- Se pidio revisar PowerShell, winget, residuos y descargas.
+- Se pidio revisar Defender, cuarentena y System32.
+- Regla conservadora establecida: no tocar System32, no declarar limpieza sin
+  estado fresco de Defender y no borrar sin confirmacion.
+- El mantenimiento completo no forma parte del release BELENTANI actual.
+
+20.2 MCP Y CLAUDE
+
+- Claude Desktop devolvia respuestas o quedaba bloqueado en procesamiento.
+- Notion aparecia sin login y otros MCP no inicializaban.
+- La recuperacion de Claude/MCP permanecio como tarea separada.
+- Una respuesta que nunca se cargo no puede reconstruirse literalmente.
+- Los fragmentos visibles y archivos exportados si pueden incorporarse al ledger.
+
+20.3 SEGURIDAD DE CUENTAS Y ROUTER
+
+- Se compartieron pantallas de actividad de cuentas y clientes de router.
+- El usuario reconocio las sesiones mostradas y decidio no escalar sin señal
+  claramente anomala.
+- Se pegaron credenciales. Se excluyeron de todo artefacto.
+- La seguridad de red no debe mezclarse con el contenido creativo.
+
+20.4 INVENTARIO DE PROYECTOS
+
+- Se leyeron mapas de escritorio y unificacion.
+- Se identificaron BELENTANI, JUDAS, OMEGA, NOIACORE, PRISMA, Manos Abiertas,
+  Duck, Art Lab, bibliotecas y agentes.
+- Se detectaron cientos de HTML/ZIP y mas de cien grupos de duplicados exactos.
+- Decision: preservar, no borrar, crear un workspace aislado.
+
+20.5 MANOS ABIERTAS
+
+- El usuario indico no tocar el proyecto por ahora.
+- Se conserva como plataforma separada y referencia humana/civica.
+
+20.6 PRISMA Y NOIACORE
+
+- PRISMA tiene motor local real y rutas FastAPI observables.
+- NOIACORE posee catalogo y backend real, con entrypoints y nombres de assets
+  inconsistentes en la version revisada.
+- Decision: tratarlos como integraciones opcionales, no fingir disponibilidad.
+
+20.7 BELENTANI 15 x 20
+
+- El usuario definio aproximadamente quince paginas.
+- El usuario pidio veinte versiones que cargan aleatoriamente.
+- Decision: contenido compartido, veinte mundos por matriz, persistencia por
+  sesion, selector manual y query ?v=.
+
+20.8 INVESTIGACION VISUAL
+
+- Se revisaron Awwwards, Dragonfly y Dogstudio.
+- Se generaron 100 referencias Awwwards distintas desde listados oficiales.
+- Se incorporaron diez URLs aportadas por el usuario.
+- Principio: extraer gramatica de interaccion, no copiar composiciones o activos.
+
+20.9 MOVIL
+
+- Se detecto HUAWEI P30 Pro por MTP.
+- El almacenamiento mostraba 229 GB totales y 47,8 GB libres.
+- El usuario aclaro que el contenido ya estaba vinculado a nube y que se buscaba
+  material para proyectos, no otra copia total.
+- Se indexaron rutas de proyecto y se extrajo una seleccion verificada de 2,34 GB.
+- Duplicados conservados.
+- Material personal fuera de Git.
+
+20.10 IMPLEMENTACION ACTUAL
+
+- Workspace: BELENTANI-20-WORLDS.
+- React, TypeScript, Vite, React Router, GSAP, Lenis, R3F, Drei, Three y Lucide.
+- Veinte mundos tipados.
+- Quince rutas tipadas.
+- Cinco capitulos.
+- Escena 3D, portal, audio generativo opt-in, archivo y laboratorio local.
+- TypeScript, ESLint, tests y build pasaron en la ultima compuerta registrada
+  antes de la inspeccion visual final.
+
+===============================================================================
+21. RESPUESTAS QUE SE PIERDEN: PROTOCOLO DE CONSERVACION
+===============================================================================
+
+Problema observado:
+
+- Plataformas muestran "respuesta en proceso" y no completan.
+- Una respuesta se marca terminada pero el contenido no carga.
+- Se copian fragmentos sin contexto.
+- Varios modelos generan materiales relacionados en sesiones separadas.
+- El usuario no siempre puede leer todo antes de que el hilo cambie.
+
+Lo que puede recuperarse:
+
+- Mensajes visibles en esta conversacion.
+- Archivos descargados.
+- HTML exportados.
+- Markdown, TXT, JSON y capturas locales.
+- Respuestas pegadas manualmente.
+- Metadatos de nombres, rutas y fechas disponibles.
+
+Lo que no puede recuperarse de forma literal:
+
+- Texto que el proveedor nunca entrego al cliente.
+- Razonamiento interno no mostrado.
+- Versiones sobrescritas sin archivo ni historial.
+- Contenido de una cuenta externa sin sesion o exportacion disponible.
+
+Protocolo propuesto:
+
+    conversations/
+      YYYY-MM-DD/
+        provider/
+          thread-id/
+            00-request.txt
+            01-response.txt
+            02-assets.json
+            03-decisions.md
+            04-open-questions.md
+
+Cada respuesta util produce:
+
+- Un resumen de diez lineas.
+- Claims y fuentes.
+- Archivos generados.
+- Decisiones aceptadas.
+- Elementos rechazados.
+- Tareas pendientes.
+- Hash del artefacto final.
+
+Regla:
+
+    chat != memoria canonica
+    chat -> extraccion -> decision -> documento canonico
+
+Este TXT es el primer documento de esa capa canonica.
+
+===============================================================================
+22. LO QUE TODAVIA NO ESTA RESUELTO
+===============================================================================
+
+- Seleccion final de imagenes del movil y Drive para publicacion.
+- Derechos de cada audio, portada, video y referencia.
+- Creditos y fuentes publicas definitivas.
+- Dominio y estrategia de deploy.
+- Formulario de contacto real.
+- Integracion opcional con PRISMA y NOIACORE.
+- Disponibilidad publica de pistas propias.
+- Revision humana de cada claim biografico.
+- Traducciones.
+- Matriz completa de screenshots de los veinte mundos.
+- Presupuesto de rendimiento en dispositivos modestos.
+- Politica de privacidad y tratamiento de datos.
+
+No resolver estos puntos no invalida el concepto. Impide declarar determinadas
+funciones como terminadas o publicables.
+
+===============================================================================
+23. METRICAS DE CALIDAD
+===============================================================================
+
+No medir solo tiempo de permanencia o numero de efectos activados.
+
+Metricas de orientacion:
+
+- El visitante identifica la naturaleza del proyecto en menos de 20 segundos.
+- Puede volver al origen desde cualquier ruta.
+- Puede saber si un contenido es real, mitico o entrelazado.
+
+Metricas de control:
+
+- Cero audio sin consentimiento.
+- Movimiento reducible.
+- Navegacion completa por teclado.
+- Foco visible.
+- Sin scroll horizontal accidental.
+
+Metricas de procedencia:
+
+- 100% de medios publicos con fuente y estado de derechos.
+- 100% de claims biograficos con fuente o etiqueta editorial.
+- Cero secretos en Git y build.
+
+Metricas tecnicas:
+
+- Quince rutas responden.
+- Veinte mundos seleccionables.
+- Canvas no vacio en escritorio y movil compatible.
+- Contenido legible sin WebGL.
+- Build reproducible.
+- Tests de contrato y Playwright limpios.
+
+Metricas narrativas:
+
+- Las cinco identidades tienen funcion distinta.
+- Los cinco capitulos producen un arco sin veredicto cerrado.
+- Cada ruta tiene una pregunta y una salida.
+- El visitante puede distinguir intensidad de desorientacion.
+
+===============================================================================
+24. ANTIPATRONES
+===============================================================================
+
+- Veinte paletas con el mismo layout.
+- Quince landing pages sin funciones distintas.
+- Hero espectacular sin contenido visible siguiente.
+- Canvas dentro de tarjeta decorativa.
+- Autoplay de audio.
+- Glitch constante.
+- Texto gigante dentro de panel compacto.
+- Cards dentro de cards.
+- Claim biografico generado por IA sin fuente.
+- Publicar archivos privados porque contienen una palabra del proyecto.
+- Fusionar Manos Abiertas y JUDAS sin separar audiencias y confianza.
+- Llamar agente a un formulario sin backend.
+- Llamar IA local a una respuesta fija sin explicarlo.
+- Confundir catalogo de referencias con licencia de uso.
+- Borrar duplicados antes de conocer genealogia.
+- Tomar unanimidad de modelos como verificacion.
+- Ocultar funciones rotas detras de lenguaje maximalista.
+- Crear otro nombre de marca para resolver una relacion no definida.
+
+===============================================================================
+25. ROADMAP DE EVOLUCION
+===============================================================================
+
+FASE 1 - NUCLEO VERIFICABLE
+
+- Quince rutas.
+- Veinte mundos.
+- Canon de cinco identidades y cinco capitulos.
+- Archivo con estados.
+- Audio generativo local opt-in.
+- Escena 3D accesible.
+- Tests, build y screenshots.
+
+FASE 2 - CORPUS CURADO
+
+- Contact sheet de imagenes.
+- Escucha privada de demos.
+- Ledger de derechos.
+- Seleccion de diez a veinte activos publicables.
+- Fichas de procedencia.
+
+FASE 3 - OBRA JUDAS
+
+- Texto final de capitulos.
+- Motivos sonoros propios.
+- Secuencias visuales.
+- Estados REAL, MITO y ENTRELAZADO.
+- Rutas de retorno.
+
+FASE 4 - NOIACORE / PRISMA
+
+- Adaptadores opcionales.
+- Estado de servicio visible.
+- Motor local determinista.
+- Catalogo sin promesas de IA remota.
+
+FASE 5 - PUBLICACION
+
+- Revision legal y de privacidad.
+- Creditos.
+- Performance budget.
+- SEO semantico.
+- PWA si aporta continuidad real.
+- Release firmado y archivo de handoff.
+
+FASE 6 - EXPANSION
+
+- Traducciones.
+- Instalacion o exposicion.
+- Colaboradores.
+- Nuevos mundos derivados de la misma matriz.
+- Archivo publico incremental.
+
+===============================================================================
+26. PRINCIPIOS NO NEGOCIABLES
+===============================================================================
+
+1. La vida real conserva procedencia.
+2. El mito conserva libertad.
+3. Lo entrelazado muestra ambas capas.
+4. Ningun mundo cambia el canon.
+5. Ningun efecto elimina el contenido.
+6. Ningun audio empieza solo.
+7. Ningun archivo personal se publica por coincidencia de nombre.
+8. Ninguna respuesta de IA se convierte en hecho sin fuente.
+9. Ninguna version nueva borra la anterior.
+10. Ninguna expansion sustituye la navegacion.
+11. Ninguna intensidad justifica perder al visitante.
+12. Ningun cierre obliga a resolver lo que sigue abierto.
+
+===============================================================================
+27. MANIFIESTO DE SISTEMA
+===============================================================================
+
+BELENTANI no separa la vida de la obra para fingir pureza.
+Tampoco las mezcla para borrar responsabilidad.
+
+Conserva el archivo.
+Declara el mito.
+Marca el lugar donde ambos se tocan.
+
+JUDAS no es una sentencia.
+Es una maquina de transformacion.
+
+La traicion entra.
+El dolor adquiere estructura.
+La voz sale sin negar el origen.
+
+Pedro sostiene.
+Marcos ordena.
+Santos recibe.
+Belentani transforma.
+The Human comparte.
+
+La Golden Key no promete una verdad final.
+Entrega agencia para cruzar el siguiente umbral.
+
+Veinte mundos cambian la forma.
+Quince rutas conservan la orientacion.
+Cinco capitulos organizan el conflicto.
+Un archivo impide que la memoria sea reescrita en silencio.
+
+La obra permanece viva porque sus versiones pueden cerrarse.
+La obra puede ser masiva porque su nucleo es legible.
+La obra puede ser personal porque sus limites son visibles.
+
+===============================================================================
+28. FUENTES LOCALES PRIORITARIAS PARA REVISION
+===============================================================================
+
+Los siguientes archivos fueron detectados en el corpus privado. Su presencia
+esta verificada; su contenido completo, autoria y publicabilidad requieren
+revision individual.
+
+- Download/web_content_belentani.md
+- Download/BELENTANI-OMEGA-FULL-1.html
+- Download/BELENTANI_OMEGA_VV_16000.html
+- Download/BELENTANI_OMEGA_VV_16000_OFFLINE.html
+- Download/OMEGA_LIVING_UNIVERSE_MAX.html
+- Download/OMEGA_LIVING_UNIVERSE_OFFLINE.html
+- Download/belentani-judas-complete.html
+- Download/judas-oracle.html
+- Download/Text. Judas.html
+- Download/NOIACORE-v8-UNIFIED.html
+- Download/NOIACORE-LAB-v7-CONTINUED.html
+- Download/ARCHITECTURE.md
+- Download/VALIDATION_REPORT.md
+- Download/05_LA_DEUDA_NARCISISTA_CANCION_EPICA_ESPAÑOL_10MIN.md
+- audios/enhanced_JUDAS DEMO.wav
+- audios/JUDAS DEMO.wav
+- audios/Judas demo good quality.wav
+- audios/Belentani - Mon Amour .wav
+- audios/Belentani - Sleep talking.wav
+- Pictures/Upscaled/
+
+Se excluyen de esta lista chats personales, identificacion, empleo, salud,
+cuentas, contactos y documentos legales.
+
+El archivo MANUSCRITO_BELENTANI_COMPLETO.md fue reconocido solo por sus
+encabezados. Contiene material relacional privado y queda expresamente fuera
+del canon publico, de la interfaz y de cualquier afirmacion biografica.
+
+28.1 AUDITORIA CURADA DEL CORPUS
+
+[VERIFICADO EN ARCHIVO]
+
+La lectura tecnica y creativa de las fuentes prioritarias confirma seis motivos
+recurrentes:
+
+1. Transmutacion: traicion, memoria y herida se convierten en archivo, musica,
+   imagen y estructura narrativa.
+2. Obra como sistema operativo: BELENTANI se imagina como universo sonoro,
+   visual, ritual e interactivo, no como una landing aislada.
+3. Archivo vivo: eras, fases, señales y artefactos se revelan gradualmente.
+4. Visitante operador: comandos, desafios, desbloqueos y navegacion convierten
+   la entrada en participacion.
+5. Organico mas tecnologico: nucleo, maquina, planeta, diamante, llave,
+   frecuencia, señal y percepcion forman una gramatica estable.
+6. IA como infraestructura creativa: amplifica proceso y variacion sin
+   sustituir la autoria ni convertir una respuesta generada en evidencia.
+
+La auditoria tambien fija limites de verdad:
+
+- web_content_belentani.md contiene una propuesta editorial util, pero sus
+  estadisticas y datos biograficos siguen PENDIENTES de evidencia independiente.
+- Los widgets llamados AI Lab son interfaces de prototipo; no se detecto un
+  servicio de IA operativo detras de ellos.
+- judas-oracle.html es referencia de tono e interfaz, no una integracion de API
+  publicable ni una arquitectura de seguridad reutilizable.
+- VALIDATION_REPORT.md verifica estructura estatica, no fidelidad WebGL en una
+  GPU real.
+- Las secuencias antiguas de las cinco fases JUDAS se contradicen. Para este
+  workspace rige el canon editorial actual: Hombre Integrado, Deuda Impagable,
+  Robo y Canto, Victoria Amarga, Mentira Compartida.
+- Las exportaciones BuildAI convertidas a HTML son capturas documentales, no
+  fuentes ejecutables de aplicacion.
+
+Mapa funcional resultante:
+
+- Artist y Archive presentan obra, creditos, fecha y procedencia.
+- JUDAS organiza las cinco fases con estado MITO o ENTRELAZADO.
+- Genesis y Studio muestran Capture > Decompose > Transmute > Deploy como
+  proceso creativo, no como promesa automatica.
+- Portal usa HUD, comandos y progreso local sin recopilar datos intimos.
+- Audio y WebGL ofrecen ECO, AUTO y ULTRA, reduccion de movimiento y fallback.
+- NOIACORE conserva identidad de estudio separada y comparte metodo sin
+  absorber la marca BELENTANI.
+- Toda pieza publica recibe REAL, MITO o ENTRELAZADO y VERIFIED, EDITORIAL o
+  PENDING antes de entrar en una release.
+
+28.2 LECTURA DEL CORPUS VISUAL UPSCALED
+
+[VERIFICADO EN ARCHIVO Y POR INSPECCION VISUAL]
+
+Se revisaron once imagenes de Pictures/Upscaled mediante una hoja de contacto
+local. La numeracion siguiente pertenece solo a esa hoja privada:
+
+- 01 y 02: composiciones corales oscuras, una fria y otra dorada. Son una misma
+  familia de caida, multitud y ciudad. Incluyen rostros; derechos PENDIENTES.
+- 03, 09, 10 y 11: retratos de performance bajo agua o foco cenital. 03 y 11
+  son duplicados visuales. Identidad, consentimiento y autoria PENDIENTES.
+- 04 y 05: campos cosmicos con cristales. Funcionan como expansion espacial,
+  pero la dominancia violeta impide usarlos como identidad cromatica principal.
+- 06: retrato ritual con metal, rojo y velas. Potente para MITO, bloqueado para
+  publicacion hasta comprobar persona, autoria y consentimiento.
+- 07 y 08: variantes de cristal central y ramificacion alada. Son los candidatos
+  mas proximos a Golden Key, pero siguen siendo PENDING hasta revisar derechos.
+
+Conclusion editorial:
+
+Las variaciones no deben eliminarse como duplicados sin valor. Forman familias
+de transformacion: FRIO/DORADO, CUERPO/HAZ, CAMPO/CRISTAL y NUCLEO/ALAS. La web
+puede emplear esas relaciones para transiciones entre mundos. Ninguna de las
+once imagenes se promovio a public/media durante esta revision.
+
+===============================================================================
+29. GLOSARIO
+===============================================================================
+
+ARCHIVO VIVO
+Sistema que acepta nuevas piezas sin reescribir silenciosamente las anteriores.
+
+ARTEFACTO
+Forma publica construida a partir de materiales, decisiones y transformaciones.
+
+AUTORIA BIFOCAL
+Capacidad de operar simultaneamente en el plano real y el simbolico conservando
+orientacion y procedencia.
+
+CANON
+Conjunto minimo de relaciones que todas las versiones deben conservar.
+
+ENTRELAZADO
+Contenido que combina fuente real y montaje mitico con ambas capas visibles.
+
+GOLDEN KEY
+Simbolo de agencia, consentimiento, paso y retorno.
+
+JUDAS
+Obra narrativa y maquina de transformacion cuyo arco convierte ruptura en voz.
+
+MUNDO
+Configuracion visual, material, tipografica y cinetica aplicada al mismo canon.
+
+NOIACORE
+Capa ejecutiva y modular del ecosistema creativo.
+
+OMEGA
+Principio de continuidad, universo vivo y evolucion versionada.
+
+PRISMA
+Motor de reenfoque que conserva la fuente mientras cambia el angulo.
+
+PROCEDENCIA
+Relacion verificable entre una pieza y su origen, version, permiso y contexto.
+
+REAL
+Capa que pretende describir material o hechos verificables.
+
+MITO
+Capa simbolica, ficticia, ritual o editorial.
+
+SEÑAL
+Unidad minima que puede ser recibida, procesada y convertida en salida.
+
+THE HUMAN
+Funcion de interfaz, relacion, legibilidad, consentimiento y limite.
+
+===============================================================================
+30. ESTADO ACTUAL
+===============================================================================
+
+VERIFICADO EN ESTA SESION:
+
+- Workspace aislado creado.
+- Git inicializado solo en el workspace nuevo.
+- Quince rutas definidas.
+- Veinte mundos definidos.
+- Cinco identidades integradas en Portal.
+- Cinco titulos de capitulos canonicos registrados.
+- Cien referencias Awwwards distintas catalogadas.
+- Diez referencias del usuario incorporadas.
+- Corpus movil seleccionado y extraido sin fallos de tamaño.
+- TypeScript aprobado.
+- ESLint aprobado.
+- Cinco tests de contrato aprobados.
+- Build de produccion aprobado.
+- Three.js separado en carga diferida.
+- Hallazgos creativos y tecnicos del corpus incorporados con limites de verdad.
+- Once imagenes Upscaled inspeccionadas y clasificadas sin publicarlas.
+- Playwright: cincuenta y tres pruebas aprobadas y una omision intencional.
+- Quince rutas comprobadas en Chromium desktop y Pixel 7.
+- Canvas WebGL comprobado con variacion real de pixeles en ambos viewports.
+- Cero overflow en rutas representativas y en los veinte mundos JUDAS movil.
+- Audio comprobado sin AudioContext antes del consentimiento.
+- Persistencia local de las cinco identidades comprobada tras recarga.
+- Cuatro familias visuales inspeccionadas en desktop y dos vistas moviles.
+- URL local activa: http://127.0.0.1:4173/
+
+PENDIENTE PARA RELEASES POSTERIORES:
+
+- Revisar derechos y consentimiento de cada asset privado antes de publicarlo.
+- Seleccionar audio publicable con creditos y procedencia.
+- Verificar GPU y accesibilidad en navegadores distintos de Chromium.
+- Decidir hosting y dominio; no se hizo despliegue remoto en esta sesion.
+
+FIN DEL DOCUMENTO

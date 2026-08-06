@@ -1,0 +1,7 @@
+export { HomePage } from './HomePage'
+export { EditorialPage } from './EditorialPage'
+export { JudasPage } from './JudasPage'
+export { ArchivePage } from './ArchivePage'
+export { LabPage } from './LabPage'
+export { PortalPage } from './PortalPage'
+export { NotFoundPage } from './NotFoundPage'

@@ -1,0 +1,14 @@
+node_modules/
+dist/
+coverage/
+playwright-report/
+test-results/
+.env*
+!.env.example
+research/private-corpus/
+research/mobile-index*.json
+research/mobile-index*.csv
+research/mobile-selection.*
+public/media/candidates/
+.devserver*.log
+.devserver.pid
