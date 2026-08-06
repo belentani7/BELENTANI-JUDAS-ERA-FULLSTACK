@@ -6,6 +6,7 @@ const topLevelPaths = [
   '/artist',
   '/judas',
   '/archive',
+  '/atlas',
   '/music',
   '/film',
   '/books',
@@ -19,7 +20,7 @@ const topLevelPaths = [
   '/contact',
 ] as const
 
-const representativePaths = ['/', '/artist', '/judas', '/archive', '/art-lab', '/portal', '/contact'] as const
+const representativePaths = ['/', '/artist', '/judas', '/judas/versions', '/archive', '/atlas', '/art-lab', '/portal', '/contact'] as const
 
 function hasVisiblePixelVariation(png: Buffer) {
   const signature = '89504e470d0a1a0a'
@@ -180,6 +181,24 @@ test('JUDAS does not create an AudioContext before opt-in', async ({ page }) => 
     const state = window as Window & { __belentaniAudioContextCount?: number }
     return state.__belentaniAudioContextCount ?? 0
   })).toBe(0)
+})
+
+test('JUDAS Version Lab exposes twelve studies and changes the active signal', async ({ page }) => {
+  await page.goto('/judas/versions')
+  const studies = page.locator('.judas-version-selector button')
+  await expect(studies).toHaveCount(12)
+  await studies.nth(10).click()
+  await expect(page.locator('.judas-study')).toHaveAttribute('data-study', 'field-circle')
+  await expect(page).toHaveURL(/study=field-circle/)
+  await expect(page.locator('.evil-eye')).toBeVisible()
+})
+
+test('HTML Atlas exposes the complete sanitized corpus in bounded pages', async ({ page }) => {
+  await page.goto('/atlas')
+  await expect(page.locator('.atlas-field')).toBeVisible()
+  await expect(page.locator('.atlas-records li')).toHaveCount(48)
+  await expect(page.locator('.atlas-browser__head')).toContainText('691 resultados')
+  await expect(page.locator('body')).not.toContainText('C:\\Users\\')
 })
 
 test('portal exposes five identities and persists opened progress', async ({ page }) => {

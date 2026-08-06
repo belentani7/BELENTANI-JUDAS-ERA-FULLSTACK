@@ -9,13 +9,15 @@ versiones BELENTANI ya publicadas.
 
 ## Estado
 
-- 15 rutas principales.
+- 16 rutas principales y el subrecorrido `/judas/versions`.
 - 20 mundos: 4 familias por 5 composiciones.
 - Selector manual, variacion por sesion y URL compartible con `?v=`.
 - Escena Three.js/R3F diferida, a pantalla completa y con movimiento reducible.
 - Audio generativo local activado solo por accion del visitante.
 - Cinco identidades del Portal con progreso en `localStorage`.
 - Archivo, laboratorio local, formularios editoriales y estados de procedencia.
+- Atlas sanitizado de 691 HTML únicos y 854 localizaciones recuperadas.
+- Version Lab con 12 relecturas JUDAS originales y tres componentes NOIACORE.
 - Sin API remota, cuentas, perfiles ni recopilacion de datos.
 
 ## Ejecucion
@@ -48,9 +50,9 @@ bun run build
 bun run test:e2e
 ```
 
-La suite E2E comprueba las 15 rutas en desktop y Pixel 7, las 20 opciones del
+La suite E2E comprueba las 16 rutas en desktop y Pixel 7, las 20 opciones del
 selector, canvas WebGL no uniforme, overflow, audio sin autoplay y persistencia
-del Portal. La matriz movil recorre los veinte mundos de JUDAS.
+del Portal. También valida Atlas, las 12 variantes y la matriz móvil de JUDAS.
 
 ## Arquitectura
 
@@ -58,6 +60,7 @@ del Portal. La matriz movil recorre los veinte mundos de JUDAS.
 - `src/shell/`: navegacion, estado visual, GSAP, Lenis y preferencias.
 - `src/pages/`: experiencias de ruta.
 - `src/components/`: escena 3D, Portal, audio y componentes interactivos.
+- `tools/build-html-atlas.ps1`: genera metadatos anónimos desde el manifiesto recuperado.
 - `src/styles/`: sistema base, paginas y variaciones de mundo.
 - `tests/e2e/`: pruebas de navegador y pixeles de canvas.
 - `docs/`: concepto, decisiones y arquitectura narrativa.
@@ -82,6 +85,7 @@ de Git. Retratos, audio, manuscritos y documentos personales no deben moverse a
 ## Documentos
 
 - `docs/BELENTANI-JUDAS-ARQUITECTURA-PSICOLOGICA-MASIVA.txt`
+- `docs/SESSION-LEDGER-2026-08-06.md`
 - `research/awwwards-100.md`
 
 ## Limites Actuales

@@ -8,6 +8,8 @@ const JudasPage = lazy(() => import('./pages/JudasPage').then((module) => ({ def
 const ArchivePage = lazy(() => import('./pages/ArchivePage').then((module) => ({ default: module.ArchivePage })))
 const LabPage = lazy(() => import('./pages/LabPage').then((module) => ({ default: module.LabPage })))
 const PortalPage = lazy(() => import('./pages/PortalPage').then((module) => ({ default: module.PortalPage })))
+const AtlasPage = lazy(() => import('./pages/AtlasPage').then((module) => ({ default: module.AtlasPage })))
+const JudasVersionsPage = lazy(() => import('./pages/JudasVersionsPage').then((module) => ({ default: module.JudasVersionsPage })))
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage').then((module) => ({ default: module.NotFoundPage })))
 
 export function App() {
@@ -17,8 +19,10 @@ export function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/judas" element={<JudasPage />} />
+          <Route path="/judas/versions" element={<JudasVersionsPage />} />
           <Route path="/judas/:chapterId" element={<JudasPage />} />
           <Route path="/archive" element={<ArchivePage />} />
+          <Route path="/atlas" element={<AtlasPage />} />
           <Route path="/art-lab" element={<LabPage />} />
           <Route path="/portal" element={<PortalPage />} />
           <Route path="/home" element={<Navigate to="/" replace />} />

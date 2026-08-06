@@ -146,6 +146,14 @@ export const routeDefinitions: RouteDefinition[] = [
     ],
   },
   {
+    id: 'atlas', path: '/atlas', label: 'HTML Atlas', navLabel: 'Atlas', title: '691 HTML, un sistema de procedencia', summary: 'Mapa sanitizado del corpus recuperado y de sus familias reutilizables.', themeId: 'cobalt-grid', status: 'verified', relatedRoutes: ['/archive', '/judas/versions', '/rights'],
+    sections: [
+      { id: 'atlas-hero', type: 'hero', eyebrow: 'corpus / mapa', title: 'Todo queda representado sin ejecutar el legado', body: 'El Atlas publica huellas anónimas, tamaño, estructura y estado editorial. Rutas locales, nombres sensibles y código histórico permanecen fuera del runtime.', cta: { label: 'Abrir estudios JUDAS', href: '/judas/versions' } },
+      { id: 'atlas-families', type: 'grid', eyebrow: 'integración', title: 'Versiones convertidas en arquitectura', body: 'Ocho familias reúnen navegación, umbral, rutas, terminal, espacio, identidad, pacto y Zion.', items: [{ id: 'atlas-core', label: 'núcleo', title: 'Señales BELENTANI', body: 'Fuentes relacionadas directamente con la arquitectura y el lenguaje del proyecto.', status: 'verified' }, { id: 'atlas-technical', label: 'técnica', title: 'Biblioteca interna', body: 'Documentación y herramientas conservadas como consulta, no como interfaz pública.', status: 'cautious' }, { id: 'atlas-external', label: 'revisión', title: 'Archivo relacionado', body: 'Material catalogado que requiere decisión editorial, derechos o contexto.', status: 'pending' }] },
+      { id: 'atlas-boundary', type: 'manifesto', eyebrow: 'límite', title: 'Representar no equivale a publicar', body: 'El mapa hace visible la escala del corpus mientras conserva la separación entre archivo privado, material revisable y componentes integrados.' },
+    ],
+  },
+  {
     id: 'music', path: '/music', label: 'Music', navLabel: 'Music', title: 'Musica en escucha lenta', summary: 'Un espacio para pistas, demos y notas de produccion con creditos verificables.', themeId: 'blue-hour', status: 'pending', relatedRoutes: ['/judas', '/studio', '/rights'],
     sections: [
       { id: 'music-hero', type: 'hero', eyebrow: 'sonido', title: 'Escuchar tambien es documentar', body: 'La interfaz debe mostrar duracion, formato, estado y credito antes de reproducir. La disponibilidad publica de cada pista queda pendiente de confirmacion.', cta: { label: 'Ver permisos', href: '/rights' } },

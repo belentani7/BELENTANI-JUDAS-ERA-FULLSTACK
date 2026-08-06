@@ -97,6 +97,7 @@ export function JudasPage() {
       </section>
 
       <footer className="page__footer">
+        <Link to="/judas/versions">Explorar 12 versiones</Link>
         <Link to="/archive">Ver materiales relacionados</Link>
         <Link to="/portal">Continuar al Portal</Link>
       </footer>
