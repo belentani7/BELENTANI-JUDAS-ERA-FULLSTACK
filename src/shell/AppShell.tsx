@@ -10,6 +10,7 @@ import { useWorld } from './WorldProvider'
 
 export function AppShell({ children }: PropsWithChildren) {
   const location = useLocation()
+  const immersive = location.pathname === '/judas'
   const stage = useRef<HTMLElement>(null)
   const [menuOpen, setMenuOpen] = useState(false)
   const { motionEnabled, setMotionEnabled } = useMotion()
@@ -29,9 +30,9 @@ export function AppShell({ children }: PropsWithChildren) {
   }, [location.pathname, motionEnabled])
 
   return (
-    <div className="app-shell">
+    <div className={`app-shell${immersive ? ' app-shell--immersive' : ''}`}>
       <a className="skip-link" href="#main-content">Saltar al contenido</a>
-      <header className="topbar">
+      <header className={`topbar${immersive ? ' topbar--immersive' : ''}`}>
         <NavLink className="brand-lockup" to="/" aria-label="BELENTANI, inicio">
           <span>BELENTANI</span>
           <span className="signal-mark" aria-hidden="true" />
@@ -77,10 +78,12 @@ export function AppShell({ children }: PropsWithChildren) {
         {children}
       </main>
 
-      <footer className="site-footer">
-        <p>BELENTANI / JUDAS / NOIACORE</p>
-        <p>Archivo vivo · Barcelona · 2026</p>
-      </footer>
+      {!immersive && (
+        <footer className="site-footer">
+          <p>BELENTANI / JUDAS / NOIACORE</p>
+          <p>Archivo vivo · Barcelona · 2026</p>
+        </footer>
+      )}
     </div>
   )
 }
