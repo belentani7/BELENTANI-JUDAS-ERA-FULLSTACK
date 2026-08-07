@@ -1,5 +1,7 @@
 node_modules/
 dist/
+dist-server/
+runtime/
 coverage/
 playwright-report/
 test-results/

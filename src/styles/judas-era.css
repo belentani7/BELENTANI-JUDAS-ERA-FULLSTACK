@@ -1,0 +1,531 @@
+.judas-era {
+  --era-black: #030103;
+  --era-ink: #0d0508;
+  --era-blood: #b80b2b;
+  --era-flare: #ff2549;
+  --era-bone: #f4e9df;
+  --era-muted: rgba(244, 233, 223, 0.58);
+  isolation: isolate;
+  overflow: clip;
+  background: var(--era-black);
+  color: var(--era-bone);
+}
+
+.judas-era__noise {
+  position: fixed;
+  z-index: 16;
+  inset: var(--topbar-height) 0 0 var(--rail-width);
+  pointer-events: none;
+  opacity: 0.18;
+  mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+}
+
+.judas-era__locales {
+  position: fixed;
+  z-index: 22;
+  top: calc(var(--topbar-height) + 18px);
+  right: 20px;
+  display: flex;
+  border: 1px solid rgba(244, 233, 223, 0.18);
+  background: rgba(3, 1, 3, 0.66);
+  backdrop-filter: blur(14px);
+}
+
+.judas-era__locales button {
+  min-width: 42px;
+  min-height: 38px;
+  padding: 0;
+  border: 0;
+  border-right: 1px solid rgba(244, 233, 223, 0.14);
+  background: transparent;
+  color: var(--era-muted);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+}
+
+.judas-era__locales button:last-child {
+  border-right: 0;
+}
+
+.judas-era__locales button[aria-pressed='true'] {
+  background: var(--era-flare);
+  color: var(--era-black);
+}
+
+.judas-era__opening {
+  position: relative;
+  min-height: calc(100svh - var(--topbar-height));
+  display: grid;
+  grid-template-columns: minmax(0, 8fr) minmax(260px, 4fr);
+  grid-template-rows: auto 1fr auto;
+  align-items: end;
+  padding: 42px clamp(24px, 4vw, 68px) 38px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 37, 73, 0.3);
+  background: var(--era-black);
+}
+
+.judas-era__opening::before {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, var(--era-black) 0 8%, transparent 48%),
+    linear-gradient(0deg, var(--era-black) 0, transparent 58%);
+}
+
+.judas-era__opening-image {
+  position: absolute;
+  inset: 0;
+  opacity: 0.38;
+  background: url('/media/judas/judas-signal-ship.webp') 70% 52% / cover no-repeat;
+  filter: contrast(1.2) saturate(0.7);
+  mask-image: linear-gradient(90deg, transparent 0, #000 28%, #000 100%);
+}
+
+.judas-era__opening-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, transparent 0 7px, rgba(255, 37, 73, 0.055) 8px 9px);
+}
+
+.judas-era__eyebrow,
+.judas-era__wordmark,
+.judas-era__opening-copy,
+.judas-era__status {
+  position: relative;
+  z-index: 2;
+}
+
+.judas-era__eyebrow {
+  grid-column: 1 / -1;
+  align-self: start;
+  margin: 0;
+  color: var(--era-flare);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+}
+
+.judas-era__wordmark {
+  grid-column: 1 / -1;
+  align-self: center;
+  margin: 0 0 2vh;
+  color: var(--era-bone);
+  font-family: 'Instrument Sans Variable', sans-serif;
+  font-size: clamp(96px, 20vw, 310px);
+  font-stretch: 115%;
+  font-weight: 760;
+  line-height: 0.67;
+  letter-spacing: -0.075em;
+  text-transform: uppercase;
+  transform-origin: left center;
+  text-shadow: 0 0 80px rgba(184, 11, 43, 0.2);
+}
+
+.judas-era__opening-copy {
+  max-width: 48ch;
+}
+
+.judas-era__opening-copy p {
+  margin: 0 0 24px;
+  color: rgba(244, 233, 223, 0.74);
+  font-size: clamp(16px, 1.35vw, 21px);
+  line-height: 1.55;
+}
+
+.judas-era__opening-copy a {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  border-bottom: 1px solid var(--era-flare);
+  color: var(--era-flare);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+}
+
+.judas-era__status {
+  display: grid;
+  justify-items: end;
+  gap: 8px;
+  color: rgba(244, 233, 223, 0.44);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
+
+.judas-era__status span:first-child {
+  color: var(--era-flare);
+}
+
+.judas-era__field {
+  position: relative;
+  min-height: 500svh;
+  background: var(--era-black);
+}
+
+.judas-era__scene {
+  position: sticky;
+  z-index: 1;
+  top: var(--topbar-height);
+  height: calc(100svh - var(--topbar-height));
+  overflow: hidden;
+}
+
+.judas-era__scene::before,
+.judas-era__scene::after {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.judas-era__scene::before {
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 48%, transparent 0 18%, rgba(3, 1, 3, 0.14) 44%, rgba(3, 1, 3, 0.88) 100%),
+    linear-gradient(90deg, rgba(3, 1, 3, 0.94), transparent 30% 78%, rgba(3, 1, 3, 0.7));
+}
+
+.judas-era__scene::after {
+  inset: 20px;
+  border: 1px solid rgba(255, 37, 73, 0.16);
+  clip-path: polygon(0 0, 12% 0, 12% 1px, 88% 1px, 88% 0, 100% 0, 100% 100%, 88% 100%, 88% calc(100% - 1px), 12% calc(100% - 1px), 12% 100%, 0 100%);
+}
+
+.judas-era__scene canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.judas-era__canvas-fallback {
+  width: 100%;
+  height: 100%;
+  background: url('/media/judas/judas-cathedral-threshold.webp') center / cover;
+  filter: grayscale(0.65) contrast(1.2);
+}
+
+.judas-era__reticle {
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  left: 50%;
+  width: min(42vw, 560px);
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  border: 1px solid rgba(255, 37, 73, 0.22);
+  border-radius: 50%;
+}
+
+.judas-era__reticle::before,
+.judas-era__reticle::after {
+  content: '';
+  position: absolute;
+  inset: 12%;
+  border: 1px dashed rgba(255, 37, 73, 0.2);
+  border-radius: inherit;
+}
+
+.judas-era__reticle::after {
+  inset: 49%;
+  border-style: solid;
+  background: var(--era-flare);
+  box-shadow: 0 0 38px var(--era-flare);
+}
+
+.judas-era__reticle span {
+  position: absolute;
+  top: -19px;
+  left: 50%;
+  color: var(--era-flare);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  translate: -50% 0;
+}
+
+.judas-era__narrative {
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+}
+
+.judas-era__chapter {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(330px, 5fr);
+  align-items: center;
+  padding: 8vh clamp(24px, 4vw, 68px);
+}
+
+.judas-era__chapter:nth-child(even) {
+  grid-template-columns: minmax(330px, 5fr) minmax(0, 7fr);
+}
+
+.judas-era__chapter-image {
+  position: absolute;
+  z-index: -1;
+  top: 14%;
+  right: 4%;
+  width: min(44vw, 590px);
+  height: 72%;
+  opacity: 0.23;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 20% 78%, transparent);
+}
+
+.judas-era__chapter:nth-child(even) .judas-era__chapter-image {
+  right: auto;
+  left: 4%;
+}
+
+.judas-era__chapter-image img {
+  width: 100%;
+  height: 115%;
+  object-fit: cover;
+  filter: saturate(0.58) contrast(1.18);
+}
+
+.judas-era__chapter-copy {
+  grid-column: 1;
+  max-width: 620px;
+  padding: 24px 0 24px clamp(16px, 3vw, 46px);
+  border-left: 1px solid rgba(255, 37, 73, 0.48);
+  text-shadow: 0 2px 30px var(--era-black);
+}
+
+.judas-era__chapter:nth-child(even) .judas-era__chapter-copy {
+  grid-column: 2;
+  justify-self: end;
+}
+
+.judas-era__chapter-copy > p:first-child {
+  margin: 0 0 22px;
+  color: var(--era-flare);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+}
+
+.judas-era__chapter-copy > p:first-child span {
+  display: inline-block;
+  min-width: 46px;
+  color: rgba(244, 233, 223, 0.38);
+}
+
+.judas-era__chapter h2 {
+  max-width: 11ch;
+  margin: 0 0 28px;
+  font-family: 'Bodoni Moda', serif;
+  font-size: clamp(48px, 6.2vw, 104px);
+  font-weight: 500;
+  line-height: 0.91;
+  letter-spacing: -0.045em;
+}
+
+.judas-era__chapter-copy > p:last-child {
+  max-width: 46ch;
+  margin: 0;
+  color: rgba(244, 233, 223, 0.7);
+  font-size: clamp(15px, 1.2vw, 19px);
+  line-height: 1.65;
+}
+
+.judas-era__seal {
+  position: relative;
+  z-index: 8;
+  min-height: 82svh;
+  display: grid;
+  align-content: center;
+  padding: 9vh clamp(24px, 6vw, 110px);
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 37, 73, 0.35);
+  background: var(--era-black);
+}
+
+.judas-era__seal::before {
+  content: 'SEALED';
+  position: absolute;
+  right: -0.08em;
+  bottom: -0.24em;
+  color: rgba(184, 11, 43, 0.12);
+  font-family: 'Instrument Sans Variable', sans-serif;
+  font-size: min(31vw, 480px);
+  font-weight: 800;
+  letter-spacing: -0.09em;
+  pointer-events: none;
+}
+
+.judas-era__seal > * {
+  position: relative;
+  z-index: 1;
+}
+
+.judas-era__seal > p {
+  color: var(--era-flare);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+}
+
+.judas-era__seal h2 {
+  max-width: 10ch;
+  margin: 12px 0 46px;
+  font-family: 'Instrument Sans Variable', sans-serif;
+  font-size: clamp(58px, 9vw, 142px);
+  font-weight: 730;
+  line-height: 0.84;
+  letter-spacing: -0.06em;
+}
+
+.judas-era__seal > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 34px;
+}
+
+.judas-era__seal a {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(244, 233, 223, 0.35);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
+.judas-era__seal a:hover {
+  border-color: var(--era-flare);
+  color: var(--era-flare);
+}
+
+@media (max-width: 900px) {
+  .judas-era__opening {
+    grid-template-columns: 1fr;
+  }
+
+  .judas-era__wordmark {
+    font-size: clamp(82px, 22vw, 190px);
+  }
+
+  .judas-era__status {
+    position: absolute;
+    right: 24px;
+    bottom: 38px;
+  }
+
+  .judas-era__chapter,
+  .judas-era__chapter:nth-child(even) {
+    grid-template-columns: 1fr;
+  }
+
+  .judas-era__chapter-copy,
+  .judas-era__chapter:nth-child(even) .judas-era__chapter-copy {
+    grid-column: 1;
+    justify-self: start;
+  }
+
+  .judas-era__chapter-image {
+    width: 64vw;
+  }
+}
+
+@media (max-width: 760px) {
+  .judas-era__noise {
+    left: 0;
+  }
+
+  .judas-era__locales {
+    top: calc(var(--topbar-height) + 10px);
+    right: 10px;
+  }
+
+  .judas-era__opening {
+    min-height: calc(100svh - var(--topbar-height));
+    padding: 74px 20px 28px;
+  }
+
+  .judas-era__opening-image {
+    opacity: 0.3;
+    background-position: 62% center;
+  }
+
+  .judas-era__wordmark {
+    align-self: center;
+    font-size: 25vw;
+    line-height: 0.78;
+  }
+
+  .judas-era__opening-copy {
+    padding-right: 0;
+  }
+
+  .judas-era__opening-copy p {
+    max-width: 33ch;
+    font-size: 15px;
+  }
+
+  .judas-era__status {
+    position: static;
+    align-self: end;
+    justify-items: start;
+    margin-top: 24px;
+  }
+
+  .judas-era__scene {
+    top: var(--topbar-height);
+  }
+
+  .judas-era__scene::before {
+    background: radial-gradient(circle at 55% 38%, transparent 0 12%, rgba(3, 1, 3, 0.25) 42%, rgba(3, 1, 3, 0.96) 100%);
+  }
+
+  .judas-era__reticle {
+    top: 38%;
+    width: 76vw;
+  }
+
+  .judas-era__chapter {
+    align-items: end;
+    padding: 9vh 20px 12vh;
+  }
+
+  .judas-era__chapter-image,
+  .judas-era__chapter:nth-child(even) .judas-era__chapter-image {
+    top: 7%;
+    right: -12%;
+    left: auto;
+    width: 94vw;
+    height: 60%;
+    opacity: 0.17;
+  }
+
+  .judas-era__chapter-copy,
+  .judas-era__chapter:nth-child(even) .judas-era__chapter-copy {
+    width: 100%;
+    padding: 18px 0 18px 18px;
+  }
+
+  .judas-era__chapter h2 {
+    font-size: clamp(46px, 14vw, 72px);
+  }
+
+  .judas-era__seal {
+    min-height: 72svh;
+    padding: 70px 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .judas-era__chapter-copy {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .judas-era__chapter-image {
+    transform: none !important;
+  }
+}

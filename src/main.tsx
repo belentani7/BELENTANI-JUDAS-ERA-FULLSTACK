@@ -1,6 +1,6 @@
-import '@fontsource-variable/instrument-sans'
-import '@fontsource/ibm-plex-mono'
-import '@fontsource/bodoni-moda'
+import '@fontsource-variable/instrument-sans/index.css'
+import '@fontsource/ibm-plex-mono/400.css'
+import '@fontsource/bodoni-moda/600.css'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
@@ -10,6 +10,7 @@ import { WorldProvider } from './shell/WorldProvider'
 import './styles/global.css'
 import './styles/pages.css'
 import './styles/worlds.css'
+import './styles/judas-era.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

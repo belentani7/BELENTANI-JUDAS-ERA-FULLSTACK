@@ -152,7 +152,7 @@ test('mobile JUDAS keeps all 20 worlds inside the viewport', async ({ page }, te
   for (const worldId of worldIds) {
     await page.goto(`/judas?v=${worldId}`)
     await page.evaluate(() => document.fonts.ready)
-    await expect(page.locator('.judas-audio')).toBeVisible()
+    await expect(page.locator('.judas-era__seal')).toBeVisible()
     const overflow = await page.evaluate(() => Math.max(document.documentElement.scrollWidth, document.body.scrollWidth) - document.documentElement.clientWidth)
     expect(overflow, `${worldId} overflow`).toBeLessThanOrEqual(0)
   }
@@ -181,6 +181,21 @@ test('JUDAS does not create an AudioContext before opt-in', async ({ page }) => 
     const state = window as Window & { __belentaniAudioContextCount?: number }
     return state.__belentaniAudioContextCount ?? 0
   })).toBe(0)
+})
+
+test('JUDAS ERA is continuous, localized and requests no protected media', async ({ page }) => {
+  const mediaRequests: string[] = []
+  page.on('request', (request) => {
+    if (/\.(?:mp3|wav|m4a|ogg|flac)(?:\?|$)/i.test(request.url())) mediaRequests.push(request.url())
+  })
+
+  await page.goto('/judas?v=black-mirror')
+  await expect(page.locator('.judas-era__chapter')).toHaveCount(5)
+  await expect(page.locator('.judas-era__wordmark')).toHaveText('JUDAS')
+  await expect(page.locator('.judas-era__seal')).toContainText('SELLADA')
+  await page.getByRole('button', { name: 'EN', exact: true }).click()
+  await expect(page.locator('.judas-era__seal')).toContainText('SEALED WORK')
+  expect(mediaRequests).toEqual([])
 })
 
 test('JUDAS Version Lab exposes twelve studies and changes the active signal', async ({ page }) => {

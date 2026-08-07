@@ -59,10 +59,10 @@ export const judasChapters: JudasChapter[] = [
     id: 'judas-01-hombre-integrado',
     number: 1,
     title: 'Hombre Integrado',
-    summary: 'Un umbral sonoro para entrar en el archivo JUDAS sin convertir una intuicion en biografia cerrada.',
+    summary: 'Un umbral visual para entrar en el archivo JUDAS sin convertir una intuicion en biografia cerrada.',
     status: 'cautious',
     sections: [
-      { id: 'call-listen', type: 'media', eyebrow: '01 / escucha', title: 'Antes del nombre, la vibracion', body: 'La experiencia puede comenzar con una escucha breve, una imagen y una frase. La autoria y la fecha quedan pendientes cuando el material no lleva ficha verificable.', items: [{ id: 'call-audio', label: 'Pista', title: 'Demo de entrada', body: 'Usar un reproductor discreto con duracion, estado de carga y credito visible.', status: 'pending' }] },
+      { id: 'call-signal', type: 'media', eyebrow: '01 / umbral', title: 'Antes del nombre, la señal', body: 'La experiencia comienza con materia, imagen y una frase. El medio de la obra permanece sellado.', items: [{ id: 'call-visual', label: 'Campo', title: 'Señal de entrada', body: 'Un artefacto visual abre el recorrido sin revelar ni precargar el medio protegido.', status: 'verified' }] },
       { id: 'call-note', type: 'manifesto', eyebrow: 'nota', title: 'Un comienzo abierto', body: 'JUDAS se trata aqui como una obra en desarrollo y como un dispositivo de lectura. El visitante recibe contexto suficiente para continuar, no una afirmacion total.' },
     ],
   },
@@ -85,7 +85,7 @@ export const judasChapters: JudasChapter[] = [
     status: 'cautious',
     sections: [
       { id: 'fall-sequence', type: 'timeline', eyebrow: '03 / secuencia', title: 'Cortar tambien es editar', body: 'La secuencia puede mostrar cambios de intensidad sin afirmar que cada fragmento representa un hecho biografico.', items: [{ id: 'fall-01', label: 'Pulso', title: 'Acumulacion', body: 'Aumentar densidad tipografica y proximidad entre piezas.', meta: 'propuesta de ritmo', status: 'cautious' }, { id: 'fall-02', label: 'Corte', title: 'Silencio', body: 'Dejar un intervalo amplio antes de introducir el siguiente documento.', meta: 'propuesta de ritmo', status: 'cautious' }] },
-      { id: 'fall-access', type: 'manifesto', eyebrow: 'cuidado', title: 'El visitante conserva el control', body: 'El audio no debe iniciar sin accion. El movimiento intenso debe tener alternativa reducida y la lectura debe permanecer posible sin efectos.' },
+      { id: 'fall-access', type: 'manifesto', eyebrow: 'cuidado', title: 'El visitante conserva el control', body: 'El movimiento intenso debe tener alternativa reducida y la lectura debe permanecer posible sin efectos.' },
     ],
   },
   {
@@ -106,7 +106,7 @@ export const judasChapters: JudasChapter[] = [
     summary: 'Un cierre provisional que devuelve al visitante al presente del estudio y a las proximas decisiones.',
     status: 'cautious',
     sections: [
-      { id: 'return-loop', type: 'radial' as RouteSectionType, eyebrow: '05 / retorno', title: 'La obra vuelve al taller', body: 'El final no necesita resolver JUDAS. Puede ofrecer rutas hacia musica, estudio, derechos y contacto con un estado editorial legible.', items: [{ id: 'return-music', label: 'Continuar', title: 'Escuchar', body: 'Volver a una pista o a una pieza relacionada.', meta: '/music' }, { id: 'return-studio', label: 'Continuar', title: 'Ver proceso', body: 'Consultar herramientas, versiones y notas de trabajo.', meta: '/studio' }] },
+      { id: 'return-loop', type: 'radial' as RouteSectionType, eyebrow: '05 / retorno', title: 'La obra vuelve al taller', body: 'El final no necesita resolver JUDAS. Puede ofrecer rutas hacia archivo, estudio, derechos y contacto con un estado editorial legible.', items: [{ id: 'return-archive', label: 'Continuar', title: 'Abrir archivo', body: 'Volver a los documentos y piezas visuales relacionadas.', meta: '/archive' }, { id: 'return-studio', label: 'Continuar', title: 'Ver proceso', body: 'Consultar herramientas, versiones y notas de trabajo.', meta: '/studio' }] },
       { id: 'return-note', type: 'manifesto', eyebrow: 'estado', title: 'Cierre abierto', body: 'La fecha de cierre, la edicion definitiva y la disponibilidad publica deben confirmarse antes de presentarse como hechos.' },
     ],
   },
@@ -134,7 +134,7 @@ export const routeDefinitions: RouteDefinition[] = [
     sections: [
       { id: 'judas-hero', type: 'hero', eyebrow: 'obra / lectura', title: 'No es una ficha cerrada', body: 'JUDAS se presenta como una experiencia de cinco capitulos. Las relaciones entre los fragmentos son una propuesta de montaje hasta que cada fuente quede comprobada.', cta: { label: 'Comenzar', href: '/judas#judas-01-the-call' } },
       { id: 'judas-chapter-index', type: 'chapters', eyebrow: 'indice', title: 'Cinco capitulos para leer a otro ritmo', body: 'El recorrido puede ser lineal o consultarse como un archivo. Cada capitulo conserva su estado editorial.', items: judasChapters.map((chapter) => ({ id: chapter.id, label: String(chapter.number).padStart(2, '0'), title: chapter.title, body: chapter.summary, meta: chapter.status })) },
-      { id: 'judas-related', type: 'media', eyebrow: 'derivas', title: 'La experiencia tiene salidas', body: 'Musica, pelicula y archivo pueden aportar contexto sin forzar una interpretacion unica.', cta: { label: 'Escuchar la obra', href: '/music' } },
+      { id: 'judas-related', type: 'media', eyebrow: 'derivas', title: 'La experiencia tiene salidas', body: 'Imagen, pelicula y archivo pueden aportar contexto sin forzar una interpretacion unica.', cta: { label: 'Abrir el archivo', href: '/archive' } },
     ],
   },
   {
@@ -157,7 +157,7 @@ export const routeDefinitions: RouteDefinition[] = [
     id: 'music', path: '/music', label: 'Music', navLabel: 'Music', title: 'Musica en escucha lenta', summary: 'Un espacio para pistas, demos y notas de produccion con creditos verificables.', themeId: 'blue-hour', status: 'pending', relatedRoutes: ['/judas', '/studio', '/rights'],
     sections: [
       { id: 'music-hero', type: 'hero', eyebrow: 'sonido', title: 'Escuchar tambien es documentar', body: 'La interfaz debe mostrar duracion, formato, estado y credito antes de reproducir. La disponibilidad publica de cada pista queda pendiente de confirmacion.', cta: { label: 'Ver permisos', href: '/rights' } },
-      { id: 'music-releases', type: 'grid', eyebrow: 'piezas', title: 'Pistas con contexto', body: 'Cada tarjeta puede alojar reproductor, ficha tecnica y una nota de proceso.', items: [{ id: 'music-judas', label: 'obra', title: 'JUDAS', body: 'Material asociado al proyecto JUDAS; revisar version y autoria antes de publicar.', status: 'pending' }, { id: 'music-demos', label: 'estudio', title: 'Demos', body: 'Bocetos sonoros para escuchar como proceso, no como lanzamiento confirmado.', status: 'pending' }] },
+      { id: 'music-releases', type: 'grid', eyebrow: 'piezas', title: 'Pistas con contexto', body: 'Cada pieza publicada puede alojar reproductor, ficha tecnica y una nota de proceso.', items: [{ id: 'music-catalogue', label: 'catálogo', title: 'Obras publicadas', body: 'Material público con autoría, versión y disponibilidad confirmadas.', status: 'cautious' }, { id: 'music-demos', label: 'estudio', title: 'Demos', body: 'Bocetos sonoros para escuchar como proceso, no como lanzamiento confirmado.', status: 'pending' }] },
       { id: 'music-notes', type: 'manifesto', eyebrow: 'escucha', title: 'El silencio tambien informa', body: 'Cargas, restricciones y ausencias de metadata deben ocupar un lugar claro en la experiencia.' },
     ],
   },
