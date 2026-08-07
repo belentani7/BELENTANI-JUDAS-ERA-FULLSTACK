@@ -120,12 +120,39 @@ test('world selector exposes 20 options and updates html data-world', async ({ p
   await expect.poll(() => page.locator('html').getAttribute('data-world')).toBe(nextWorld)
 })
 
-test('home canvas produces nonblank WebGL pixels', async ({ page }) => {
-  await page.goto('/?v=black-mirror')
+test('home exposes four cinematic directions', async ({ page }) => {
+  await page.goto('/?direction=ritual')
 
-  const canvas = page.locator('.home-intro__signal canvas')
+  const directions = page.locator('.cinematic-home__directions button')
+  await expect(directions).toHaveCount(4)
+  await directions.nth(3).click()
+  await expect(page.locator('.cinematic-home')).toHaveAttribute('data-direction', 'portal')
+  await expect(page).toHaveURL(/direction=portal/)
+})
+
+test('home artifact selects WebGL or the intentional mobile fallback', async ({ page }, testInfo) => {
+  await page.goto('/?direction=portal')
+
+  if (testInfo.project.name === 'mobile-chromium') {
+    await expect(page.locator('.home-artifact-fallback[data-direction="portal"]')).toBeVisible()
+    await expect(page.locator('.home-artifact-canvas')).toHaveCount(0)
+    return
+  }
+
+  const canvas = page.locator('.home-artifact-canvas')
   await expect(canvas).toBeVisible({ timeout: 30_000 })
   await expect.poll(async () => hasVisiblePixelVariation(await canvas.screenshot()), { timeout: 30_000, intervals: [100, 250, 500, 1_000] }).toBe(true)
+})
+
+test('mobile home directions remain inside the viewport', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== 'mobile-chromium', 'Mobile Home matrix')
+
+  for (const direction of ['ritual', 'archive', 'body', 'portal']) {
+    await page.goto(`/?direction=${direction}`)
+    await page.evaluate(() => document.fonts.ready)
+    const overflow = await page.evaluate(() => Math.max(document.documentElement.scrollWidth, document.body.scrollWidth) - document.documentElement.clientWidth)
+    expect(overflow, `${direction} overflow`).toBeLessThanOrEqual(0)
+  }
 })
 
 test.describe('layout', () => {

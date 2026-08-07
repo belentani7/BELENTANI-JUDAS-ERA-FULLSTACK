@@ -10,6 +10,7 @@ import { useWorld } from './WorldProvider'
 
 export function AppShell({ children }: PropsWithChildren) {
   const location = useLocation()
+  const isHome = location.pathname === '/'
   const stage = useRef<HTMLElement>(null)
   const [menuOpen, setMenuOpen] = useState(false)
   const { motionEnabled, setMotionEnabled } = useMotion()
@@ -29,7 +30,7 @@ export function AppShell({ children }: PropsWithChildren) {
   }, [location.pathname, motionEnabled])
 
   return (
-    <div className="app-shell">
+    <div className={isHome ? 'app-shell app-shell--cinematic-home' : 'app-shell'}>
       <a className="skip-link" href="#main-content">Saltar al contenido</a>
       <header className="topbar">
         <NavLink className="brand-lockup" to="/" aria-label="BELENTANI, inicio">
@@ -45,7 +46,7 @@ export function AppShell({ children }: PropsWithChildren) {
               <option key={theme.id} value={theme.id}>{String(index + 1).padStart(2, '0')} · {theme.name}</option>
             ))}
           </select>
-          <button className="icon-button" type="button" onClick={shuffleWorld} title="Cambiar mundo al azar" aria-label="Cambiar mundo al azar">
+          <button className="icon-button world-shuffle" type="button" onClick={shuffleWorld} title="Cambiar mundo al azar" aria-label="Cambiar mundo al azar">
             <Shuffle size={18} />
           </button>
           <button

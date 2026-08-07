@@ -5,6 +5,7 @@ runtime/
 coverage/
 playwright-report/
 test-results/
+artifacts/
 .env*
 !.env.example
 research/private-corpus/
