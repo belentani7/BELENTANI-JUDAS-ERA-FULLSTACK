@@ -277,6 +277,32 @@ test('OMEGA Studio persists narrative and game discoveries locally', async ({ pa
 
   await expect(narrativeNodes.nth(2)).toHaveAttribute('data-visited', 'true')
   await expect(fragments.nth(4)).toHaveAttribute('aria-pressed', 'true')
+  await narrativeNodes.nth(0).click()
+  await expect(narrativeNodes.nth(0)).toHaveAttribute('aria-pressed', 'true')
+  await narrativeNodes.nth(2).click()
+  await expect(narrativeNodes.nth(2)).toHaveAttribute('aria-pressed', 'true')
+})
+
+test('OMEGA Studio remains usable when local storage is unavailable', async ({ page }) => {
+  const pageErrors: string[] = []
+  page.on('pageerror', (error) => pageErrors.push(error.message))
+  await page.addInitScript(() => {
+    const nativeSetItem = Storage.prototype.setItem
+    Storage.prototype.setItem = function setItem(key, value) {
+      if (this === window.localStorage) throw new DOMException('Storage disabled', 'SecurityError')
+      return nativeSetItem.call(this, key, value)
+    }
+  })
+
+  await page.goto('/art-lab')
+  const narrativeNode = page.locator('.constellation-map ol button').nth(2)
+  const fragment = page.getByRole('button', { name: 'Fragmento 1 de 7' })
+  await narrativeNode.click()
+  await fragment.click()
+
+  await expect(narrativeNode).toHaveAttribute('data-visited', 'true')
+  await expect(fragment).toHaveAttribute('aria-pressed', 'true')
+  expect(pageErrors).toEqual([])
 })
 
 test('OMEGA Studio creates no audio context before explicit playback', async ({ page }) => {
@@ -373,6 +399,7 @@ test.describe('full-stack API', () => {
   test('health and sealed manifest are available', async ({ request }) => {
     const health = await request.get('http://127.0.0.1:8787/api/health')
     expect(health.ok()).toBe(true)
+    expect(health.headers()['content-security-policy']).toContain("img-src 'self' data: blob:")
     await expect(health.json()).resolves.toMatchObject({ status: 'ok', service: 'belentani-judas-era' })
 
     const manifest = await request.get('http://127.0.0.1:8787/api/judas-era')

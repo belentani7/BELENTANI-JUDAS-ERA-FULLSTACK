@@ -35,7 +35,7 @@ function setSecurityHeaders(response: ServerResponse): void {
   response.setHeader('X-Frame-Options', 'DENY')
   response.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin')
   response.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=()')
-  response.setHeader('Content-Security-Policy', "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; font-src 'self'; worker-src 'self' blob:")
+  response.setHeader('Content-Security-Policy', "default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; font-src 'self'; worker-src 'self' blob:")
 }
 
 function sendJson(response: ServerResponse, statusCode: number, value: unknown): void {

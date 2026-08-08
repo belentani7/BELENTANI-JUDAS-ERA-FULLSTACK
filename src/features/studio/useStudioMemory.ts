@@ -13,9 +13,15 @@ const emptyMemory: StudioMemory = { visited: [], fragments: [], zeroRoom: false 
 function readMemory(): StudioMemory {
   try {
     const parsed = JSON.parse(window.localStorage.getItem(STORAGE_KEY) ?? '') as Partial<StudioMemory>
+    const visited = Array.isArray(parsed.visited)
+      ? parsed.visited.filter((value): value is string => typeof value === 'string')
+      : []
+    const fragments = Array.isArray(parsed.fragments)
+      ? parsed.fragments.filter((value): value is number => Number.isInteger(value) && value >= 0 && value < 7)
+      : []
     return {
-      visited: Array.isArray(parsed.visited) ? parsed.visited.filter((value): value is string => typeof value === 'string') : [],
-      fragments: Array.isArray(parsed.fragments) ? parsed.fragments.filter((value): value is number => Number.isInteger(value) && value >= 0 && value < 7) : [],
+      visited: [...new Set(visited)],
+      fragments: [...new Set(fragments)].sort((left, right) => left - right),
       zeroRoom: parsed.zeroRoom === true,
     }
   } catch {
@@ -23,11 +29,19 @@ function readMemory(): StudioMemory {
   }
 }
 
+function writeMemory(memory: StudioMemory) {
+  try {
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(memory))
+  } catch {
+    // Keep the current session usable when storage is unavailable.
+  }
+}
+
 export function useStudioMemory() {
   const [memory, setMemory] = useState<StudioMemory>(readMemory)
 
   useEffect(() => {
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(memory))
+    writeMemory(memory)
   }, [memory])
 
   useEffect(() => {
@@ -44,7 +58,10 @@ export function useStudioMemory() {
   }, [])
 
   const visit = (id: string) => {
-    setMemory((current) => current.visited.includes(id) ? current : { ...current, visited: [...current.visited, id] })
+    setMemory((current) => ({
+      ...current,
+      visited: [...current.visited.filter((visitedId) => visitedId !== id), id],
+    }))
   }
 
   const collect = (index: number) => {
