@@ -11,6 +11,7 @@ import { useWorld } from './WorldProvider'
 export function AppShell({ children }: PropsWithChildren) {
   const location = useLocation()
   const isHome = location.pathname === '/'
+  const isStudioWorld = location.pathname === '/art-lab'
   const stage = useRef<HTMLElement>(null)
   const [menuOpen, setMenuOpen] = useState(false)
   const { motionEnabled, setMotionEnabled } = useMotion()
@@ -30,7 +31,11 @@ export function AppShell({ children }: PropsWithChildren) {
   }, [location.pathname, motionEnabled])
 
   return (
-    <div className={isHome ? 'app-shell app-shell--cinematic-home' : 'app-shell'}>
+    <div className={[
+      'app-shell',
+      isHome ? 'app-shell--cinematic-home' : '',
+      isStudioWorld ? 'app-shell--studio-world' : '',
+    ].filter(Boolean).join(' ')}>
       <a className="skip-link" href="#main-content">Saltar al contenido</a>
       <header className="topbar">
         <NavLink className="brand-lockup" to="/" aria-label="BELENTANI, inicio">

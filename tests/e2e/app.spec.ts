@@ -243,6 +243,116 @@ test('HTML Atlas exposes the complete sanitized corpus in bounded pages', async 
   await expect(page.locator('body')).not.toContainText('C:\\Users\\')
 })
 
+test('OMEGA Studio exposes one hundred local instruments and deterministic output', async ({ page }) => {
+  await page.goto('/art-lab')
+  await page.getByRole('button', { name: 'Pausar movimiento' }).click()
+
+  const tools = page.locator('[data-tool-id]')
+  await expect(tools).toHaveCount(20)
+  await expect(page.locator('.tool-index__heading output')).toHaveText('100 / 100')
+
+  const designation = page.locator('.artifact-stage__visual > span')
+  const initialDesignation = await designation.textContent()
+  await page.getByRole('button', { name: 'Ejecutar instrumento' }).click()
+  await expect(designation).toHaveText(initialDesignation ?? '')
+
+  await page.locator('#studio-seed').fill('archivo que respira')
+  await page.getByRole('button', { name: 'Ejecutar instrumento' }).click()
+  await expect(designation).not.toHaveText(initialDesignation ?? '')
+
+  await page.locator('#studio-tool-search').fill('OMEGA')
+  await expect(page.locator('[data-tool-id]')).toHaveCount(3)
+})
+
+test('OMEGA Studio persists narrative and game discoveries locally', async ({ page }) => {
+  await page.goto('/art-lab')
+
+  const narrativeNodes = page.locator('.constellation-map ol button')
+  const fragments = page.locator('.ritual-hunt__field > button')
+  await expect(narrativeNodes).toHaveCount(7)
+  await expect(fragments).toHaveCount(7)
+  await narrativeNodes.nth(2).click()
+  await fragments.nth(4).click()
+  await page.reload()
+
+  await expect(narrativeNodes.nth(2)).toHaveAttribute('data-visited', 'true')
+  await expect(fragments.nth(4)).toHaveAttribute('aria-pressed', 'true')
+})
+
+test('OMEGA Studio creates no audio context before explicit playback', async ({ page }) => {
+  await page.addInitScript(() => {
+    const state = window as Window & { __studioAudioContextCount?: number }
+    state.__studioAudioContextCount = 0
+    const NativeAudioContext = window.AudioContext
+    if (!NativeAudioContext) return
+    window.AudioContext = new Proxy(NativeAudioContext, {
+      construct(target, args, newTarget) {
+        state.__studioAudioContextCount = (state.__studioAudioContextCount ?? 0) + 1
+        return Reflect.construct(target, args, newTarget)
+      },
+    })
+  })
+  await page.goto('/art-lab')
+  await expect.poll(() => page.evaluate(() => (window as Window & { __studioAudioContextCount?: number }).__studioAudioContextCount ?? 0)).toBe(0)
+})
+
+test('OMEGA Studio keeps its core path keyboard-operable and same-origin', async ({ page }) => {
+  const consoleErrors: string[] = []
+  const externalRequests: string[] = []
+  page.on('console', (message) => {
+    if (message.type() === 'error') consoleErrors.push(message.text())
+  })
+  page.on('request', (request) => {
+    const url = new URL(request.url())
+    if (url.origin !== 'http://127.0.0.1:4173') externalRequests.push(request.url())
+  })
+
+  await page.goto('/art-lab')
+  await page.getByRole('button', { name: 'Pausar movimiento' }).click()
+  await expect(page.locator('.vite-error-overlay')).toHaveCount(0)
+  await expect(page.locator('body')).toContainText('Un estudio completo dentro de un mundo vivo.')
+
+  const imageDomain = page.getByRole('button', { name: 'Imagen', exact: true })
+  await imageDomain.focus()
+  await page.keyboard.press('Enter')
+  await expect(imageDomain).toHaveAttribute('aria-pressed', 'true')
+  await expect(page.locator('[data-tool-id]')).toHaveCount(10)
+
+  const fragment = page.getByRole('button', { name: 'Fragmento 1 de 7' })
+  await fragment.focus()
+  await page.keyboard.press('Space')
+  await expect(fragment).toHaveAttribute('aria-pressed', 'true')
+  expect(consoleErrors).toEqual([])
+  expect(externalRequests).toEqual([])
+})
+
+test('OMEGA Studio exports generated PNG, WAV and a converted local image', async ({ page }) => {
+  await page.goto('/art-lab')
+  await page.getByRole('button', { name: 'Pausar movimiento' }).click()
+
+  const [pngDownload] = await Promise.all([
+    page.waitForEvent('download'),
+    page.getByRole('button', { name: 'PNG', exact: true }).click(),
+  ])
+  expect(pngDownload.suggestedFilename()).toMatch(/\.png$/)
+
+  const [waveDownload] = await Promise.all([
+    page.waitForEvent('download'),
+    page.getByRole('button', { name: 'WAV', exact: true }).click(),
+  ])
+  expect(waveDownload.suggestedFilename()).toMatch(/\.wav$/)
+
+  const onePixelPng = Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=', 'base64')
+  await page.locator('#transmuter-file').setInputFiles({ name: 'relic.png', mimeType: 'image/png', buffer: onePixelPng })
+  await page.locator('#transmuter-format').selectOption('image/webp')
+  const [convertedDownload] = await Promise.all([
+    page.waitForEvent('download'),
+    page.getByRole('button', { name: 'Convertir y descargar' }).click(),
+  ])
+  expect(convertedDownload.suggestedFilename()).toBe('relic.webp')
+  await expect(page.locator('.image-transmuter__preview')).toContainText('convertido en este dispositivo')
+})
+
 test('portal exposes five identities and persists opened progress', async ({ page }) => {
   await page.goto('/portal')
 

@@ -12,6 +12,7 @@ import './styles/pages.css'
 import './styles/worlds.css'
 import './styles/judas-era.css'
 import './styles/home-experience.css'
+import './styles/studio-world.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
