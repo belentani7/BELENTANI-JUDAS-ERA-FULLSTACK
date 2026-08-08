@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { useMotion } from '../../shell/MotionProvider'
@@ -7,6 +7,7 @@ import { getHomeDirection, homeDirections } from './homeDirections'
 
 export function CinematicHome() {
   const root = useRef<HTMLElement>(null)
+  const [maximumIllumination, setMaximumIllumination] = useState(false)
   const [searchParams, setSearchParams] = useSearchParams()
   const { motionEnabled } = useMotion()
   const direction = getHomeDirection(searchParams.get('direction'))
@@ -28,6 +29,13 @@ export function CinematicHome() {
     return () => context.revert()
   }, [direction.id, motionEnabled])
 
+  useEffect(() => {
+    setMaximumIllumination(false)
+    if (direction.id !== 'portal' || !motionEnabled) return
+    const timeout = window.setTimeout(() => setMaximumIllumination(true), 9000)
+    return () => window.clearTimeout(timeout)
+  }, [direction.id, motionEnabled])
+
   const handlePointerMove = (event: React.PointerEvent<HTMLElement>) => {
     if (!root.current || !motionEnabled) return
     const x = event.clientX / window.innerWidth - 0.5
@@ -41,6 +49,7 @@ export function CinematicHome() {
       ref={root}
       className="cinematic-home"
       data-direction={direction.id}
+      data-illuminated={maximumIllumination || undefined}
       style={{ '--home-accent': direction.accent } as React.CSSProperties}
       onPointerMove={handlePointerMove}
       aria-labelledby="cinematic-home-title"
@@ -60,6 +69,7 @@ export function CinematicHome() {
           direction={direction.id}
           accent={direction.accent}
           motionEnabled={motionEnabled}
+          maximumIllumination={maximumIllumination}
         />
       </div>
 
@@ -81,6 +91,17 @@ export function CinematicHome() {
         <span>Entrar en el mundo</span>
         <b aria-hidden="true">↗</b>
       </Link>
+
+      {direction.id === 'portal' && (
+        <button
+          className="cinematic-home__illumination"
+          type="button"
+          aria-pressed={maximumIllumination}
+          onClick={() => setMaximumIllumination(true)}
+        >
+          {maximumIllumination ? 'Iluminación máxima' : 'Activar iluminación máxima'}
+        </button>
+      )}
 
       <nav className="cinematic-home__directions" aria-label="Direcciones visuales de Home">
         {homeDirections.map((item) => (

@@ -9,6 +9,7 @@ interface HomeArtifactSceneProps {
   readonly direction: HomeDirectionId
   readonly accent: string
   readonly motionEnabled: boolean
+  readonly maximumIllumination: boolean
 }
 
 interface ArtifactProps {
@@ -75,7 +76,7 @@ function Artifact({ direction, accent }: ArtifactProps) {
   )
 }
 
-export function HomeArtifactScene({ direction, accent, motionEnabled }: HomeArtifactSceneProps) {
+export function HomeArtifactScene({ direction, accent, motionEnabled, maximumIllumination }: HomeArtifactSceneProps) {
   const compact = useCompactExperience()
   if (compact || !motionEnabled) {
     return <div className="home-artifact-fallback" data-direction={direction} aria-hidden="true" />
@@ -92,7 +93,11 @@ export function HomeArtifactScene({ direction, accent, motionEnabled }: HomeArti
       <ambientLight intensity={direction === 'portal' ? 0.12 : 0.34} />
       <directionalLight position={[4, 5, 5]} intensity={direction === 'portal' ? 0.7 : 2.4} color={accent} />
       <pointLight position={[-4, -2, 3]} intensity={direction === 'portal' ? 7 : 28} color="#ffffff" distance={9} />
-      {direction === 'portal' ? <LivingDiamondWorld /> : <Artifact direction={direction} accent={accent} />}
+      {direction === 'portal' ? (
+        <LivingDiamondWorld maximumIllumination={maximumIllumination} />
+      ) : (
+        <Artifact direction={direction} accent={accent} />
+      )}
       <Sparkles count={70} scale={[7, 5, 3]} size={1.4} speed={0.14} color={accent} opacity={0.42} />
     </Canvas>
   )

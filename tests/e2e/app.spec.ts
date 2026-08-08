@@ -258,3 +258,38 @@ test('portal exposes five identities and persists opened progress', async ({ pag
   await expect(identityButtons).toHaveCount(5)
   await expect(progress).toContainText('1 de 5')
 })
+
+test.describe('full-stack API', () => {
+  test('health and sealed manifest are available', async ({ request }) => {
+    const health = await request.get('http://127.0.0.1:8787/api/health')
+    expect(health.ok()).toBe(true)
+    await expect(health.json()).resolves.toMatchObject({ status: 'ok', service: 'belentani-judas-era' })
+
+    const manifest = await request.get('http://127.0.0.1:8787/api/judas-era')
+    expect(manifest.ok()).toBe(true)
+    await expect(manifest.json()).resolves.toMatchObject({ title: 'JUDAS', status: 'SEALED', releaseMediaAvailable: false })
+  })
+
+  test('session accepts a valid signal and rejects invalid input', async ({ request }) => {
+    const invalid = await request.post('http://127.0.0.1:8787/api/judas-era/session', { data: { locale: 'xx', reducedMotion: false } })
+    expect(invalid.status()).toBe(400)
+
+    const created = await request.post('http://127.0.0.1:8787/api/judas-era/session', { data: { locale: 'es', reducedMotion: true } })
+    expect(created.status()).toBe(201)
+    const session = await created.json() as { id: string }
+
+    const signal = await request.post('http://127.0.0.1:8787/api/judas-era/signal', { data: { sessionId: session.id, chapter: 'threshold' } })
+    expect(signal.status()).toBe(202)
+    await expect(signal.json()).resolves.toEqual({ accepted: true })
+  })
+
+  test('malformed JSON is rejected without exposing an internal error', async () => {
+    const response = await fetch('http://127.0.0.1:8787/api/judas-era/session', {
+      method: 'POST',
+      body: '{',
+      headers: { 'Content-Type': 'application/json' },
+    })
+    expect(response.status).toBe(400)
+    await expect(response.json()).resolves.toEqual({ error: 'INVALID_JSON' })
+  })
+})

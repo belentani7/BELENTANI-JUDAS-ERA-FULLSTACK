@@ -1,7 +1,16 @@
 import { Float, MeshTransmissionMaterial, Sparkles } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { useMemo, useRef } from 'react'
-import { AdditiveBlending, BufferGeometry, Color, Float32BufferAttribute, type Group, type ShaderMaterial } from 'three'
+import {
+  AdditiveBlending,
+  BufferGeometry,
+  Color,
+  Float32BufferAttribute,
+  type Group,
+  type MeshBasicMaterial,
+  type PointLight,
+  type ShaderMaterial,
+} from 'three'
 import fragmentShader from './living-diamond.fragment.glsl?raw'
 import vertexShader from './living-diamond.vertex.glsl?raw'
 
@@ -190,12 +199,22 @@ function FloatingGem({ color, glow, position, scale, speed, phase }: FloatingGem
   )
 }
 
-export function LivingDiamondWorld() {
+interface LivingDiamondWorldProps {
+  readonly maximumIllumination: boolean
+}
+
+export function LivingDiamondWorld({ maximumIllumination }: LivingDiamondWorldProps) {
   const root = useRef<Group>(null)
   const orbit = useRef<Group>(null)
   const material = useRef<ShaderMaterial>(null)
-  const keyLight = useRef<Group>(null)
-  const rimLight = useRef<Group>(null)
+  const keyLight = useRef<PointLight>(null)
+  const rimLight = useRef<PointLight>(null)
+  const maximumLight = useRef<PointLight>(null)
+  const shockwave = useRef<Group>(null)
+  const shockwaveMaterial = useRef<MeshBasicMaterial>(null)
+  const illumination = useRef(0)
+  const shockwaveProgress = useRef(1)
+  const previousMaximum = useRef(false)
   const field = useMemo(createParticleField, [])
   const coreGeometry = useMemo(createDiamondGeometry, [])
   const uniforms = useMemo(
@@ -203,15 +222,36 @@ export function LivingDiamondWorld() {
       uColor: { value: new Color('#8f5cff') },
       uMorph: { value: 0 },
       uTime: { value: 0 },
+      uIllumination: { value: 0 },
     }),
     [],
   )
 
   useFrame((state, delta) => {
     const elapsed = state.clock.elapsedTime
+    const targetIllumination = maximumIllumination ? 1 : 0
+    illumination.current += (targetIllumination - illumination.current) * (1 - Math.exp(-delta * 2.8))
+
+    if (maximumIllumination && !previousMaximum.current) shockwaveProgress.current = 0
+    previousMaximum.current = maximumIllumination
+
+    if (shockwaveProgress.current < 1) {
+      shockwaveProgress.current = Math.min(1, shockwaveProgress.current + delta * 0.62)
+      const progress = shockwaveProgress.current
+      if (shockwave.current) {
+        const scale = 0.65 + progress * 5.8
+        shockwave.current.scale.setScalar(scale)
+        shockwave.current.visible = progress < 1
+      }
+      if (shockwaveMaterial.current) {
+        shockwaveMaterial.current.opacity = Math.sin(progress * Math.PI) * 0.58
+      }
+    }
+
     if (material.current) {
       material.current.uniforms.uTime.value = elapsed
       material.current.uniforms.uMorph.value = 0.5 + Math.sin(elapsed * 0.42 - 0.7) * 0.5
+      material.current.uniforms.uIllumination.value = illumination.current
     }
     if (root.current) {
       root.current.rotation.y += delta * 0.035
@@ -228,6 +268,9 @@ export function LivingDiamondWorld() {
       rimLight.current.position.y = -1.1 + Math.cos(elapsed * 0.68) * 0.7
       rimLight.current.position.z = 1.6 + Math.cos(elapsed * 0.52) * 0.45
     }
+    if (maximumLight.current) {
+      maximumLight.current.intensity = illumination.current * 42
+    }
     if (orbit.current) {
       orbit.current.rotation.y = elapsed * 0.22
       orbit.current.rotation.z = Math.sin(elapsed * 0.28) * 0.2
@@ -243,6 +286,7 @@ export function LivingDiamondWorld() {
       <pointLight position={[-2.7, 1.8, 0.9]} intensity={4.4} color="#32ff9a" distance={6.5} />
       <pointLight position={[1.8, 1.7, -1.4]} intensity={4.6} color="#ffd84a" distance={7.2} />
       <pointLight ref={rimLight} position={[-2.8, -0.6, 0.8]} intensity={4.8} color="#34d8ff" distance={7.5} />
+      <pointLight ref={maximumLight} position={[0, 1.4, 3.2]} intensity={0} color="#fff8fb" distance={12} />
       <spotLight position={[0, 3.8, 2.4]} angle={0.42} penumbra={1} intensity={9} color="#ffffff" distance={11} />
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2.08, 0]} scale={[3.2, 3.2, 3.2]}>
         <circleGeometry args={[1, 96]} />
@@ -295,6 +339,20 @@ export function LivingDiamondWorld() {
           <meshBasicMaterial color="#fff6ff" transparent opacity={0.16} depthWrite={false} blending={AdditiveBlending} />
         </mesh>
       </Float>
+
+      <group ref={shockwave} visible={false} rotation={[Math.PI / 2, 0, 0]}>
+        <mesh>
+          <ringGeometry args={[0.82, 1, 128]} />
+          <meshBasicMaterial
+            ref={shockwaveMaterial}
+            color="#fff5fb"
+            transparent
+            opacity={0}
+            depthWrite={false}
+            blending={AdditiveBlending}
+          />
+        </mesh>
+      </group>
 
       <group ref={orbit} rotation={[0.42, 0, -0.12]}>
         <Float speed={1.15} rotationIntensity={0.42} floatIntensity={0.18}>

@@ -1,26 +1,30 @@
-# BELENTANI / 20 WORLDS
+# BELENTANI / JUDAS ERA — FULL STACK
 
-Workspace web aislado para BELENTANI.
+Experiencia React 19 + TypeScript + Vite con R3F/Drei/Three.js, GSAP y Lenis. Incluye servidor Bun/Node, API de sesiones/señales, archivo, atlas, laboratorio, portal y JUDAS sellado.
 
-## Uso
+## Arranque
 
 ```powershell
 bun install
 bun run dev
 ```
 
-## Verificacion
+- Web: `http://127.0.0.1:5173`
+- API: `http://127.0.0.1:8787/api/health`
+
+## Producción
 
 ```powershell
-bun run typecheck
-bun run lint
-bun run test
 bun run build
+bun run start
 ```
 
-## Estructura
+El servidor publica `dist/` y las rutas `/api/health`, `/api/judas-era`, `/api/judas-era/session` y `/api/judas-era/signal`.
 
-- `src/` codigo de aplicacion
-- `server/` API
-- `public/` assets y entrada web
-- `tests/` verificacion
+## Verificación
+
+```powershell
+bun run verify
+```
+
+Ejecuta tipos, ESLint, Vitest, build y Playwright en escritorio/móvil. La experiencia respeta teclado, movimiento reducido y activación voluntaria de audio. Los masters privados de JUDAS permanecen fuera del frontend.

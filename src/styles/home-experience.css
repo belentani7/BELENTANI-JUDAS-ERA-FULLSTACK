@@ -233,6 +233,37 @@
   font-size: 13px;
 }
 
+.cinematic-home__illumination {
+  position: absolute;
+  z-index: 8;
+  left: 50%;
+  bottom: clamp(6.8rem, 12vh, 9.4rem);
+  translate: -50% 0;
+  border: 1px solid color-mix(in srgb, var(--home-accent) 68%, transparent);
+  padding: 0.72rem 1rem;
+  background: rgb(2 4 9 / 62%);
+  color: #f9fbff;
+  font: 500 0.62rem/1 'IBM Plex Mono', monospace;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  transition: border-color 240ms ease, box-shadow 240ms ease, color 240ms ease;
+}
+
+.cinematic-home__illumination:hover,
+.cinematic-home__illumination:focus-visible,
+.cinematic-home__illumination[aria-pressed='true'] {
+  border-color: #fff;
+  color: #fff;
+  box-shadow: 0 0 2.6rem color-mix(in srgb, var(--home-accent) 46%, transparent);
+  outline: none;
+}
+
+.cinematic-home[data-direction='portal'][data-illuminated='true'] .cinematic-home__grade {
+  filter: brightness(1.18) saturate(1.12);
+}
+
 .cinematic-home__entry b {
   color: var(--home-accent);
   font-size: 20px;

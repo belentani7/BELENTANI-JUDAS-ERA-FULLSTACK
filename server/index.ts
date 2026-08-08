@@ -12,6 +12,7 @@ const host = process.env.HOST ?? '0.0.0.0'
 const runtimeDir = join(process.cwd(), 'runtime')
 const distDir = join(process.cwd(), 'dist')
 const sessions = new Map<string, Session>()
+const requestWindows = new Map<string, { count: number; resetAt: number }>()
 const locales: readonly Locale[] = ['es', 'en', 'pt', 'ca']
 
 const eraManifest = {
@@ -31,8 +32,10 @@ const mimeTypes: Readonly<Record<string, string>> = {
 
 function setSecurityHeaders(response: ServerResponse): void {
   response.setHeader('X-Content-Type-Options', 'nosniff')
+  response.setHeader('X-Frame-Options', 'DENY')
   response.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin')
   response.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=()')
+  response.setHeader('Content-Security-Policy', "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; font-src 'self'; worker-src 'self' blob:")
 }
 
 function sendJson(response: ServerResponse, statusCode: number, value: unknown): void {
@@ -50,7 +53,23 @@ async function readJson(request: IncomingMessage): Promise<unknown> {
     if (size > 8_192) throw new Error('PAYLOAD_TOO_LARGE')
     chunks.push(buffer)
   }
-  return JSON.parse(Buffer.concat(chunks).toString('utf8')) as unknown
+  try {
+    return JSON.parse(Buffer.concat(chunks).toString('utf8')) as unknown
+  } catch {
+    throw new Error('INVALID_JSON')
+  }
+}
+
+function acceptsRequest(request: IncomingMessage): boolean {
+  const key = request.socket.remoteAddress ?? 'unknown'
+  const now = Date.now()
+  const current = requestWindows.get(key)
+  if (!current || now >= current.resetAt) {
+    requestWindows.set(key, { count: 1, resetAt: now + 60_000 })
+    return true
+  }
+  current.count += 1
+  return current.count <= 60
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -67,6 +86,10 @@ async function recordEvent(value: Record<string, unknown>): Promise<void> {
 }
 
 async function handleApi(request: IncomingMessage, response: ServerResponse, pathname: string): Promise<boolean> {
+  if (request.method === 'POST' && pathname.startsWith('/api/') && !acceptsRequest(request)) {
+    sendJson(response, 429, { error: 'RATE_LIMITED' })
+    return true
+  }
   if (request.method === 'GET' && pathname === '/api/health') {
     sendJson(response, 200, { status: 'ok', service: 'belentani-judas-era', time: new Date().toISOString() })
     return true
@@ -133,8 +156,10 @@ const server = createServer(async (request, response) => {
     }
     await serveStatic(response, url.pathname, request.method === 'HEAD')
   } catch (error) {
-    const code = error instanceof Error && error.message === 'PAYLOAD_TOO_LARGE' ? 413 : 500
-    sendJson(response, code, { error: code === 413 ? 'PAYLOAD_TOO_LARGE' : 'INTERNAL_ERROR' })
+    const message = error instanceof Error ? error.message : ''
+    const code = message === 'PAYLOAD_TOO_LARGE' ? 413 : message === 'INVALID_JSON' ? 400 : 500
+    const responseError = code === 413 ? 'PAYLOAD_TOO_LARGE' : code === 400 ? 'INVALID_JSON' : 'INTERNAL_ERROR'
+    sendJson(response, code, { error: responseError })
   }
 })
 
