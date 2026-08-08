@@ -2,6 +2,10 @@
 
 Experiencia React 19 + TypeScript + Vite con R3F/Drei/Three.js, GSAP y Lenis. Incluye servidor Bun/Node, API de sesiones/señales, archivo, atlas, laboratorio, portal y JUDAS sellado.
 
+## Mapa de archivos
+
+El árbol vigente, la función de cada subsistema, los archivos generados y las fronteras privadas están documentados en [`docs/MAPA-DE-ARCHIVOS.md`](docs/MAPA-DE-ARCHIVOS.md).
+
 ## Arranque
 
 ```powershell
