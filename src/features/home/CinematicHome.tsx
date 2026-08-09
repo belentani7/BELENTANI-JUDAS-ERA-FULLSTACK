@@ -8,6 +8,7 @@ import { getHomeDirection, homeDirections } from './homeDirections'
 export function CinematicHome() {
   const root = useRef<HTMLElement>(null)
   const [maximumIllumination, setMaximumIllumination] = useState(false)
+  const [quintessenceGathered, setQuintessenceGathered] = useState(false)
   const [searchParams, setSearchParams] = useSearchParams()
   const { motionEnabled } = useMotion()
   const direction = getHomeDirection(searchParams.get('direction'))
@@ -31,6 +32,7 @@ export function CinematicHome() {
 
   useEffect(() => {
     setMaximumIllumination(false)
+    setQuintessenceGathered(false)
     if (direction.id !== 'portal' || !motionEnabled) return
     const timeout = window.setTimeout(() => setMaximumIllumination(true), 9000)
     return () => window.clearTimeout(timeout)
@@ -50,6 +52,7 @@ export function CinematicHome() {
       className="cinematic-home"
       data-direction={direction.id}
       data-illuminated={maximumIllumination || undefined}
+      data-gathered={direction.id === 'quintessence' && quintessenceGathered ? true : undefined}
       style={{ '--home-accent': direction.accent } as React.CSSProperties}
       onPointerMove={handlePointerMove}
       aria-labelledby="cinematic-home-title"
@@ -70,6 +73,7 @@ export function CinematicHome() {
           accent={direction.accent}
           motionEnabled={motionEnabled}
           maximumIllumination={maximumIllumination}
+          quintessenceGathered={quintessenceGathered}
         />
       </div>
 
@@ -82,13 +86,13 @@ export function CinematicHome() {
         ))}
       </h1>
 
-      <div className="cinematic-home__statement" aria-live="polite">
+      <div id="cinematic-home-statement" className="cinematic-home__statement" aria-live="polite">
         <span>{direction.index} / {direction.label}</span>
-        <p>{direction.statement}</p>
+        <p>{direction.id === 'quintessence' && quintessenceGathered ? 'Lo que parecía fragmento era umbral.' : direction.statement}</p>
       </div>
 
       <Link className="cinematic-home__entry" to="/artist">
-        <span>Entrar en el mundo</span>
+        <span>{direction.id === 'quintessence' && quintessenceGathered ? 'Abrir el mundo' : 'Entrar en el mundo'}</span>
         <b aria-hidden="true">↗</b>
       </Link>
 
@@ -100,6 +104,18 @@ export function CinematicHome() {
           onClick={() => setMaximumIllumination(true)}
         >
           {maximumIllumination ? 'Iluminación máxima' : 'Activar iluminación máxima'}
+        </button>
+      )}
+
+      {direction.id === 'quintessence' && (
+        <button
+          className="cinematic-home__gather"
+          type="button"
+          aria-pressed={quintessenceGathered}
+          aria-describedby="cinematic-home-statement"
+          onClick={() => setQuintessenceGathered((gathered) => !gathered)}
+        >
+          {quintessenceGathered ? 'Dispersar' : 'Reunir'}
         </button>
       )}
 
