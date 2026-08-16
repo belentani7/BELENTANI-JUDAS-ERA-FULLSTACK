@@ -20,8 +20,7 @@
 }
 
 .app-shell--cinematic-home .brand-lockup small,
-.app-shell--cinematic-home .world-controls select,
-.app-shell--cinematic-home .world-shuffle {
+.app-shell--cinematic-home .motion-button {
   display: none;
 }
 
@@ -34,32 +33,10 @@
   display: inline-grid;
 }
 
-.app-shell--cinematic-home .route-rail {
-  z-index: 90;
-  top: 0;
-  width: min(440px, 92vw);
-  padding: 92px 24px 32px;
-  transform: translateX(-104%);
-  border-right: 1px solid rgba(255, 255, 255, 0.16);
-  background: rgba(4, 4, 5, 0.93);
-  backdrop-filter: blur(22px);
-  transition: transform 650ms cubic-bezier(0.65, 0, 0.2, 1);
-}
-
-.app-shell--cinematic-home .route-rail[data-open='true'] {
-  transform: translateX(0);
-}
-
-.app-shell--cinematic-home .route-rail a {
-  min-height: 52px;
-  grid-template-columns: 36px 1fr;
-  padding-inline: 8px;
-  border-color: rgba(255, 255, 255, 0.13);
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.app-shell--cinematic-home .route-rail a span {
-  display: block;
+.app-shell--cinematic-home .site-menu {
+  --world-bg: #050506;
+  --world-fg: #f4f0e9;
+  --world-accent: var(--home-accent, #ff315c);
 }
 
 .app-shell--cinematic-home main {
@@ -251,6 +228,7 @@
 }
 
 .cinematic-home__directions button {
+  position: relative;
   min-height: 54px;
   display: grid;
   grid-template-columns: 30px 1fr;
@@ -260,6 +238,22 @@
   background: transparent;
   color: rgba(255, 255, 255, 0.48);
   text-align: left;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .cinematic-home__media img {
+    transition-duration: 0.45s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cinematic-home__media img,
+  .cinematic-home__title,
+  .cinematic-home__grade,
+  .home-artifact-fallback {
+    animation: none;
+    transition: none;
+  }
 }
 
 .cinematic-home__directions button::before {
@@ -352,10 +346,6 @@
 
   .app-shell--cinematic-home .topbar {
     height: 60px;
-  }
-
-  .app-shell--cinematic-home .world-controls .icon-button:not(.menu-button) {
-    display: none;
   }
 
   .cinematic-home__edition,

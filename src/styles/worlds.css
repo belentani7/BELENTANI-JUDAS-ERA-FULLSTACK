@@ -1,7 +1,3 @@
-html[data-family='ritual'] {
-  --rail-width: 176px;
-}
-
 html[data-family='ritual'] .page__eyebrow,
 html[data-family='ritual'] .page__kicker {
   color: var(--world-accent);
@@ -14,7 +10,7 @@ html[data-family='ritual'] .section-inner {
 }
 
 html[data-family='spatial'] .topbar,
-html[data-family='spatial'] .route-rail {
+html[data-family='spatial'] .site-menu {
   background: color-mix(in srgb, var(--world-bg) 78%, transparent);
 }
 
@@ -29,10 +25,6 @@ html[data-family='spatial'] .home-intro__signal::after {
   z-index: 2;
   pointer-events: none;
   border: 1px solid color-mix(in srgb, var(--world-accent) 58%, transparent);
-}
-
-html[data-family='signal'] {
-  --rail-width: 190px;
 }
 
 html[data-family='signal'] .display-title,
@@ -51,10 +43,6 @@ html[data-family='signal'] .section-band,
 html[data-family='signal'] .editorial-list li,
 html[data-family='signal'] .route-list {
   border-color: color-mix(in srgb, var(--world-accent) 52%, transparent);
-}
-
-html[data-family='operational'] .route-rail a {
-  min-height: 40px;
 }
 
 html[data-family='operational'] .editorial-list article {
@@ -197,10 +185,6 @@ html[data-world='blue-hour'] .home-intro__signal {
   opacity: 0.84;
 }
 
-html[data-world='deep-space'] .route-rail {
-  border-right-color: color-mix(in srgb, var(--world-accent) 40%, transparent);
-}
-
 html[data-world='acid-console'] .page__kicker::before {
   content: '> ';
 }
@@ -211,10 +195,6 @@ html[data-world='cobalt-grid'] .editorial-list article {
 
 html[data-world='infrared-wave'] .signal-mark::after {
   width: 8px;
-}
-
-html[data-world='lime-circuit'] .route-rail a.active {
-  box-shadow: inset 5px 0 0 var(--world-accent);
 }
 
 html[data-world='amber-pulse'] .page__index {

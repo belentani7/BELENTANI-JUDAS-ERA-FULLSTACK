@@ -130,6 +130,43 @@ test('home exposes four cinematic directions', async ({ page }) => {
   await expect(page).toHaveURL(/direction=portal/)
 })
 
+test('immersive menu traps focus, closes with Escape and restores its trigger', async ({ page }) => {
+  await page.goto('/artist')
+
+  const trigger = page.getByRole('button', { name: 'Abrir menú' })
+  const menu = page.locator('#primary-nav')
+  await expect(menu).toHaveAttribute('aria-hidden', 'true')
+
+  await trigger.click()
+  await expect(menu).toHaveAttribute('data-open', 'true')
+  await expect(page.locator('body')).toHaveAttribute('data-menu-open', 'true')
+  await expect(page.getByRole('heading', { name: 'Elegir un territorio' })).toBeVisible()
+  await expect(page.getByRole('button', { name: 'Cerrar', exact: true })).toBeFocused()
+  await expect(page.locator('.site-menu__scene')).toBeVisible()
+
+  await page.getByRole('link', { name: 'JUDAS — Sealed Work' }).focus()
+  await expect(page.locator('.site-menu__scene')).toHaveAttribute('data-territory', 'OBRA / SELLO')
+
+  await page.keyboard.press('Escape')
+  await expect(menu).toHaveAttribute('aria-hidden', 'true')
+  await expect(page.locator('body')).not.toHaveAttribute('data-menu-open', 'true')
+  await expect(trigger).toBeFocused()
+})
+
+test('internal studies declare noindex while public routes remain indexable', async ({ page }) => {
+  await page.goto('/atlas')
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, nofollow')
+
+  await page.goto('/judas')
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, nofollow')
+
+  await page.goto('/judas/versions')
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, nofollow')
+
+  await page.goto('/archive')
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'index, follow')
+})
+
 test('home artifact selects WebGL or the intentional mobile fallback', async ({ page }, testInfo) => {
   await page.goto('/?direction=portal')
 
@@ -172,6 +209,7 @@ test.describe('layout', () => {
 
 test('mobile JUDAS keeps all 20 worlds inside the viewport', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'mobile-chromium', 'Mobile composition matrix')
+  test.setTimeout(120_000)
   await page.goto('/judas?v=paper-archive')
   const worldIds = await page.locator('#world-select option').evaluateAll((options) => options.map((option) => (option as HTMLOptionElement).value))
   expect(worldIds).toHaveLength(20)

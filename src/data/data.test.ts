@@ -55,6 +55,10 @@ describe('BELENTANI data contract', () => {
     expect(judasVersions.every((version) => version.image.startsWith('/media/judas/'))).toBe(true)
   })
 
+  it('keeps every JUDAS study sealed from reproducible media', () => {
+    expect(JSON.stringify(judasVersions)).not.toMatch(/audio|lyrics?|letra|waveform|master|preload|download|\.(?:mp3|wav|flac|m4a|ogg)/i)
+  })
+
   it('catalogs 100 distinct Awwwards sites and all user references', () => {
     expect(references.filter((reference) => reference.source === 'Awwwards')).toHaveLength(100)
     expect(new Set(references.filter((reference) => reference.source === 'Awwwards').map((reference) => reference.url)).size).toBe(100)

@@ -27,3 +27,9 @@ movimiento y atmósfera. No se copiaron monolitos, telemetría ficticia ni vigil
 - Lenis: https://lenis.dev/
 
 Estas referencias fijan nivel de ejecución e interacción. No son fuente de código copiado.
+
+## Delta de Downloads — 2026-08-13
+
+La revisión posterior no promovió nuevos medios ni código de ejecución: los candidatos
+seguían en revisión, eran duplicados, material sellado o carecían de licencia/consentimiento
+verificable. Hashes y decisiones: `docs/DOWNLOADS-REUSE-AUDIT-2026-08-13.md`.

@@ -35,6 +35,15 @@ function setSecurityHeaders(response: ServerResponse): void {
   response.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=()')
 }
 
+function setIndexingPolicy(response: ServerResponse, pathname: string): void {
+  const sealedRoute = pathname === '/judas' || pathname.startsWith('/judas/')
+  const sealedMedia = pathname.startsWith('/media/judas/')
+  const internalRoute = ['/atlas', '/noiacore', '/agents', '/prisma'].includes(pathname)
+  if (sealedRoute || sealedMedia || internalRoute) {
+    response.setHeader('X-Robots-Tag', sealedMedia ? 'noindex, noimageindex, nofollow' : 'noindex, nofollow')
+  }
+}
+
 function sendJson(response: ServerResponse, statusCode: number, value: unknown): void {
   setSecurityHeaders(response)
   response.writeHead(statusCode, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' })
@@ -111,6 +120,7 @@ async function serveStatic(response: ServerResponse, pathname: string, headOnly:
   let filePath = candidateRelative.startsWith('..') || isAbsolute(candidateRelative) ? join(distDir, 'index.html') : candidate
   if (!existsSync(filePath) || (await stat(filePath)).isDirectory()) filePath = join(distDir, 'index.html')
   setSecurityHeaders(response)
+  setIndexingPolicy(response, pathname)
   response.writeHead(200, {
     'Content-Type': mimeTypes[extname(filePath)] ?? 'application/octet-stream',
     'Cache-Control': pathname.startsWith('/assets/') ? 'public, max-age=31536000, immutable' : 'no-cache',
