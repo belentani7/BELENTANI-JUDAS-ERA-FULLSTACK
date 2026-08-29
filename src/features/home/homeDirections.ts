@@ -62,6 +62,10 @@ export const homeDirections: readonly HomeDirection[] = [
   },
 ]
 
-export function getHomeDirection(value: string | null): HomeDirection {
-  return homeDirections.find((direction) => direction.id === value) ?? homeDirections[0]
+export const canonicalHomeDirection = homeDirections[4]
+export const HOME_LAB_QUERY = 'home'
+
+export function getHomeDirection(value: string | null, laboratory = false): HomeDirection {
+  if (!laboratory) return canonicalHomeDirection
+  return homeDirections.find((direction) => direction.id === value) ?? canonicalHomeDirection
 }

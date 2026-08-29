@@ -8,13 +8,18 @@ describe('homeDirections', () => {
     expect(new Set(ids).size).toBe(5)
   })
 
-  it('resolves quintessence without protected media', () => {
+  it('keeps quintessence canonical and free of protected media', () => {
     const direction = getHomeDirection('quintessence')
     expect(direction).toMatchObject({ id: 'quintessence', index: '05' })
     expect(direction.image).toBeUndefined()
   })
 
-  it('falls back to ritual for unknown input', () => {
-    expect(getHomeDirection('unknown').id).toBe('ritual')
+  it('ignores prototype directions outside the explicit laboratory', () => {
+    expect(getHomeDirection('ritual').id).toBe('quintessence')
+  })
+
+  it('resolves all prototypes inside the explicit laboratory', () => {
+    expect(getHomeDirection('ritual', true).id).toBe('ritual')
+    expect(getHomeDirection('unknown', true).id).toBe('quintessence')
   })
 })

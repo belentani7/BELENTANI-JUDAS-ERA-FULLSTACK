@@ -21,8 +21,11 @@ const PARTICLE_COUNT = 600
 const SHARD_COUNT = 5
 const TAU = Math.PI * 2
 
+export type QuintessencePhase = 'dormancy' | 'memory' | 'convergence' | 'shockwave' | 'threshold'
+
 interface QuintessenceWorldProps {
-  readonly gathered: boolean
+  readonly phase: QuintessencePhase
+  readonly quality: number
 }
 
 interface ParticleField {
@@ -99,10 +102,19 @@ function createStratumGeometry(): BufferGeometry {
   return geometry
 }
 
-export function QuintessenceWorld({ gathered }: QuintessenceWorldProps) {
+const phaseTarget: Record<QuintessencePhase, number> = {
+  dormancy: 0,
+  memory: 0.18,
+  convergence: 1,
+  shockwave: 1.12,
+  threshold: 1,
+}
+
+export function QuintessenceWorld({ phase, quality }: QuintessenceWorldProps) {
   const root = useRef<Group>(null)
   const stratum = useRef<Mesh>(null)
   const shards = useRef<InstancedMesh>(null)
+  const particles = useRef<BufferGeometry>(null)
   const particleMaterial = useRef<ShaderMaterial>(null)
   const coreMaterial = useRef<MeshPhysicalMaterial>(null)
   const coreLight = useRef<PointLight>(null)
@@ -121,10 +133,13 @@ export function QuintessenceWorld({ gathered }: QuintessenceWorldProps) {
   )
 
   useEffect(() => () => stratumGeometry.dispose(), [stratumGeometry])
+  useEffect(() => {
+    particles.current?.setDrawRange(0, Math.round(240 + MathUtils.clamp(quality, 0, 1) * 360))
+  }, [quality])
 
   useFrame((state, delta) => {
     const elapsed = state.clock.elapsedTime
-    gather.current = MathUtils.damp(gather.current, gathered ? 1 : 0, 2.6, delta)
+    gather.current = MathUtils.damp(gather.current, phaseTarget[phase], phase === 'shockwave' ? 8 : 2.6, delta)
     const progress = gather.current
 
     if (particleMaterial.current) {
@@ -145,7 +160,7 @@ export function QuintessenceWorld({ gathered }: QuintessenceWorldProps) {
       coreMaterial.current.roughness = 0.34 - progress * 0.2
     }
     if (coreLight.current) {
-      coreLight.current.intensity = 1.4 + progress * 6.2
+      coreLight.current.intensity = 2.2 + progress * 7
     }
     if (shards.current) {
       for (let index = 0; index < SHARD_COUNT; index += 1) {
@@ -172,24 +187,24 @@ export function QuintessenceWorld({ gathered }: QuintessenceWorldProps) {
 
   return (
     <group ref={root} position={[0.64, 0.02, 0]}>
-      <ambientLight intensity={0.22} color="#3b2c28" />
-      <directionalLight position={[-3.2, 4.5, 3.8]} intensity={2.1} color="#e8ded0" />
-      <pointLight ref={coreLight} position={[0.25, 0.15, 1.5]} intensity={1.4} color="#a82f2d" distance={6} />
+      <ambientLight intensity={0.38} color="#5d4540" />
+      <directionalLight position={[-3.2, 4.5, 3.8]} intensity={3.1} color="#f1e4d7" />
+      <pointLight ref={coreLight} position={[0.25, 0.15, 1.5]} intensity={2.2} color="#c84a45" distance={6} />
 
       <mesh ref={stratum} geometry={stratumGeometry} rotation={[0.24, -0.36, -0.08]}>
-        <meshStandardMaterial color="#342925" roughness={0.94} metalness={0.12} flatShading side={2} />
+        <meshStandardMaterial color="#503732" roughness={0.88} metalness={0.16} flatShading side={2} />
       </mesh>
 
       <instancedMesh ref={shards} args={[undefined, undefined, SHARD_COUNT]}>
         <tetrahedronGeometry args={[1, 1]} />
-        <meshStandardMaterial color="#5d3a32" roughness={0.82} metalness={0.28} flatShading />
+        <meshStandardMaterial color="#815148" roughness={0.76} metalness={0.3} flatShading />
       </instancedMesh>
 
       <mesh rotation={[0.08, 0.42, Math.PI * 0.25]} scale={[0.72, 1.28, 0.48]}>
         <octahedronGeometry args={[0.92, 2]} />
         <meshPhysicalMaterial
           ref={coreMaterial}
-          color="#111011"
+          color="#1b1617"
           emissive="#d9c8b8"
           emissiveIntensity={0.08}
           metalness={0.78}
@@ -204,7 +219,7 @@ export function QuintessenceWorld({ gathered }: QuintessenceWorldProps) {
       </mesh>
 
       <points>
-        <bufferGeometry>
+        <bufferGeometry ref={particles}>
           <bufferAttribute attach="attributes-position" args={[field.expanded, 3]} />
           <bufferAttribute attach="attributes-aGathered" args={[field.gathered, 3]} />
           <bufferAttribute attach="attributes-aScale" args={[field.scale, 1]} />

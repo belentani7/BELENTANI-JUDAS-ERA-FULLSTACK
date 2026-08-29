@@ -1,22 +1,28 @@
-import { Canvas, useFrame } from '@react-three/fiber'
-import { Float, Sparkles } from '@react-three/drei'
+import { Canvas, useFrame, useThree } from '@react-three/fiber'
+import { Float, PerformanceMonitor, Sparkles } from '@react-three/drei'
 import { useEffect, useRef, useState } from 'react'
 import type { Group } from 'three'
 import type { HomeDirectionId } from './homeDirections'
 import { LivingDiamondWorld } from './LivingDiamondWorld'
 import { QuintessenceWorld } from './QuintessenceWorld'
+import type { QuintessencePhase } from './QuintessenceWorld'
 
 interface HomeArtifactSceneProps {
   readonly direction: HomeDirectionId
   readonly accent: string
   readonly motionEnabled: boolean
   readonly maximumIllumination: boolean
-  readonly quintessenceGathered: boolean
+  readonly quintessencePhase: QuintessencePhase
 }
 
 interface ArtifactProps {
   readonly direction: HomeDirectionId
   readonly accent: string
+}
+
+interface ContextGuardProps {
+  readonly onLost: () => void
+  readonly onRestored: () => void
 }
 
 function useCompactExperience(): boolean {
@@ -31,6 +37,25 @@ function useCompactExperience(): boolean {
   }, [])
 
   return compact
+}
+
+function WebglContextGuard({ onLost, onRestored }: ContextGuardProps) {
+  const canvas = useThree((state) => state.gl.domElement)
+
+  useEffect(() => {
+    const handleLost = (event: Event) => {
+      event.preventDefault()
+      onLost()
+    }
+    canvas.addEventListener('webglcontextlost', handleLost)
+    canvas.addEventListener('webglcontextrestored', onRestored)
+    return () => {
+      canvas.removeEventListener('webglcontextlost', handleLost)
+      canvas.removeEventListener('webglcontextrestored', onRestored)
+    }
+  }, [canvas, onLost, onRestored])
+
+  return null
 }
 
 function Artifact({ direction, accent }: ArtifactProps) {
@@ -78,38 +103,58 @@ function Artifact({ direction, accent }: ArtifactProps) {
   )
 }
 
-export function HomeArtifactScene({ direction, accent, motionEnabled, maximumIllumination, quintessenceGathered }: HomeArtifactSceneProps) {
+function SceneFallback({ direction, phase, contextLost = false }: {
+  readonly direction: HomeDirectionId
+  readonly phase: QuintessencePhase
+  readonly contextLost?: boolean
+}) {
+  return (
+    <div
+      className="home-artifact-fallback"
+      data-direction={direction}
+      data-state={direction === 'quintessence' ? phase : undefined}
+      data-context-lost={contextLost || undefined}
+      aria-hidden="true"
+    />
+  )
+}
+
+export function HomeArtifactScene({ direction, accent, motionEnabled, maximumIllumination, quintessencePhase }: HomeArtifactSceneProps) {
   const compact = useCompactExperience()
-  if (compact || !motionEnabled) {
-    return (
-      <div
-        className="home-artifact-fallback"
-        data-direction={direction}
-        data-gathered={direction === 'quintessence' && quintessenceGathered ? true : undefined}
-        aria-hidden="true"
-      />
-    )
-  }
+  const [quality, setQuality] = useState(0.72)
+  const [contextLost, setContextLost] = useState(false)
+  const dpr: [number, number] = [1, direction === 'quintessence' ? 1 + quality * 0.42 : 1 + quality * 0.62]
+
+  if (compact || !motionEnabled) return <SceneFallback direction={direction} phase={quintessencePhase} />
 
   return (
-    <Canvas
-      className="home-artifact-canvas"
-      camera={{ position: [0, 0, 4.3], fov: 42 }}
-      dpr={direction === 'quintessence' ? [1, 1.25] : [1, 1.5]}
-      gl={{ alpha: true, antialias: true, powerPreference: 'high-performance' }}
-      aria-hidden="true"
-    >
-      {direction !== 'quintessence' && <ambientLight intensity={direction === 'portal' ? 0.12 : 0.34} />}
-      {direction !== 'quintessence' && <directionalLight position={[4, 5, 5]} intensity={direction === 'portal' ? 0.7 : 2.4} color={accent} />}
-      {direction !== 'quintessence' && <pointLight position={[-4, -2, 3]} intensity={direction === 'portal' ? 7 : 28} color="#ffffff" distance={9} />}
-      {direction === 'quintessence' ? (
-        <QuintessenceWorld gathered={quintessenceGathered} />
-      ) : direction === 'portal' ? (
-        <LivingDiamondWorld maximumIllumination={maximumIllumination} />
-      ) : (
-        <Artifact direction={direction} accent={accent} />
-      )}
-      {direction !== 'quintessence' && <Sparkles count={70} scale={[7, 5, 3]} size={1.4} speed={0.14} color={accent} opacity={0.42} />}
-    </Canvas>
+    <div className="home-artifact-stage" data-context-state={contextLost ? 'lost' : 'ready'} aria-hidden="true">
+      {contextLost && <SceneFallback direction={direction} phase={quintessencePhase} contextLost />}
+      <Canvas
+        className="home-artifact-canvas"
+        camera={{ position: [0, 0, 4.3], fov: 42 }}
+        dpr={dpr}
+        gl={{ alpha: true, antialias: quality > 0.42, powerPreference: 'high-performance' }}
+      >
+        <WebglContextGuard onLost={() => setContextLost(true)} onRestored={() => setContextLost(false)} />
+        <PerformanceMonitor
+          bounds={(refreshRate) => refreshRate > 90 ? [55, 90] : [42, 58]}
+          flipflops={3}
+          onChange={({ factor }) => setQuality(factor)}
+          onFallback={() => setQuality(0.25)}
+        />
+        {direction !== 'quintessence' && <ambientLight intensity={direction === 'portal' ? 0.12 : 0.34} />}
+        {direction !== 'quintessence' && <directionalLight position={[4, 5, 5]} intensity={direction === 'portal' ? 0.7 : 2.4} color={accent} />}
+        {direction !== 'quintessence' && <pointLight position={[-4, -2, 3]} intensity={direction === 'portal' ? 7 : 28} color="#ffffff" distance={9} />}
+        {direction === 'quintessence' ? (
+          <QuintessenceWorld phase={quintessencePhase} quality={quality} />
+        ) : direction === 'portal' ? (
+          <LivingDiamondWorld maximumIllumination={maximumIllumination} />
+        ) : (
+          <Artifact direction={direction} accent={accent} />
+        )}
+        {direction !== 'quintessence' && <Sparkles count={Math.round(36 + quality * 54)} scale={[7, 5, 3]} size={1.4} speed={0.14} color={accent} opacity={0.42} />}
+      </Canvas>
+    </div>
   )
 }

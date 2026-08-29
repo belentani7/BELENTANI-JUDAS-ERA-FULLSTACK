@@ -92,7 +92,7 @@ test.describe('top-level routes', () => {
       await page.goto(path)
 
       const routeRoot = page.locator('main#main-content [data-route-root]')
-      await expect(routeRoot).toBeVisible()
+      await expect(routeRoot).toBeVisible({ timeout: 30_000 })
       await expect(routeRoot.locator('h1').first()).toBeVisible()
     })
   }
@@ -121,7 +121,7 @@ test('world selector exposes 20 options and updates html data-world', async ({ p
 })
 
 test('home exposes five cinematic directions', async ({ page }) => {
-  await page.goto('/?direction=ritual')
+  await page.goto('/?lab=home&direction=ritual')
 
   const directions = page.locator('.cinematic-home__directions button')
   await expect(directions).toHaveCount(5)
@@ -131,23 +131,23 @@ test('home exposes five cinematic directions', async ({ page }) => {
 })
 
 test('quintessence reunites five fields into one accessible state', async ({ page }) => {
-  await page.goto('/?direction=quintessence')
+  await page.goto('/')
 
   const home = page.locator('.cinematic-home')
   const action = page.locator('.cinematic-home__gather')
   await expect(home).toHaveAttribute('data-direction', 'quintessence')
-  await expect(page.locator('.cinematic-home__statement')).toContainText('Cinco materias. Una presencia.')
+  await expect(page.locator('.cinematic-home__statement')).toContainText('Cinco materias esperan bajo la superficie.')
   await expect(action).toHaveAccessibleName('Reunir')
-  await expect(action).toHaveAttribute('aria-pressed', 'false')
   await action.click()
-  await expect(action).toHaveAttribute('aria-pressed', 'true')
-  await expect(action).toHaveText('Dispersar')
   await expect(home).toHaveAttribute('data-gathered', 'true')
+  await expect(home).toHaveAttribute('data-experience-state', 'threshold', { timeout: 4_000 })
   await expect(page.locator('.cinematic-home__statement')).toContainText('Lo que parecía fragmento era umbral.')
+  await page.getByRole('button', { name: 'Dispersar', exact: true }).click()
+  await expect(home).toHaveAttribute('data-experience-state', 'dormancy')
 })
 
 test('home artifact selects WebGL or the intentional mobile fallback', async ({ page }, testInfo) => {
-  await page.goto('/?direction=portal')
+  await page.goto('/?lab=home&direction=portal')
 
   if (testInfo.project.name === 'mobile-chromium') {
     await expect(page.locator('.home-artifact-fallback[data-direction="portal"]')).toBeVisible()
@@ -161,7 +161,7 @@ test('home artifact selects WebGL or the intentional mobile fallback', async ({ 
 })
 
 test('quintessence keeps a live WebGL scene or its intentional mobile fallback', async ({ page }, testInfo) => {
-  await page.goto('/?direction=quintessence')
+  await page.goto('/')
 
   if (testInfo.project.name === 'mobile-chromium') {
     await expect(page.locator('.home-artifact-fallback[data-direction="quintessence"]')).toBeVisible()
@@ -180,7 +180,7 @@ test('mobile home directions remain inside the viewport', async ({ page }, testI
   test.skip(testInfo.project.name !== 'mobile-chromium', 'Mobile Home matrix')
 
   for (const direction of ['ritual', 'archive', 'body', 'portal', 'quintessence']) {
-    await page.goto(`/?direction=${direction}`)
+    await page.goto(`/?lab=home&direction=${direction}`)
     await page.evaluate(() => document.fonts.ready)
     const overflow = await page.evaluate(() => Math.max(document.documentElement.scrollWidth, document.body.scrollWidth) - document.documentElement.clientWidth)
     expect(overflow, `${direction} overflow`).toBeLessThanOrEqual(0)

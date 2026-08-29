@@ -10,6 +10,7 @@ const LabPage = lazy(() => import('./pages/LabPage').then((module) => ({ default
 const PortalPage = lazy(() => import('./pages/PortalPage').then((module) => ({ default: module.PortalPage })))
 const AtlasPage = lazy(() => import('./pages/AtlasPage').then((module) => ({ default: module.AtlasPage })))
 const JudasVersionsPage = lazy(() => import('./pages/JudasVersionsPage').then((module) => ({ default: module.JudasVersionsPage })))
+const ArtistPage = lazy(() => import('./pages/ArtistPage').then((module) => ({ default: module.ArtistPage })))
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage').then((module) => ({ default: module.NotFoundPage })))
 
 export function App() {
@@ -25,6 +26,7 @@ export function App() {
           <Route path="/atlas" element={<AtlasPage />} />
           <Route path="/art-lab" element={<LabPage />} />
           <Route path="/portal" element={<PortalPage />} />
+          <Route path="/artist" element={<ArtistPage />} />
           <Route path="/home" element={<Navigate to="/" replace />} />
           <Route path="/:routeId" element={<EditorialPage />} />
           <Route path="*" element={<NotFoundPage />} />
