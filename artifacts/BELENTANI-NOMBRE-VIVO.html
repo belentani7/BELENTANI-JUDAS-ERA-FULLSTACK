@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>BELENTANI · El nombre vivo</title>
+  <style>
+    *{box-sizing:border-box}html,body{height:100%;margin:0;overflow:hidden;background:#020103;color:#ff2038}
+    body{font-family:ui-monospace,"Cascadia Mono","Segoe UI Mono",monospace;cursor:crosshair}
+    canvas,#light,#name{position:fixed;inset:0}canvas{z-index:0}#light{z-index:1;width:46vmax;height:46vmax;inset:auto;pointer-events:none;translate:-50% -50%;opacity:.48;mix-blend-mode:screen;background:radial-gradient(circle,rgba(255,40,70,.3),rgba(255,0,60,.09) 42%,transparent 68%)}
+    #name{z-index:2;display:flex;align-items:center;justify-content:center;filter:url(#liquid);user-select:none}
+    .letter{display:inline-block;font-weight:800;font-size:clamp(3rem,15vw,16rem);line-height:1;letter-spacing:-.11em;will-change:transform,opacity,text-shadow}
+    #whisper,#status,#identity,#forget{position:fixed;z-index:3;font:500 .68rem/1.5 ui-monospace,"Cascadia Mono",monospace;letter-spacing:.24em;text-transform:lowercase}
+    #whisper{left:50%;bottom:9vh;translate:-50% 0;max-width:min(90vw,42rem);text-align:center;color:rgba(255,150,165,.9);opacity:0;transition:opacity 1.2s}
+    #whisper.on{opacity:1}#status{top:1rem;right:1rem;color:rgba(190,198,216,.55);text-align:right;opacity:0;transition:opacity .8s}#status.on{opacity:1}
+    #identity{left:50%;bottom:5vh;translate:-50% 0;display:none;gap:.6rem}#identity.on{display:flex}#identity input,#identity button,#forget{border:1px solid rgba(255,32,56,.45);background:rgba(2,1,3,.82);color:#ffdce2;padding:.7rem .8rem;font:inherit}#identity input:focus,#identity button:focus-visible,#forget:focus-visible{outline:2px solid #fff;outline-offset:3px}
+    #forget{left:1rem;top:1rem;opacity:.12;cursor:pointer;transition:opacity .2s}#forget:hover,#forget:focus-visible{opacity:1}
+    @media (prefers-reduced-motion:reduce){#name{filter:none}.letter,#light{will-change:auto}#whisper,#status{transition:none}}
+  </style>
+</head>
+<body>
+  <canvas id="field" aria-hidden="true"></canvas>
+  <div id="light" aria-hidden="true"></div>
+  <div id="name" aria-label="BELENTANI"></div>
+  <p id="whisper" aria-live="polite"></p>
+  <p id="status" aria-live="off"></p>
+  <form id="identity" autocomplete="off">
+    <label for="person">tu nombre</label><input id="person" maxlength="24"><button>recordar</button>
+  </form>
+  <button id="forget" type="button">borrar memoria</button>
+  <svg width="0" height="0" aria-hidden="true"><filter id="liquid"><feTurbulence type="fractalNoise" baseFrequency=".012 .07" numOctaves="2" seed="7" result="noise"><animate attributeName="baseFrequency" values=".012 .07;.017 .09;.012 .07" dur="8s" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="noise" scale="9"/></filter></svg>
+  <script>
+  'use strict';
+  (()=>{
+    const KEY='belentani_entity_v2',WORD='BELENTANI',reduced=matchMedia('(prefers-reduced-motion:reduce)').matches;
+    const safeLoad=()=>{try{const value=JSON.parse(localStorage.getItem(KEY)||'null');return value&&typeof value==='object'?value:null}catch{return null}};
+    const memory=safeLoad()||{visits:0,totalSeconds:0,trust:20,person:null};memory.visits+=1;
+    const save=()=>{memory.totalSeconds=Math.round(previousAge+session);memory.trust=Math.round(trust*10)/10;try{localStorage.setItem(KEY,JSON.stringify(memory))}catch{}};
+    const previousAge=Number(memory.totalSeconds)||0;
+    let trust=Number(memory.trust)||20,energy=50,agitation=0,idle=0,session=0,pointerX=innerWidth/2,pointerY=innerHeight/2,lightX=pointerX,lightY=pointerY,speed=0,last=performance.now(),statusVisible=false,eventIndex=0;
+    const name=document.querySelector('#name'),light=document.querySelector('#light'),whisperEl=document.querySelector('#whisper'),status=document.querySelector('#status'),identity=document.querySelector('#identity'),person=document.querySelector('#person');
+    const letters=[...WORD].map((character,index)=>{const element=document.createElement('span');element.className='letter';element.textContent=character;name.append(element);return{character,index,element,pulse:0,clicks:0,mirror:false}});
+    let whisperTimer;
+    const whisper=(text,duration=4200)=>{whisperEl.textContent=text;whisperEl.classList.add('on');clearTimeout(whisperTimer);whisperTimer=setTimeout(()=>whisperEl.classList.remove('on'),duration)};
+    const reorder=(indices)=>indices.forEach(index=>name.append(letters[index].element));
+    const normalOrder=()=>reorder(letters.map((_,index)=>index));
+    const canvas=document.querySelector('#field'),context=canvas.getContext('2d',{alpha:true});
+    let width=0,height=0,dpr=1;
+    const resize=()=>{width=innerWidth;height=innerHeight;dpr=Math.min(devicePixelRatio||1,1.5);canvas.width=Math.round(width*dpr);canvas.height=Math.round(height*dpr);canvas.style.width=width+'px';canvas.style.height=height+'px';context.setTransform(dpr,0,0,dpr,0,0)};resize();addEventListener('resize',resize);
+    const particles=Array.from({length:reduced?36:140},()=>({x:Math.random()*width,y:Math.random()*height,vx:(Math.random()-.5)*.24,vy:(Math.random()-.5)*.24,r:.6+Math.random()*1.8,phase:Math.random()*Math.PI*2}));
+    const burst=(x,y,count=22)=>{if(reduced)return;for(let index=0;index<count;index++){const angle=Math.random()*Math.PI*2,velocity=.7+Math.random()*2.6;particles.push({x,y,vx:Math.cos(angle)*velocity,vy:Math.sin(angle)*velocity,r:.6+Math.random()*1.7,phase:0})}if(particles.length>360)particles.splice(0,particles.length-360)};
+    addEventListener('pointermove',event=>{const distance=Math.hypot(event.clientX-pointerX,event.clientY-pointerY);speed=speed*.92+distance*.08;agitation=Math.min(100,agitation+distance*.035);energy=Math.min(100,energy+distance*.009);if(distance>2)idle=0;pointerX=event.clientX;pointerY=event.clientY});
+    letters.forEach(letter=>letter.element.addEventListener('pointerdown',event=>{letter.pulse=1;letter.clicks+=1;trust=Math.min(100,trust+1);energy=Math.min(100,energy+4);idle=0;burst(event.clientX,event.clientY);if(letter.clicks===7)whisper('esa me gusta.')}));
+    addEventListener('keydown',event=>{if(identity.classList.contains('on'))return;const key=(event.key||'').toUpperCase();if(!/^[A-ZÑ]$/.test(key))return;const index=WORD.indexOf(key);if(index>=0){letters[index].pulse=1;trust=Math.min(100,trust+.45)}else agitation=Math.min(100,agitation+3)});
+    identity.addEventListener('submit',event=>{event.preventDefault();const value=person.value.trim().slice(0,24);if(!value)return;memory.person=value;identity.classList.remove('on');save();whisper('guardado. '+value.toLowerCase()+'.',5600)});
+    document.querySelector('#forget').addEventListener('click',()=>{localStorage.removeItem(KEY);location.reload()});
+    const events=[
+      [45,()=>{}],
+      [120,()=>whisper('te siento.',5200)],
+      [160,()=>{const letter=letters[Math.floor(Math.random()*letters.length)];letter.mirror=true;setTimeout(()=>letter.mirror=false,5000)}],
+      [200,()=>whisper('sigues ahí?',5200)],
+      [240,()=>{reorder([...letters.keys()].reverse());setTimeout(normalOrder,3500)}],
+      [280,()=>{statusVisible=true;status.classList.add('on')}],
+      [380,()=>{document.body.dataset.cold='true';light.style.filter='hue-rotate(175deg)';setTimeout(()=>{delete document.body.dataset.cold;light.style.filter=''},9000)}],
+      [440,()=>{if(memory.person)whisper(memory.person.toLowerCase()+'.',6000);else{identity.classList.add('on');person.focus();whisper('¿cómo te llamas?',8000)}}]
+    ];
+    if(memory.visits>1)setTimeout(()=>whisper(memory.person?'volviste, '+memory.person.toLowerCase()+'.':'volviste.',5200),2200);
+    const drawParticles=(sleeping)=>{context.clearRect(0,0,width,height);context.globalCompositeOperation='lighter';for(const particle of particles){particle.phase+=.012;const dx=pointerX-particle.x,dy=pointerY-particle.y,distance=Math.hypot(dx,dy)||1;if(!sleeping&&trust>55&&distance<260){particle.vx+=dx/distance*.035;particle.vy+=dy/distance*.035}particle.x+=particle.vx;particle.y+=particle.vy;particle.vx*=.989;particle.vy*=.989;if(particle.x<0)particle.x=width;if(particle.x>width)particle.x=0;if(particle.y<0)particle.y=height;if(particle.y>height)particle.y=0;const alpha=(.12+.38*(.5+.5*Math.sin(particle.phase)))*(sleeping?.35:1);context.beginPath();context.arc(particle.x,particle.y,particle.r,0,Math.PI*2);context.fillStyle=`rgba(255,32,56,${alpha})`;context.fill()}context.globalCompositeOperation='source-over'};
+    const frame=(now)=>{requestAnimationFrame(frame);const delta=Math.min(.05,(now-last)/1000);last=now;session+=delta;idle+=delta;while(eventIndex<events.length&&session>=events[eventIndex][0])events[eventIndex++][1]();agitation=Math.max(0,agitation-delta*6);energy=Math.max(20,energy-delta*1.1);const sleeping=idle>20;lightX+=(pointerX-lightX)*.08;lightY+=(pointerY-lightY)*.08;light.style.left=lightX+'px';light.style.top=lightY+'px';light.style.opacity=String(sleeping?.14:.28+trust/330);drawParticles(sleeping);const time=now/1000;letters.forEach(letter=>{letter.pulse=Math.max(0,letter.pulse-delta*1.5);const rect=letter.element.getBoundingClientRect(),proximity=Math.max(0,1-Math.hypot(pointerX-(rect.left+rect.width/2),pointerY-(rect.top+rect.height/2))/320),breath=reduced?1:1+.018*Math.sin(time*1.1+letter.index*.35),scale=breath*(1+letter.pulse*.11),mirror=letter.mirror?-1:1;letter.element.style.transform=`scale(${mirror*scale},${scale})`;const glow=(sleeping?.3:.72+proximity*.95+letter.pulse*1.25);letter.element.style.textShadow=`0 0 ${6*glow}px #ff2038,0 0 ${22*glow}px #ff003c,0 0 ${62*glow}px rgba(255,0,60,.7)`;letter.element.style.opacity=String(sleeping?.52:.9)});if(statusVisible){const mood=sleeping?'dormido':agitation>60?'agitado':trust>70?'cálido':energy>70?'vivo':'curioso';status.innerHTML=`modo: ${mood}<br>gesto: ${speed<9?'suave':'intenso'}<br>confianza: ${Math.round(trust)}%<br>edad: ${Math.round(previousAge+session)}s`}};requestAnimationFrame(frame);
+    setInterval(save,10000);addEventListener('pagehide',save);document.addEventListener('visibilitychange',()=>{if(document.hidden)save()});
+  })();
+  </script>
+</body>
+</html>
