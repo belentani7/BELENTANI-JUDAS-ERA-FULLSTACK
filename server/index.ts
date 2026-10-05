@@ -6,13 +6,17 @@ import { randomUUID } from 'node:crypto'
 
 type Locale = 'es' | 'en' | 'pt' | 'ca'
 type Session = { id: string; locale: Locale; reducedMotion: boolean; createdAt: string }
+type RateBucket = { windowStartedAt: number; count: number }
 
 const port = Number.parseInt(process.env.PORT ?? '8787', 10)
 const host = process.env.HOST ?? '0.0.0.0'
 const runtimeDir = join(process.cwd(), 'runtime')
 const distDir = join(process.cwd(), 'dist')
 const sessions = new Map<string, Session>()
+const rateBuckets = new Map<string, RateBucket>()
 const locales: readonly Locale[] = ['es', 'en', 'pt', 'ca']
+const RATE_WINDOW_MS = 60_000
+const RATE_LIMIT = 60
 
 const eraManifest = {
   title: 'JUDAS',
@@ -44,10 +48,43 @@ function setIndexingPolicy(response: ServerResponse, pathname: string): void {
   }
 }
 
-function sendJson(response: ServerResponse, statusCode: number, value: unknown): void {
+function sendJson(response: ServerResponse, statusCode: number, value: unknown, headers?: Record<string, string>): void {
   setSecurityHeaders(response)
-  response.writeHead(statusCode, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' })
+  response.writeHead(statusCode, {
+    'Content-Type': 'application/json; charset=utf-8',
+    'Cache-Control': 'no-store',
+    ...headers,
+  })
   response.end(JSON.stringify(value))
+}
+
+function clientKey(request: IncomingMessage): string {
+  return request.socket.remoteAddress ?? 'unknown'
+}
+
+function isRateLimited(request: IncomingMessage): boolean {
+  const now = Date.now()
+  const key = clientKey(request)
+  const bucket = rateBuckets.get(key)
+
+  if (!bucket || now - bucket.windowStartedAt >= RATE_WINDOW_MS) {
+    rateBuckets.set(key, { windowStartedAt: now, count: 1 })
+    return false
+  }
+
+  bucket.count += 1
+  return bucket.count > RATE_LIMIT
+}
+
+setInterval(() => {
+  const cutoff = Date.now() - RATE_WINDOW_MS
+  for (const [key, bucket] of rateBuckets) {
+    if (bucket.windowStartedAt < cutoff) rateBuckets.delete(key)
+  }
+}, RATE_WINDOW_MS).unref()
+
+function rateLimitResponse(response: ServerResponse): void {
+  sendJson(response, 429, { error: 'RATE_LIMITED' }, { 'Retry-After': '60' })
 }
 
 async function readJson(request: IncomingMessage): Promise<unknown> {
@@ -85,6 +122,10 @@ async function handleApi(request: IncomingMessage, response: ServerResponse, pat
     return true
   }
   if (request.method === 'POST' && pathname === '/api/judas-era/session') {
+    if (isRateLimited(request)) {
+      rateLimitResponse(response)
+      return true
+    }
     const body = await readJson(request)
     if (!isRecord(body) || !isLocale(body.locale) || typeof body.reducedMotion !== 'boolean') {
       sendJson(response, 400, { error: 'INVALID_SESSION_INPUT' })
@@ -99,6 +140,10 @@ async function handleApi(request: IncomingMessage, response: ServerResponse, pat
     return true
   }
   if (request.method === 'POST' && pathname === '/api/judas-era/signal') {
+    if (isRateLimited(request)) {
+      rateLimitResponse(response)
+      return true
+    }
     const body = await readJson(request)
     const sessionId = isRecord(body) && typeof body.sessionId === 'string' ? body.sessionId : ''
     const chapter = isRecord(body) && typeof body.chapter === 'string' ? body.chapter : ''
