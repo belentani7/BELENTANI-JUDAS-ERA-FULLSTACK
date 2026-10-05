@@ -1,7 +1,4 @@
 # Compila la aplicacion y la publica en GitHub Pages.
-#
-# El repositorio contiene codigo fuente (src/main.tsx), no la version
-# compilada. Pages debe publicar exclusivamente dist/.
 name: Deploy Pages
 
 on:
@@ -26,7 +23,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: npm install --no-audit --no-fund --legacy-peer-deps
+          cache: npm
+      - run: npm ci
       - name: Typecheck
         run: npm run typecheck
       - name: Lint
