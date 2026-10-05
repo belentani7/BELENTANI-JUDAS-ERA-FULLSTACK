@@ -1,4 +1,4 @@
-export type HomeDirectionId = 'ritual' | 'archive' | 'body' | 'portal'
+export type HomeDirectionId = 'ritual' | 'archive' | 'body' | 'portal' | 'quintessence'
 
 export interface HomeDirection {
   readonly id: HomeDirectionId
@@ -50,6 +50,15 @@ export const homeDirections: readonly HomeDirection[] = [
     statement: 'La materia recuerda el mundo antes de convertirse en diamante.',
     accent: '#ff315c',
     objectPosition: '50% 56%',
+  },
+  {
+    id: 'quintessence',
+    index: '05',
+    label: 'Quintessence',
+    title: ['BELEN', 'TANI'],
+    statement: 'Memoria, materia y luz convergen antes de cruzar el umbral.',
+    accent: '#d9c8b8',
+    objectPosition: '50% 50%',
   },
 ]
 
