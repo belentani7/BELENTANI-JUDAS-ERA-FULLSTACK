@@ -157,8 +157,6 @@ export function CinematicHome() {
           {maximumIllumination ? 'Iluminación máxima' : 'Activar iluminación máxima'}
         </button>
       )}
-        </div>
-      )}
 
       <Link className="cinematic-home__entry" to="/artist">
         <span>Entrar</span>
