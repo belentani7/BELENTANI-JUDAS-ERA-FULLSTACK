@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { getHomeDirection, homeDirections } from './homeDirections'
 
 describe('homeDirections', () => {
-  it('exposes five unique visual directions', () => {
+  it('exposes five unique canonical visual directions', () => {
     const ids = homeDirections.map((direction) => direction.id)
     expect(ids).toHaveLength(5)
     expect(new Set(ids).size).toBe(5)
@@ -14,12 +14,13 @@ describe('homeDirections', () => {
     expect(direction.image).toBeUndefined()
   })
 
-  it('ignores prototype directions outside the explicit laboratory', () => {
-    expect(getHomeDirection('ritual').id).toBe('quintessence')
+  it('falls back to the first canonical direction for unknown values', () => {
+    expect(getHomeDirection('unknown').id).toBe('ritual')
   })
 
-  it('resolves all prototypes inside the explicit laboratory', () => {
-    expect(getHomeDirection('ritual', true).id).toBe('ritual')
-    expect(getHomeDirection('unknown', true).id).toBe('quintessence')
+  it('resolves every canonical direction', () => {
+    for (const direction of homeDirections) {
+      expect(getHomeDirection(direction.id)).toBe(direction)
+    }
   })
 })
