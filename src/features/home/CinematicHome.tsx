@@ -145,15 +145,18 @@ export function CinematicHome() {
           <button type="button" onClick={disperse} disabled={!isGathered}>
             Dispersar
           </button>
-          {labMode && direction.id === 'portal' && (
-            <button
-              type="button"
-              aria-pressed={maximumIllumination}
-              onClick={() => setMaximumIllumination((current) => !current)}
-            >
-              {maximumIllumination ? 'Iluminación máxima' : 'Activar iluminación máxima'}
-            </button>
-          )}
+        </div>
+      )}
+
+      {labMode && direction.id === 'portal' && (
+        <button
+          type="button"
+          aria-pressed={maximumIllumination}
+          onClick={() => setMaximumIllumination((current) => !current)}
+        >
+          {maximumIllumination ? 'Iluminación máxima' : 'Activar iluminación máxima'}
+        </button>
+      )}
         </div>
       )}
 
