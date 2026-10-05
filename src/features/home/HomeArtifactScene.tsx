@@ -115,39 +115,48 @@ export function HomeArtifactScene({
   return (
     <div className="home-artifact-stage" data-context-state={contextState}>
       <Canvas
-      className="home-artifact-canvas"
-
-      camera={{ position: [0, 0, 4.3], fov: 42 }}
-      dpr={[1, 1.5]}
-      gl={{ alpha: true, antialias: true, powerPreference: 'high-performance' }}
-      aria-hidden="true"
-    >
-      <ambientLight intensity={(isQuintessence ? 0.42 : direction === 'portal' ? 0.12 : 0.34) * illumination} />
-      <directionalLight
-        position={[4, 5, 5]}
-        intensity={(isQuintessence ? 2.1 : direction === 'portal' ? 0.7 : 2.4) * illumination}
-        color={accent}
-      />
-      <pointLight
-        position={[-4, -2, 3]}
-        intensity={(isQuintessence ? 12 : direction === 'portal' ? 7 : 28) * illumination}
-        color="#ffffff"
-        distance={9}
-      />
-      {isQuintessence ? (
-        <QuintessenceWorld phase={quintessencePhase} quality={maximumIllumination ? 1 : 0.72} />
-      ) : direction === 'portal' ? (
-        <LivingDiamondWorld />
-      ) : (
-        <Artifact direction={direction} accent={accent} />
+        className="home-artifact-canvas"
+        camera={{ position: [0, 0, 4.3], fov: 42 }}
+        dpr={[1, 1.5]}
+        gl={{ alpha: true, antialias: true, powerPreference: 'high-performance' }}
+        aria-hidden="true"
+        onCreated={({ gl }) => {
+          canvasRef.current = gl.domElement
+        }}
+      >
+        <ambientLight intensity={(isQuintessence ? 0.42 : direction === 'portal' ? 0.12 : 0.34) * illumination} />
+        <directionalLight
+          position={[4, 5, 5]}
+          intensity={(isQuintessence ? 2.1 : direction === 'portal' ? 0.7 : 2.4) * illumination}
+          color={accent}
+        />
+        <pointLight
+          position={[-4, -2, 3]}
+          intensity={(isQuintessence ? 12 : direction === 'portal' ? 7 : 28) * illumination}
+          color="#ffffff"
+          distance={9}
+        />
+        {isQuintessence ? (
+          <QuintessenceWorld phase={quintessencePhase} quality={maximumIllumination ? 1 : 0.72} />
+        ) : direction === 'portal' ? (
+          <LivingDiamondWorld />
+        ) : (
+          <Artifact direction={direction} accent={accent} />
+        )}
+        <Sparkles
+          count={isQuintessence ? 90 : 70}
+          scale={[7, 5, 3]}
+          size={1.4}
+          speed={0.14}
+          color={accent}
+          opacity={0.42}
+        />
+      </Canvas>
+      {contextState === 'lost' && (
+        <div className="home-artifact-fallback" data-context-lost="true" aria-live="polite">
+          Recuperando la escena visual…
+        </div>
       )}
-      <Sparkles
-        count={isQuintessence ? 90 : 70}
-        scale={[7, 5, 3]}
-        size={1.4}
-        speed={0.14}
-        color={accent}
-        opacity={0.42}
-      />
-    </Canvas>
+    </div>
+  )
 }
