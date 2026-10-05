@@ -4,11 +4,14 @@ import { useEffect, useRef, useState } from 'react'
 import type { Group } from 'three'
 import type { HomeDirectionId } from './homeDirections'
 import { LivingDiamondWorld } from './LivingDiamondWorld'
+import { QuintessenceWorld, type QuintessencePhase } from './QuintessenceWorld'
 
 interface HomeArtifactSceneProps {
   readonly direction: HomeDirectionId
   readonly accent: string
   readonly motionEnabled: boolean
+  readonly maximumIllumination?: boolean
+  readonly quintessencePhase?: QuintessencePhase
 }
 
 interface ArtifactProps {
@@ -75,11 +78,20 @@ function Artifact({ direction, accent }: ArtifactProps) {
   )
 }
 
-export function HomeArtifactScene({ direction, accent, motionEnabled }: HomeArtifactSceneProps) {
+export function HomeArtifactScene({
+  direction,
+  accent,
+  motionEnabled,
+  maximumIllumination = false,
+  quintessencePhase = 'dormancy',
+}: HomeArtifactSceneProps) {
   const compact = useCompactExperience()
   if (compact || !motionEnabled) {
     return <div className="home-artifact-fallback" data-direction={direction} aria-hidden="true" />
   }
+
+  const isQuintessence = direction === 'quintessence'
+  const illumination = maximumIllumination ? 1.4 : 1
 
   return (
     <Canvas
@@ -89,11 +101,33 @@ export function HomeArtifactScene({ direction, accent, motionEnabled }: HomeArti
       gl={{ alpha: true, antialias: true, powerPreference: 'high-performance' }}
       aria-hidden="true"
     >
-      <ambientLight intensity={direction === 'portal' ? 0.12 : 0.34} />
-      <directionalLight position={[4, 5, 5]} intensity={direction === 'portal' ? 0.7 : 2.4} color={accent} />
-      <pointLight position={[-4, -2, 3]} intensity={direction === 'portal' ? 7 : 28} color="#ffffff" distance={9} />
-      {direction === 'portal' ? <LivingDiamondWorld /> : <Artifact direction={direction} accent={accent} />}
-      <Sparkles count={70} scale={[7, 5, 3]} size={1.4} speed={0.14} color={accent} opacity={0.42} />
+      <ambientLight intensity={(isQuintessence ? 0.42 : direction === 'portal' ? 0.12 : 0.34) * illumination} />
+      <directionalLight
+        position={[4, 5, 5]}
+        intensity={(isQuintessence ? 2.1 : direction === 'portal' ? 0.7 : 2.4) * illumination}
+        color={accent}
+      />
+      <pointLight
+        position={[-4, -2, 3]}
+        intensity={(isQuintessence ? 12 : direction === 'portal' ? 7 : 28) * illumination}
+        color="#ffffff"
+        distance={9}
+      />
+      {isQuintessence ? (
+        <QuintessenceWorld phase={quintessencePhase} quality={maximumIllumination ? 1 : 0.72} />
+      ) : direction === 'portal' ? (
+        <LivingDiamondWorld />
+      ) : (
+        <Artifact direction={direction} accent={accent} />
+      )}
+      <Sparkles
+        count={isQuintessence ? 90 : 70}
+        scale={[7, 5, 3]}
+        size={1.4}
+        speed={0.14}
+        color={accent}
+        opacity={0.42}
+      />
     </Canvas>
   )
 }
