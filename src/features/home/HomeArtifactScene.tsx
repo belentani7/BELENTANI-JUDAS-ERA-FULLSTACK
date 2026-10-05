@@ -86,6 +86,25 @@ export function HomeArtifactScene({
   quintessencePhase = 'dormancy',
 }: HomeArtifactSceneProps) {
   const compact = useCompactExperience()
+  const canvasRef = useRef<HTMLCanvasElement | null>(null)
+  const [contextState, setContextState] = useState<'ready' | 'lost'>('ready')
+
+  useEffect(() => {
+    const canvas = canvasRef.current
+    if (!canvas) return
+    const handleContextLost = (event: Event) => {
+      event.preventDefault()
+      setContextState('lost')
+    }
+    const handleContextRestored = () => setContextState('ready')
+    canvas.addEventListener('webglcontextlost', handleContextLost)
+    canvas.addEventListener('webglcontextrestored', handleContextRestored)
+    return () => {
+      canvas.removeEventListener('webglcontextlost', handleContextLost)
+      canvas.removeEventListener('webglcontextrestored', handleContextRestored)
+    }
+  }, [direction, motionEnabled])
+
   if (compact || !motionEnabled) {
     return <div className="home-artifact-fallback" data-direction={direction} aria-hidden="true" />
   }
@@ -94,8 +113,10 @@ export function HomeArtifactScene({
   const illumination = maximumIllumination ? 1.4 : 1
 
   return (
-    <Canvas
+    <div className="home-artifact-stage" data-context-state={contextState}>
+      <Canvas
       className="home-artifact-canvas"
+
       camera={{ position: [0, 0, 4.3], fov: 42 }}
       dpr={[1, 1.5]}
       gl={{ alpha: true, antialias: true, powerPreference: 'high-performance' }}
@@ -129,5 +150,4 @@ export function HomeArtifactScene({
         opacity={0.42}
       />
     </Canvas>
-  )
 }
