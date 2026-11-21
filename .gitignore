@@ -1,3 +1,7 @@
+# Generated OS metadata, Python bytecode, and HTML reports
+htmlcov/
+playwright-report/
+
 # Generated operating-system metadata and Python bytecode
 .DS_Store
 Thumbs.db
