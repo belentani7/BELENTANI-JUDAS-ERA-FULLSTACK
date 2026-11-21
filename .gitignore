@@ -1,14 +1,40 @@
-# Generated OS metadata, Python bytecode, and HTML reports
-htmlcov/
-playwright-report/
-
-# Generated operating-system metadata and Python bytecode
-.DS_Store
+# Generated operating-system metadata
 Thumbs.db
 Desktop.ini
 desktop.ini
 ._*
 __MACOSX/
-__pycache__/
-*.pyc
-*.pyo
+
+node_modules/
+dist/
+dist-server/
+runtime/
+coverage/
+playwright-report/
+test-results/
+artifacts/
+.env*
+!.env.example
+research/private-corpus/
+research/mobile-index*.json
+research/mobile-index*.csv
+research/mobile-selection.*
+public/media/candidates/
+.devserver*.log
+.devserver.pid
+
+# --- guardias-sinc-2026-10-08 (auto) ---
+node_modules/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.next/
+.nuxt/
+.turbo/
+dist/
+build/
+coverage/
+*.log
+.DS_Store
