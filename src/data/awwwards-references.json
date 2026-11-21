@@ -1,0 +1,902 @@
+[
+  {
+    "id": "awwwards-1",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/cerebrium",
+    "title": "Cerebrium",
+    "category": "gsap",
+    "pattern": "Coreografia temporal con GSAP, continuidad entre estados y movimiento reducido.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-2",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/loro-labs",
+    "title": "Loro Labs",
+    "category": "gsap",
+    "pattern": "Coreografia temporal con GSAP, continuidad entre estados y movimiento reducido.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-3",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/actl",
+    "title": "Actl",
+    "category": "gsap",
+    "pattern": "Coreografia temporal con GSAP, continuidad entre estados y movimiento reducido.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-4",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/vigilante",
+    "title": "Vigilante",
+    "category": "gsap",
+    "pattern": "Coreografia temporal con GSAP, continuidad entre estados y movimiento reducido.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-5",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/gionatan-nese-26",
+    "title": "Gionatan Nese 26",
+    "category": "gsap",
+    "pattern": "Coreografia temporal con GSAP, continuidad entre estados y movimiento reducido.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-6",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/oregon-outdoor-alliance",
+    "title": "Oregon Outdoor Alliance",
+    "category": "gsap",
+    "pattern": "Coreografia temporal con GSAP, continuidad entre estados y movimiento reducido.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-7",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/serotoninn",
+    "title": "Serotoninn",
+    "category": "gsap",
+    "pattern": "Coreografia temporal con GSAP, continuidad entre estados y movimiento reducido.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-8",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/united-carriers",
+    "title": "United Carriers",
+    "category": "gsap",
+    "pattern": "Coreografia temporal con GSAP, continuidad entre estados y movimiento reducido.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-9",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/web-agency-fahrenheit",
+    "title": "Web Agency Fahrenheit",
+    "category": "gsap",
+    "pattern": "Coreografia temporal con GSAP, continuidad entre estados y movimiento reducido.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-10",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/i-creativ-studio-v7",
+    "title": "I Creativ Studio V7",
+    "category": "gsap",
+    "pattern": "Coreografia temporal con GSAP, continuidad entre estados y movimiento reducido.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-11",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/justus-john",
+    "title": "Justus John",
+    "category": "gsap",
+    "pattern": "Coreografia temporal con GSAP, continuidad entre estados y movimiento reducido.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-12",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/twofold-therapy",
+    "title": "Twofold Therapy",
+    "category": "gsap",
+    "pattern": "Coreografia temporal con GSAP, continuidad entre estados y movimiento reducido.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-13",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/soma-maison-de-production",
+    "title": "Soma Maison De Production",
+    "category": "gsap",
+    "pattern": "Coreografia temporal con GSAP, continuidad entre estados y movimiento reducido.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-14",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/kim-seunghyuk",
+    "title": "Kim Seunghyuk",
+    "category": "gsap",
+    "pattern": "Coreografia temporal con GSAP, continuidad entre estados y movimiento reducido.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-15",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/lorenzo-lannino",
+    "title": "Lorenzo Lannino",
+    "category": "gsap",
+    "pattern": "Coreografia temporal con GSAP, continuidad entre estados y movimiento reducido.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-16",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/raphael-segerman-portfolio",
+    "title": "Raphael Segerman Portfolio",
+    "category": "gsap",
+    "pattern": "Coreografia temporal con GSAP, continuidad entre estados y movimiento reducido.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-17",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/upvent-digital",
+    "title": "Upvent Digital",
+    "category": "gsap",
+    "pattern": "Coreografia temporal con GSAP, continuidad entre estados y movimiento reducido.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-18",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/hearst-exhibit-2026",
+    "title": "Hearst Exhibit 2026",
+    "category": "gsap",
+    "pattern": "Coreografia temporal con GSAP, continuidad entre estados y movimiento reducido.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-19",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/eladio-dieste",
+    "title": "Eladio Dieste",
+    "category": "gsap",
+    "pattern": "Coreografia temporal con GSAP, continuidad entre estados y movimiento reducido.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-20",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/zoumboulakis-galleries-1",
+    "title": "Zoumboulakis Galleries 1",
+    "category": "gsap",
+    "pattern": "Coreografia temporal con GSAP, continuidad entre estados y movimiento reducido.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-21",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/noomo-showcase",
+    "title": "Noomo Showcase",
+    "category": "gsap",
+    "pattern": "Coreografia temporal con GSAP, continuidad entre estados y movimiento reducido.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-22",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/daoism-systems",
+    "title": "Daoism Systems",
+    "category": "gsap",
+    "pattern": "Coreografia temporal con GSAP, continuidad entre estados y movimiento reducido.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-23",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/weichie",
+    "title": "Weichie",
+    "category": "gsap",
+    "pattern": "Coreografia temporal con GSAP, continuidad entre estados y movimiento reducido.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-24",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/godin-x-angine-de-poitrine",
+    "title": "Godin X Angine De Poitrine",
+    "category": "gsap",
+    "pattern": "Coreografia temporal con GSAP, continuidad entre estados y movimiento reducido.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-25",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/gptagency-io",
+    "title": "Gptagency Io",
+    "category": "gsap",
+    "pattern": "Coreografia temporal con GSAP, continuidad entre estados y movimiento reducido.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-26",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/grainient-v2",
+    "title": "Grainient V2",
+    "category": "gsap",
+    "pattern": "Coreografia temporal con GSAP, continuidad entre estados y movimiento reducido.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-27",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/why-zero",
+    "title": "Why Zero",
+    "category": "gsap",
+    "pattern": "Coreografia temporal con GSAP, continuidad entre estados y movimiento reducido.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-28",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/neoconda",
+    "title": "Neoconda",
+    "category": "gsap",
+    "pattern": "Coreografia temporal con GSAP, continuidad entre estados y movimiento reducido.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-29",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/rechroma",
+    "title": "Rechroma",
+    "category": "gsap",
+    "pattern": "Coreografia temporal con GSAP, continuidad entre estados y movimiento reducido.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-30",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/made-with-gsap-1",
+    "title": "Made With Gsap 1",
+    "category": "gsap",
+    "pattern": "Coreografia temporal con GSAP, continuidad entre estados y movimiento reducido.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-31",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/rabbit-r1",
+    "title": "Rabbit R1",
+    "category": "gsap",
+    "pattern": "Coreografia temporal con GSAP, continuidad entre estados y movimiento reducido.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-32",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/heyclicky",
+    "title": "Heyclicky",
+    "category": "webgl",
+    "pattern": "Escena espacial WebGL con contenido equivalente y control de rendimiento.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-33",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/world-cup-the-immortals",
+    "title": "World Cup The Immortals",
+    "category": "webgl",
+    "pattern": "Escena espacial WebGL con contenido equivalente y control de rendimiento.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-34",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/lacoste-ace-breaker",
+    "title": "Lacoste Ace Breaker",
+    "category": "webgl",
+    "pattern": "Escena espacial WebGL con contenido equivalente y control de rendimiento.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-35",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/viskhan-khasiyev",
+    "title": "Viskhan Khasiyev",
+    "category": "webgl",
+    "pattern": "Escena espacial WebGL con contenido equivalente y control de rendimiento.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-36",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/omnicom-reputation-group",
+    "title": "Omnicom Reputation Group",
+    "category": "webgl",
+    "pattern": "Escena espacial WebGL con contenido equivalente y control de rendimiento.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-37",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/oreo-bts-love-letter-site",
+    "title": "Oreo Bts Love Letter Site",
+    "category": "webgl",
+    "pattern": "Escena espacial WebGL con contenido equivalente y control de rendimiento.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-38",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/trevor-noah",
+    "title": "Trevor Noah",
+    "category": "webgl",
+    "pattern": "Escena espacial WebGL con contenido equivalente y control de rendimiento.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-39",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/illoca",
+    "title": "Illoca",
+    "category": "webgl",
+    "pattern": "Escena espacial WebGL con contenido equivalente y control de rendimiento.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-40",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/the-tie-break",
+    "title": "The Tie Break",
+    "category": "webgl",
+    "pattern": "Escena espacial WebGL con contenido equivalente y control de rendimiento.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-41",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/everest-the-ascent",
+    "title": "Everest The Ascent",
+    "category": "webgl",
+    "pattern": "Escena espacial WebGL con contenido equivalente y control de rendimiento.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-42",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/monolayer",
+    "title": "Monolayer",
+    "category": "webgl",
+    "pattern": "Escena espacial WebGL con contenido equivalente y control de rendimiento.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-43",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/obys-r-experiment-space",
+    "title": "Obys R Experiment Space",
+    "category": "webgl",
+    "pattern": "Escena espacial WebGL con contenido equivalente y control de rendimiento.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-44",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/linea-prompt",
+    "title": "Linea Prompt",
+    "category": "webgl",
+    "pattern": "Escena espacial WebGL con contenido equivalente y control de rendimiento.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-45",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/wc-2026-data-portraits",
+    "title": "Wc 2026 Data Portraits",
+    "category": "webgl",
+    "pattern": "Escena espacial WebGL con contenido equivalente y control de rendimiento.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-46",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/nod-marketing",
+    "title": "Nod Marketing",
+    "category": "webgl",
+    "pattern": "Escena espacial WebGL con contenido equivalente y control de rendimiento.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-47",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/bam",
+    "title": "Bam",
+    "category": "webgl",
+    "pattern": "Escena espacial WebGL con contenido equivalente y control de rendimiento.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-48",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/digitz-2",
+    "title": "Digitz 2",
+    "category": "webgl",
+    "pattern": "Escena espacial WebGL con contenido equivalente y control de rendimiento.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-49",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/goboldtm-agency",
+    "title": "Goboldtm Agency",
+    "category": "webgl",
+    "pattern": "Escena espacial WebGL con contenido equivalente y control de rendimiento.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-50",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/tabasco-the-root-of-a-legacy",
+    "title": "Tabasco The Root Of A Legacy",
+    "category": "webgl",
+    "pattern": "Escena espacial WebGL con contenido equivalente y control de rendimiento.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-51",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/venezuela-strong",
+    "title": "Venezuela Strong",
+    "category": "webgl",
+    "pattern": "Escena espacial WebGL con contenido equivalente y control de rendimiento.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-52",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/partizan",
+    "title": "Partizan",
+    "category": "webgl",
+    "pattern": "Escena espacial WebGL con contenido equivalente y control de rendimiento.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-53",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/the-tuscan-journey-begins",
+    "title": "The Tuscan Journey Begins",
+    "category": "webgl",
+    "pattern": "Escena espacial WebGL con contenido equivalente y control de rendimiento.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-54",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/jordi-garreta-creative-dev",
+    "title": "Jordi Garreta Creative Dev",
+    "category": "webgl",
+    "pattern": "Escena espacial WebGL con contenido equivalente y control de rendimiento.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-55",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/webfactory-studio",
+    "title": "Webfactory Studio",
+    "category": "webgl",
+    "pattern": "Escena espacial WebGL con contenido equivalente y control de rendimiento.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-56",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/big-sur",
+    "title": "Big Sur",
+    "category": "experimental",
+    "pattern": "Navegacion no lineal que conserva orientacion, teclado y salida clara.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-57",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/qridian",
+    "title": "Qridian",
+    "category": "experimental",
+    "pattern": "Navegacion no lineal que conserva orientacion, teclado y salida clara.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-58",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/acid-crunch",
+    "title": "Acid Crunch",
+    "category": "experimental",
+    "pattern": "Navegacion no lineal que conserva orientacion, teclado y salida clara.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-59",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/ciao-energy-launch-website",
+    "title": "Ciao Energy Launch Website",
+    "category": "experimental",
+    "pattern": "Navegacion no lineal que conserva orientacion, teclado y salida clara.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-60",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/sergio-ayala-art-director",
+    "title": "Sergio Ayala Art Director",
+    "category": "experimental",
+    "pattern": "Navegacion no lineal que conserva orientacion, teclado y salida clara.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-61",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/pomp-circumstance-pr",
+    "title": "Pomp Circumstance Pr",
+    "category": "experimental",
+    "pattern": "Navegacion no lineal que conserva orientacion, teclado y salida clara.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-62",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/julien-pianetti",
+    "title": "Julien Pianetti",
+    "category": "experimental",
+    "pattern": "Navegacion no lineal que conserva orientacion, teclado y salida clara.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-63",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/daniel-dungyov-portfolio",
+    "title": "Daniel Dungyov Portfolio",
+    "category": "experimental",
+    "pattern": "Navegacion no lineal que conserva orientacion, teclado y salida clara.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-64",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/pedro-bellezas-personal-website",
+    "title": "Pedro Bellezas Personal Website",
+    "category": "experimental",
+    "pattern": "Navegacion no lineal que conserva orientacion, teclado y salida clara.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-65",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/shaky-picks",
+    "title": "Shaky Picks",
+    "category": "experimental",
+    "pattern": "Navegacion no lineal que conserva orientacion, teclado y salida clara.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-66",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/www-aicreatorawards-com",
+    "title": "Www Aicreatorawards Com",
+    "category": "experimental",
+    "pattern": "Navegacion no lineal que conserva orientacion, teclado y salida clara.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-67",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/sauds-ps2-portfolio",
+    "title": "Sauds Ps2 Portfolio",
+    "category": "experimental",
+    "pattern": "Navegacion no lineal que conserva orientacion, teclado y salida clara.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-68",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/ato-hen-shi-noqi",
+    "title": "Ato Hen Shi Noqi",
+    "category": "experimental",
+    "pattern": "Navegacion no lineal que conserva orientacion, teclado y salida clara.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-69",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/truth-generation",
+    "title": "Truth Generation",
+    "category": "experimental",
+    "pattern": "Navegacion no lineal que conserva orientacion, teclado y salida clara.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-70",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/the-triadic-ballet-ai",
+    "title": "The Triadic Ballet Ai",
+    "category": "experimental",
+    "pattern": "Navegacion no lineal que conserva orientacion, teclado y salida clara.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-71",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/spectral-field",
+    "title": "Spectral Field",
+    "category": "experimental",
+    "pattern": "Navegacion no lineal que conserva orientacion, teclado y salida clara.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-72",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/fuch-ai",
+    "title": "Fuch Ai",
+    "category": "experimental",
+    "pattern": "Navegacion no lineal que conserva orientacion, teclado y salida clara.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-73",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/craft-engineered",
+    "title": "Craft Engineered",
+    "category": "experimental",
+    "pattern": "Navegacion no lineal que conserva orientacion, teclado y salida clara.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-74",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/3dyco",
+    "title": "3Dyco",
+    "category": "experimental",
+    "pattern": "Navegacion no lineal que conserva orientacion, teclado y salida clara.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-75",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/meinhard-taxer",
+    "title": "Meinhard Taxer",
+    "category": "experimental",
+    "pattern": "Navegacion no lineal que conserva orientacion, teclado y salida clara.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-76",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/race-condition",
+    "title": "Race Condition",
+    "category": "experimental",
+    "pattern": "Navegacion no lineal que conserva orientacion, teclado y salida clara.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-77",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/ross-halfin-photography",
+    "title": "Ross Halfin Photography",
+    "category": "music",
+    "pattern": "Sonido opcional con transporte visible, contexto y silencio por defecto.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-78",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/kaitlyn-hova-portfolio",
+    "title": "Kaitlyn Hova Portfolio",
+    "category": "music",
+    "pattern": "Sonido opcional con transporte visible, contexto y silencio por defecto.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-79",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/paul-kalkbrenner",
+    "title": "Paul Kalkbrenner",
+    "category": "music",
+    "pattern": "Sonido opcional con transporte visible, contexto y silencio por defecto.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-80",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/forms",
+    "title": "Forms",
+    "category": "music",
+    "pattern": "Sonido opcional con transporte visible, contexto y silencio por defecto.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-81",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/xanvier-allison",
+    "title": "Xanvier Allison",
+    "category": "music",
+    "pattern": "Sonido opcional con transporte visible, contexto y silencio por defecto.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-82",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/spotify-wrapped-party",
+    "title": "Spotify Wrapped Party",
+    "category": "music",
+    "pattern": "Sonido opcional con transporte visible, contexto y silencio por defecto.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-83",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/sunbeam-bagels-coffee",
+    "title": "Sunbeam Bagels Coffee",
+    "category": "music",
+    "pattern": "Sonido opcional con transporte visible, contexto y silencio por defecto.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-84",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/carriere-scene",
+    "title": "Carriere Scene",
+    "category": "music",
+    "pattern": "Sonido opcional con transporte visible, contexto y silencio por defecto.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-85",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/osi-90th-anniversary",
+    "title": "Osi 90Th Anniversary",
+    "category": "music",
+    "pattern": "Sonido opcional con transporte visible, contexto y silencio por defecto.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-86",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/the-history-of-muse-group",
+    "title": "The History Of Muse Group",
+    "category": "music",
+    "pattern": "Sonido opcional con transporte visible, contexto y silencio por defecto.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-87",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/michael-gatt-folio",
+    "title": "Michael Gatt Folio",
+    "category": "music",
+    "pattern": "Sonido opcional con transporte visible, contexto y silencio por defecto.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-88",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/paysages-studio",
+    "title": "Paysages Studio",
+    "category": "music",
+    "pattern": "Sonido opcional con transporte visible, contexto y silencio por defecto.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-89",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/vibeme-ai",
+    "title": "Vibeme Ai",
+    "category": "music",
+    "pattern": "Sonido opcional con transporte visible, contexto y silencio por defecto.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-90",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/van-morrison",
+    "title": "Van Morrison",
+    "category": "music",
+    "pattern": "Sonido opcional con transporte visible, contexto y silencio por defecto.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-91",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/serhat-durmus",
+    "title": "Serhat Durmus",
+    "category": "music",
+    "pattern": "Sonido opcional con transporte visible, contexto y silencio por defecto.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-92",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/silent-partners-studio",
+    "title": "Silent Partners Studio",
+    "category": "music",
+    "pattern": "Sonido opcional con transporte visible, contexto y silencio por defecto.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-93",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/neko-engineering",
+    "title": "Neko Engineering",
+    "category": "music",
+    "pattern": "Sonido opcional con transporte visible, contexto y silencio por defecto.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-94",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/die-antwoord",
+    "title": "Die Antwoord",
+    "category": "music",
+    "pattern": "Sonido opcional con transporte visible, contexto y silencio por defecto.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-95",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/planetooote-digital-obsession",
+    "title": "Planetooote Digital Obsession",
+    "category": "music",
+    "pattern": "Sonido opcional con transporte visible, contexto y silencio por defecto.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-96",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/yungbld-creative-studio",
+    "title": "Yungbld Creative Studio",
+    "category": "music",
+    "pattern": "Sonido opcional con transporte visible, contexto y silencio por defecto.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-97",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/aorum",
+    "title": "Aorum",
+    "category": "music",
+    "pattern": "Sonido opcional con transporte visible, contexto y silencio por defecto.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-98",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/coveo-music-1",
+    "title": "Coveo Music 1",
+    "category": "music",
+    "pattern": "Sonido opcional con transporte visible, contexto y silencio por defecto.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-99",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/sfjazz",
+    "title": "Sfjazz",
+    "category": "music",
+    "pattern": "Sonido opcional con transporte visible, contexto y silencio por defecto.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  },
+  {
+    "id": "awwwards-100",
+    "source": "Awwwards",
+    "url": "https://www.awwwards.com/sites/sasuke-haraguchi",
+    "title": "Sasuke Haraguchi",
+    "category": "music",
+    "pattern": "Sonido opcional con transporte visible, contexto y silencio por defecto.",
+    "caution": "Referencia de investigacion. Reutilizar principios, no composicion, codigo, texto ni activos."
+  }
+]
